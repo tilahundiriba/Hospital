@@ -5,61 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <link rel="stylesheet" href="staff.css">
     <style>
-        form{
-           display: flex;
-           flex-direction:column;
-
-        }
-        .empInfo{
-            background-color:red;
-           width: 400px;
-        }
-        .empAdd{
-            background-color:green;
-            width: 400px;
-            
-        }
-        .japp{
-            background-color:yellow;
-            width: 400px;
-        }
+      
+        
     </style>
+
 </head>
 <body>
     <form>
-
-    <h2>WELCOME TO REGISTRATION PAGE</h2>
+<fieldset class="fieldone">
+ <legend><h2>WELCOME TO REGISTRATION PAGE</h2></legend>
     <div class="empInfo">
-    <legend>Employee Information
-    
-    <p>Frist Name <input type="text" name="fname"></p>
-    <p>Middle Name <input type="text" name="mname"></p>
-    <p>Last Name <input type="text" name="lname"></p>
-    <p>Date Brith <input type="text" name="dbrith"></p>
-    <p>Age <input type="text" name="age"></p>
-    <p>Gender <input type="radio" name="male" value="Male">
-    <label for="male">Male</label>
-    <input type="radio" name="female" value="Female">
-    <label for="female">Female</label></p>
-    <p>Registration Date<input type="text" name="lname"></p>
-    </legend>
+
+  <h3> Employee Information</h3> 
+
+
+    <label for="fname" class="label">First Name</label> 
+    <input type="text" name="fname" class="input">
+    <label for="mname" class="label">Middle Name</label>
+    <input type="text" name="mname" class="input">
+    <label for="lname" class="label">Last Name</label>
+     <input type="text" name="lname" class="input">
+    <label for="dbrith" class="label">Date of brith</label>
+     <input type="text" name="dbrith" class="input">
+    <label for="age" class="label">Age</label>
+    <input type="text" name="age" class="input">
+    <p>
+    <label for="Gender" class="label">Gender</label>
+     <input type="radio" name="male" value="Male" class="rad">
+    <label for="male" class="label">Male</label>
+    <input type="radio" name="female" value="Female" class="rad">
+    <label for="female" class="label">Female</label></p>
+
+
+   
+
     </div>
+    
     <div class="empAdd">
-    <legend>Employee Address
-    <p>Phone Number <input type="text" name="phone"></p>
-    <p>Email<input type="text" name="email"></p>
-    <p>Country<input type="text" name="country"></p>
-    <p>Region <input type="text" name="region"></p>
-    <p>Address <input type="text" name="address"></p>
+
+    <h3>Employee Address</h3>
+    <label for="phone" class="label">Phone</label> 
+    <input type="text" name="phone" class="input">
+    <label for="email" class="label">Email</label>
+    <input type="text" name="email"  class="input">
+    <label for="country" class="label">Country</label>
+    <input type="text" name="country"  class="input">
+    <label for="region" class="label">Region</label> 
+    <input type="text" name="region"  class="input">
+    <label for="address" class="label">Address</label>
+     <input type="text" name="address"  class="input">
+
     
-    </legend>
     </div>
+
     <div class="japp">
-    <legend>Job Application
-    <p>Employee ID <input type="text" name="id"></p>
-    <p>Password <input type="password" name="password"></p>
-    <p>Job Type <select name="proffession" id="proffession">
+
+   <h3>Job Application</h3> 
+    <label for="id" class="label">Employee Id</label>
+    <input type="text" name="id"  class="input">
+    <label for="Password" class="label">Password</label>
+     <input type="password" name="password"  class="input">
+    <label for="proffession" class="label">Proffession</label> 
+    <select name="proffession" id="proffession" class="job">
 
 <option value="doctor">Doctor</option>
 <option value="nurse">Nurse</option>
@@ -67,14 +76,22 @@
 <option value="labortarist">Labortarist</option>
  <option value="radiographer">Radiographer</option>
   <option value="dentist">Dentist</option>
-</select></p></p>
-    <p>Payment <input type="text" name="payment"></p>
-    </legend>
+</select>
+    <label for="payment" class="label">Payment</label>
+    <input type="text" name="payment"  class="input">
+
+
     </div>
-    <p><button name="submit">Save</button>
-    <button name="reset">New</button></p>
+    <div class="btnclass">
+    <button name="submit" class="save">Save</button>
+    <button name="reset" class="save">New</button>
+    <button name="reset" class="save">Back</button>
+   
+    
+   
+    </div>
 
-
+    </fieldset>
     </form>
 </body>
 </html>
