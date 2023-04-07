@@ -22,15 +22,15 @@
 
 
     <label for="fname" class="label">First Name</label> 
-    <input type="text" name="fname" class="input">
+    <input type="text" name="fname" class="input" placeholder="first name">
     <label for="mname" class="label">Middle Name</label>
-    <input type="text" name="mname" class="input">
+    <input type="text" name="mname" class="input" placeholder="middle name">
     <label for="lname" class="label">Last Name</label>
-     <input type="text" name="lname" class="input">
+     <input type="text" name="lname" class="input" placeholder="last name">
     <label for="dbrith" class="label">Date of brith</label>
-     <input type="text" name="dbrith" class="input">
+     <input type="text" name="dbrith" class="input" placeholder="date of brith">
     <label for="age" class="label">Age</label>
-    <input type="text" name="age" class="input">
+    <input type="text" name="age" class="input" placeholder="age">
     <p>
     <label for="Gender" class="label">Gender</label>
      <input type="radio" name="male" value="Male" class="rad">
@@ -39,23 +39,21 @@
     <label for="female" class="label">Female</label></p>
 
 
-   
-
     </div>
     
     <div class="empAdd">
 
     <h3>Employee Address</h3>
     <label for="phone" class="label">Phone</label> 
-    <input type="text" name="phone" class="input">
+    <input type="text" name="phone" class="input" placeholder="phone number">
     <label for="email" class="label">Email</label>
-    <input type="text" name="email"  class="input">
+    <input type="email" name="email"  class="input" placeholder="email address">
     <label for="country" class="label">Country</label>
-    <input type="text" name="country"  class="input">
+    <input type="text" name="country"  class="input" placeholder="country">
     <label for="region" class="label">Region</label> 
-    <input type="text" name="region"  class="input">
+    <input type="text" name="region"  class="input" placeholder="region">
     <label for="address" class="label">Address</label>
-     <input type="text" name="address"  class="input">
+     <input type="text" name="address"  class="input" placeholder="address">
 
     
     </div>
@@ -64,9 +62,9 @@
 
    <h3>Job Application</h3> 
     <label for="id" class="label">Employee Id</label>
-    <input type="text" name="id"  class="input">
+    <input type="text" name="id"  class="input" placeholder="employee id">
     <label for="Password" class="label">Password</label>
-     <input type="password" name="password"  class="input">
+     <input type="password" name="password"  class="input" placeholder="password">
     <label for="proffession" class="label">Proffession</label> 
     <select name="proffession" id="proffession" class="job">
 
@@ -78,7 +76,7 @@
   <option value="dentist">Dentist</option>
 </select>
     <label for="payment" class="label">Payment</label>
-    <input type="text" name="payment"  class="input">
+    <input type="text" name="payment"  class="input" placeholder="payment">
 
 
     </div>
