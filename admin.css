@@ -1,0 +1,71 @@
+body{
+   
+    background-image: url("images/adminWalpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    }
+    .admindiv{
+        position: absolute;
+        background-color: rgba(1,1,1,0.2);
+        left:400px ;
+        align-items: center;
+        height: 400px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 40px;
+        margin: 10px;
+        margin-top: 50px;
+        padding: 10px;
+        padding-top: 20px;
+    }
+    .labclass{
+        position: relative;
+        left: -75px;
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        margin-top: 20px;
+
+    }
+    .inputclass{
+        background-color: rgba(1,1,1,0.2);
+        width: 250px;
+        height: 30px;
+        border-radius: 10px;
+        border-bottom: solid 2px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    .inputclass:hover{
+        background-color: rgba(1,1,1,0.4);
+    }
+  
+    h3{
+        height: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 40px;
+        font-weight: bold;
+
+
+    }
+    .btnclass{
+ position: relative;
+        width: 250px;
+        height: 40px;
+        color: black;
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-top: 10px;
+        background-color: rgba(1,1,1,0.5);
+        margin-top: 20px;
+
+    }
+    .btnclass:hover{
+        background-color: rgb(0.6,0.5,0); 
+        color: aquamarine;
+    }
