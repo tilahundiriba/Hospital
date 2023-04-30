@@ -6,12 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin.css">
     <title>Admin Page</title>
+    <style>
+
+        .adminlogo{
+            height: 150px;
+            width: 250px;
+            border-radius: 20px;
+        }
+        .admindiv{
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
     <form>
 <div class="admindiv">
-
-    <h3>Login</h3>
+<div class="adm">
+    <img src="images/adminlogin.jpg" alt="Admin logo" class="adminlogo">
+</div>
+    
     <label for="username" class="labclass">Username</label>
     <input type="text" name="username" class="inputclass" placeholder="username">
     <label for="password" class="labclass"> Password </label>

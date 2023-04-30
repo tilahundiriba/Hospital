@@ -14,7 +14,7 @@
    font-style: italic;
   font-family: 'Times New Roman', Times, serif;
    font-display: flex;
-   color: rgb(243, 9, 9);
+   color:  #CCF381;
 
         }
         *
@@ -80,7 +80,7 @@ cursor: default;
             cursor: pointer;
         }
         label{
-color: white;
+color:  #CCF381;
 font-size: 30px;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-style: unset;
@@ -91,12 +91,14 @@ font-style: unset;
          color: #000;
         }
         .button{
-            padding: 15px 50px;
+            padding: 15px ;
             border: solid white;
             background-color: rgba(1,1,1,0.4);
             border-radius: 15px;
             color: white;
             font-size: large;
+            height: 50px;
+            width: 200px;
         }
         .button:hover{
             color: rgb(84, 129, 78);
