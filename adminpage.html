@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMIN PAGE </title>
-   
+
     <style>
      .header{
     background-color: rgba(1, 1, 1,0.5);
@@ -15,7 +15,7 @@
   flex-direction: row;
   margin-top: 0px;
   margin-left: 0px;
- 
+
   padding-left: 20px;
 
 
@@ -25,17 +25,17 @@
 }
 
   .linkers{
- position: relative; 
+ position: relative;
     display: flex;
     flex-direction: row;
     color: aquamarine;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-     left: 30%; 
-    margin: 20px;  
-    text-decoration: none; 
-} 
+     left: 30%;
+    margin: 20px;
+    text-decoration: none;
+}
 .linkers:hover{
 height: 22px;
 width: 70px;
@@ -47,7 +47,7 @@ h2{
     color: aquamarine;
     position:relative;
     top: 20px;
-    
+
 }
 h3{
   color: #D2302C;
@@ -59,7 +59,7 @@ h3{
    display: flex;
   flex-direction: column;
   background-color: #161B21;
-  align-items: center; 
+  align-items: center;
   width: 400px;
   border-radius: 20px;
 height: 700px;
@@ -96,7 +96,7 @@ body{
   background-color: #295F2D;
   font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
- 
+
 }
 .btnsave:hover{
   background-color: #358597;
@@ -110,30 +110,30 @@ body{
   font-weight: bold;
   margin-top: 10px;
 }
+small{
+  color: red;
+}
     </style>
+    
 </head>
 <body>
-    <form >
+    <form name="myForm" id="form">
         <div class="header">
-
-   <a href="#" class="linkers">View</a>
-    <a href="aboutus.php" class="linkers">Search</a>
-     <a href="homepage.php" class="linkers">Home</a>
+           <a href="#" class="linkers">View</a>
+           <a href="aboutus.php" class="linkers">Search</a>
+           <a href="homepage.php" class="linkers">Home</a>
         </div>
         <div class="empInfo">
-
 <h3> Update Employee Information</h3>
-
-
   <label for="empId" class="label">Employee Id</label>
-  <input type="text" name="empId" class="input" placeholder="Employee Id">
+  <input type="text" name="empId" class="input" placeholder="Employee Id" id="id" >
+ 
   <label for="age" class="label">Age</label>
-  <input type="text" name="age" class="input" placeholder="Age">
+  <input type="number" name="age" class="input" placeholder="Age" id="age">
   <label for="phone" class="label">Phone</label>
-   <input type="text" name="phone" class="input" placeholder="Phone">
+   <input type="number" name="phone" class="input" placeholder="Phone" id="phone">
   <label for="country" class="label">Country</label>
-  <select name="country" class="input">
-
+  <select name="country" class="input" id="country">
 <option value="Ethiopia">Ethiopia</option>
 <option value="Sudan">Sudan</option>
 <option value="Kenya">Kenya</option>
@@ -142,14 +142,13 @@ body{
   <option value="Pakstan">Pakstan</option>
 </select>
   <label for="region" class="label">Region</label>
-  <input type="text" name="region" class="input" placeholder="Region">
-  
+  <input type="text" name="region" class="input" placeholder="Region" id="region">
   <label for="address" class="label">Address</label>
-   <input type="text" name="address" class="input" placeholder="Address">
-   <label for="male" class="label">Date</label>
-  <input type="date" name="date" class="input">
+   <input type="text" name="address" class="input" placeholder="Address" id="address">
+   <label for="date" class="label">Date</label>
+  <input type="date" name="date" class="input" id="date">
    <label for="proffession" class="label">Proffession</label>
-   <select name="proffession" class="input">
+   <select name="proffession" class="input" id="proff">
 
 <option value="Doctor">Doctor</option>
 <option value="Nurse">Nurse</option>
@@ -159,7 +158,7 @@ body{
   <option value="Dentist">Dentist</option>
 </select>
 <label for="salary" class="label">Salary</label>
-<input type="text" name="salary" class="input" placeholder="Salary">
+<input type="number" name="salary" class="input" placeholder="Salary" id="salary">
    <div class="btndiv">
 <input type="submit" value="Save" class="btnsave">
 <input type="reset" value="Clear" class="btnsave">
@@ -167,5 +166,68 @@ body{
   </div>
 
     </form>
+    <script type="text/javascript">
+        
+      const form1=document.getElementById('form');
+      form1.addEventListener('submit',(e)=>{
+      
+          e.preventDefault();
+          validate();
+      });
+      function validate() {
+      
+          if(document.myForm.empId.value.trim()==""){
+              alert("please enter your employee Id");
+              document.myForm.empId.focus();
+              return false;
+              
+          }
+          
+          if(document.myForm.age.value.trim()==""){
+              alert("please enter your card number");
+              document.myForm.age.focus();
+              return false;
+          }
+          if(document.myForm.phone.value.trim()==""){
+             alert("please provide phone");
+              document.myForm.phone.focus();
+              return false;
+          }
+          if(document.myForm.country.value.trim()==""){
+              alert("please provide country");
+              document.myForm.country.focus();
+              return false;
+          }
+          if(document.myForm.region.value.trim()==""){
+              alert("please provide region");
+              document.myForm.region.focus();
+              return false;
+          }
+          if(document.myForm.address.value.trim()==""){
+              alert("please provide address");
+              document.myForm.address.focus();
+              return false;
+          }
+          if(document.myForm.date.value.trim()==""){
+              alert("please provide date");
+              document.myForm.date.focus();
+              return false;
+          }
+          if(document.myForm.proffession.value.trim()==""){
+              alert("please provide proffession");
+              document.myForm.proffession.focus();
+              return false;
+          }
+          if(document.myForm.salary.value.trim()==""){
+              alert("please provide salary");
+              document.myForm.salary.focus();
+              return false;
+          }
+      
+          
+          return (true);
+      }
+          </script>
 </body>
+
 </html>

@@ -199,7 +199,7 @@ h2{
 
 </head>
 <body>
-    <form>
+    <form name="myForm" id="form">
 
  
  <div class="header">
@@ -217,7 +217,7 @@ h2{
 
 
     <label for="item id" class="label">Item ID</label> 
-    <input type="text" name="item id" class="input" placeholder="item id">
+    <input type="text" name="itemid" class="input" placeholder="item id">
     <label for="name" class="label">Item Name</label>
     <input type="text" name="name" class="input" placeholder="item name">
     <label for="category" class="label">Category</label>
@@ -230,12 +230,12 @@ h2{
 
 <h3>Payments</h3>
 <label for="price" class="label">Price</label>
-     <input type="text" name="price" class="input" placeholder="price for each">
+     <input type="number" name="price" class="input" placeholder="price for each">
     <label for="amount" class="label">Amount</label>
-    <input type="text" name="amount" class="input" placeholder="amount">
+    <input type="number" name="amount" class="input" placeholder="amount">
     
     <label for="total" class="label">Total Cost</label>
-     <input type="text" name="total" class="input" placeholder="total  Cost">
+     <input type="number" name="total" class="input" placeholder="total  Cost">
     <label for="recorded" class="label">Recorded by </label>
     <input type="text" name="recorded" class="input" placeholder="Recorder name">
     <label for="date" class="label">Date of Addition</label>
@@ -254,5 +254,70 @@ h2{
 
     </form>
 </body>
+<script type="text/javascript">
+        
+        const form1=document.getElementById('form');
+   
+        var rfn =/^[a=zA-Z]$/
+        form1.addEventListener('submit',(e)=>{
+        
+            e.preventDefault();
+            validate();
+        });
+        function validate() {
+        
+         
+            
+            if(document.myForm.itemid.value.trim()==""){
+                alert("please enter item id");
+                document.myForm.itemid.focus();
+                return false;
+            }
+            if(document.myForm.name.value.trim()==""){
+                alert("please provide items name");
+                document.myForm.name.focus();
+                return false;
+            }
+            if(document.myForm.category.value.trim()==""){
+                alert("please provide items category");
+                document.myForm.category.focus();
+                return false;
+            }
+            if(document.myForm.price.value.trim()==""){
+                alert("please provide price");
+                document.myForm.price.focus();
+                return false;
+            }
+            if(document.myForm.amount.value.trim()==""){
+               alert("please provide amount");
+                document.myForm.amount.focus();
+                return false;
+            }
+          
+            if(document.myForm.total.value.trim()==""){
+                alert("please provide total");
+                document.myForm.total.focus();
+                return false;
+            }
+            if(document.myForm.recorded.value.trim()==""){
+                alert("please enter recorder name");
+                document.myForm.recorded.focus();
+                return false;
+                
+            }
+            if(document.myForm.date.value.trim()==""){
+                alert("please enter date of addition");
+                document.myForm.date.focus();
+                return false;
+                
+            }
+            // else if(!(rfn.test(document.myForm.nameacceptor.value.trim()))){
+            //     alert("please provide correct word for name");
+            //     document.myForm.nameacceptor.focus();
+            //     return false;
+            // }
+            return (true);
+        }
+            </script>
 </html>
 

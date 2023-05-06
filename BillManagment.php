@@ -133,7 +133,7 @@ color: white;
 </ul>
 </div> 
 
-    <form action="">
+    <form action="" name="myForm" id="form">
       
  <div class="diveinfo">
     <label for="date">Date</label><br>
@@ -141,11 +141,11 @@ color: white;
     <label for="card">CardNo</label><br>
     <input type="text" name="cardNo" id="card" class="inptext" placeholder="Please Enter CardNo....."><br><br>
     <label for="amount">Service Price</label><br>
-    <input type="text" name="amount" id="amount" class="inptext" placeholder="please enter the amount......"><br><br>
+    <input type="number" name="amount" id="amount" class="inptext" placeholder="please enter the amount......"><br><br>
     <label for="price">Bed Price</label><br>
-    <input type="text" name="price" id="price" class="inptext" placeholder="Bed Price......"><br><br>
+    <input type="number" name="price" id="price" class="inptext" placeholder="Bed Price......"><br><br>
     <label for="total">Total Price</label><br>
-    <input type="text" name="total" id="total" class="inptext" placeholder="total price......"><br><br>
+    <input type="number" name="total" id="total" class="inptext" placeholder="total price......"><br><br>
     <label for="nameacceptor">Name Of Price Acceptor</label><br>
     <input type="text" name="nameacceptor" id="nameacceptor" class="inptext" placeholder=" Price Acceptor......"><br><br>
 
@@ -157,5 +157,60 @@ color: white;
     </form>
   
 </body>
+
+    <script type="text/javascript">
+        
+        const form1=document.getElementById('form');
+   
+        var rfn =/^[a=zA-Z]$/
+        form1.addEventListener('submit',(e)=>{
+        
+            e.preventDefault();
+            validate();
+        });
+        function validate() {
+        
+            if(document.myForm.date.value.trim()==""){
+                alert("please enter your date");
+                document.myForm.date.focus();
+                return false;
+                
+            }
+            
+            if(document.myForm.cardNo.value.trim()==""){
+                alert("please enter your card number");
+                document.myForm.cardNo.focus();
+                return false;
+            }
+        
+        
+            if(document.myForm.amount.value.trim()==""){
+               alert("please provide amount");
+                document.myForm.amount.focus();
+                return false;
+            }
+            if(document.myForm.price.value.trim()==""){
+                alert("please provide price");
+                document.myForm.price.focus();
+                return false;
+            }
+            if(document.myForm.total.value.trim()==""){
+                alert("please provide total");
+                document.myForm.total.focus();
+                return false;
+            }
+            if(document.myForm.nameacceptor.value.trim()==""){
+                alert("please provide name");
+                document.myForm.nameacceptor.focus();
+                return false;
+            }
+            // else if(!(rfn.test(document.myForm.nameacceptor.value.trim()))){
+            //     alert("please provide correct word for name");
+            //     document.myForm.nameacceptor.focus();
+            //     return false;
+            // }
+            return (true);
+        }
+            </script>
 
 </html>

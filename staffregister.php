@@ -21,17 +21,17 @@
   height: 450px;
   margin:20px;
   padding-top: 10px;
-  
+
 }
 .empInfo:hover{
-    background-color: rgba(1,1,1,0.6);  
+    background-color: rgba(1,1,1,0.6);
 }
 
 .empAdd{
     background-color: rgba(1,1,1,0.4);
     padding-top: 10px;
     border-radius: 40px;
-   
+
     width: 350px;
     top: 80px;
     display: flex;
@@ -42,7 +42,7 @@
   height: 450px;
 }
 .empAdd:hover{
-    background-color: rgba(1,1,1,0.6);  
+    background-color: rgba(1,1,1,0.6);
 }
 .japp{
     border-radius: 40px;
@@ -58,7 +58,7 @@
   height: 450px;
 }
 .japp:hover{
-    background-color: rgba(1,1,1,0.6);  
+    background-color: rgba(1,1,1,0.6);
 }
 .btnclass{
     position: absolute;
@@ -76,7 +76,7 @@ margin-top: 10px;
 background-color: rgba(1,1,1,0.2);
 }
 .input:hover{
-    background-color: rgba(1,1,1,0.4);   
+    background-color: white;
 }
 .save{
     width: 150px;
@@ -88,7 +88,7 @@ border-top-color: green;
 background-color: rgba(1,1,1,0.2);
 color: #FFF748;
 border-radius: 10px;
-font-size: large; 
+font-size: large;
 }
 .save:hover{
 color: black;
@@ -108,7 +108,7 @@ background-attachment: fixed;
 body{
 
     background-color: #b3b3ff;
-    background-image: url("images/doctors.jpg"); 
+    background-image: url("images/doctors.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 }
@@ -153,17 +153,17 @@ height: 30px;
 }
 
   .linkers{
- position: relative; 
+ position: relative;
     display: flex;
     flex-direction: row;
     color: aquamarine;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-     left: 75%; 
-    margin: 20px;  
-    text-decoration: none; 
-} 
+     left: 75%;
+    margin: 20px;
+    text-decoration: none;
+}
 .linkers:hover{
     text-decoration: wavy;
     color: black;
@@ -180,6 +180,7 @@ p{
   padding-right: 20px;
   gap: 20px;
 }
+
     </style>
 
 </head>
@@ -191,10 +192,10 @@ p{
 
 
         </div>
-    <form>
+    <form id="form" name="myForm">
 
 
- 
+
 
     <div class="empInfo">
 
@@ -202,23 +203,22 @@ p{
 
 
     <label for="fname" class="label">First Name</label>
-    <input type="text" name="fname" class="input" placeholder="first name">
+    <input type="text" name="fname" class="input" placeholder="first name" id="fname">
     <label for="mname" class="label">Middle Name</label>
-    <input type="text" name="mname" class="input" placeholder="middle name">
+    <input type="text" name="mname" class="input" placeholder="middle name" id="mname">
     <label for="lname" class="label">Last Name</label>
-     <input type="text" name="lname" class="input" placeholder="last name">
+     <input type="text" name="lname" class="input" placeholder="last name" id="lname">
     <label for="dbrith" class="label">Date of brith</label>
-     <input type="text" name="dbrith" class="input" placeholder="date of brith">
+     <input type="date" name="dbrith" class="input" placeholder="date of brith" id="dbrith">
     <label for="age" class="label">Age</label>
-    <input type="text" name="age" class="input" placeholder="age">
-    
+    <input type="number" name="age" class="input" placeholder="age" id="age">
+
     <label for="Gender" class="label">Gender</label>
     <p>
-    
-    
+
+
      <input type="radio" name="gender" value="Male" class="rad" id="male">
      <label for="male" class="label">Male</label>
-    
     <input type="radio" name="gender" value="Female" class="rad" id="female">
      <label for="female" class="label">Female</label>
    </p>
@@ -229,15 +229,22 @@ p{
 
     <h3>Employee Address</h3>
     <label for="phone" class="label">Phone</label>
-    <input type="text" name="phone" class="input" placeholder="phone number">
+    <input type="text" name="number" class="input" placeholder="phone number" id="phone">
     <label for="email" class="label">Email</label>
-    <input type="email" name="email"  class="input" placeholder="email address">
+    <input type="email" name="email"  class="input" placeholder="email address" id="email">
     <label for="country" class="label">Country</label>
-    <input type="text" name="country"  class="input" placeholder="country">
+    <select name="country" class="input" id="country">
+<option value="Ethiopia">Ethiopia</option>
+<option value="Sudan">Sudan</option>
+<option value="Kenya">Kenya</option>
+<option value="USA">USA</option>
+ <option value="India">India</option>
+  <option value="Pakstan">Pakstan</option>
+</select>
     <label for="region" class="label">Region</label>
-    <input type="text" name="region"  class="input" placeholder="region">
+    <input type="text" name="region"  class="input" placeholder="region" id="region">
     <label for="address" class="label">Address</label>
-     <input type="text" name="address"  class="input" placeholder="address">
+     <input type="text" name="address"  class="input" placeholder="address" id="address">
 
 
     </div>
@@ -248,11 +255,11 @@ p{
    <label for="date" class="label">Date</label>
     <input type="date" name="date" id="date" class="input" placeholder=" date......">
     <label for="id" class="label">Employee Id</label>
-    <input type="text" name="id"  class="input" placeholder="employee id">
+    <input type="text" name="id"  class="input" placeholder="employee id" id="id">
     <label for="Password" class="label">Password</label>
-     <input type="password" name="password"  class="input" placeholder="password">
+     <input type="password" name="password"  class="input" placeholder="password" id="pass">
     <label for="proffession" class="label">Proffession</label>
-    <select name="proffession" id="proffession" class="job">
+    <select name="proffession" id="proffession" class="input">
 
 <option value="doctor">Doctor</option>
 <option value="nurse">Nurse</option>
@@ -261,21 +268,22 @@ p{
  <option value="radiographer">Radiographer</option>
   <option value="dentist">Dentist</option>
 </select>
-    <label for="payment" class="label">Payment</label>
-    <input type="text" name="payment"  class="input" placeholder="payment">
+    <label for="payment" class="label">Salary</label>
+    <input type="text" name="salary"  class="input" placeholder="payment" id="salary">
 
 
     </div>
     <div class="btnclass">
     <button name="submit" class="save">Save</button>
     <button name="reset" class="save">New</button>
-   
+
 
 
 
     </div>
 
-    
+
     </form>
 </body>
+<script src="validation.js" type="text/javascript"> </script>
 </html>
