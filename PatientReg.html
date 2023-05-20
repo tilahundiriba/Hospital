@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pateint Registration Page</title>
+    <!-- <link rel="stylesheet" href="staff.css"> -->
+    <style>
+        .empInfo {
+            background-color: rgba(1, 1, 1, 0.5);
+            transform: 0.5;
+            width: 460px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            left: 80px;
+            position: absolute;
+            top: 50px;
+            height: 600px;
+            margin: 20px;
+            padding-top: 30px;
+
+        }
+
+        .empAdd {
+            background-color: rgba(1, 1, 1, 0.5);
+            /* padding-top: 10px; */
+
+            width: 390px;
+            top: 70px;
+            display: flex;
+            flex-direction: column;
+            left: 450px;
+            align-items: center;
+            position: absolute;
+            height: 600px;
+            padding-top: 30px;
+        }
+
+        .btnclass {
+            position: absolute;
+
+
+            height: 50px;
+            width: 400px;
+            top: 470px;
+            left: 100px;
+        }
+
+        .input {
+            width: 300px;
+            border-radius: 2px;
+            height: 30px;
+
+
+        }
+
+        .save {
+            padding: 15px;
+            border-bottom-color: red;
+            border-top-color: green;
+            background-color: rgba(1, 1, 1, 0.2);
+            color: #CCF381;
+            width: 200px;
+            border-radius: 10px;
+            font-size: large;
+            margin-right: 30px;
+        }
+
+        .save:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .fieldone {
+            top: 0px;
+            width: 1300px;
+            height: 600px;
+            border: solid black;
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+        }
+
+        body {
+            background-color: rgba(1, 1, 1, 0.2);
+            background-image: url("images/homepageback.jpg");
+            background-size: cover;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .label {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #F0A07C;
+        }
+
+        h3 {
+            color: black;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            left: 300px;
+        }
+
+        .btnclass {
+
+            top: 750px;
+            left: 320px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        body {
+
+
+            background-color: #33adff;
+            background-repeat: none;
+            background-size: cover;
+
+        }
+
+        #storempAdd {
+            left: 560px;
+
+        }
+
+        #linkers {
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            background-color: #4d4dff;
+            height: 550px;
+            border-radius: 20px;
+            left: 30px;
+            top: 100px;
+
+        }
+
+        .wts {
+            position: absolute;
+            left: 300px;
+        }
+
+        /* #btnclassforStore{
+    top: 500px;
+    left: 350px;
+    width: 600px;
+} */
+        .pharm {
+            position: absolute;
+            left: 800px;
+            height: 800px;
+            width: 800px;
+            top: 100px;
+            border-radius: 30px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .header {
+            background-color: rgba(1, 1, 1, 0.5);
+            height: 70px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 0px;
+            margin-left: 0px;
+
+            padding-left: 20px;
+
+
+        }
+
+        .header:hover {
+            background-color: rgba(1, 1, 1, 1);
+        }
+
+        .linkers {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            color: aquamarine;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: normal;
+            left: 50%;
+            margin: 20px;
+            text-decoration: none;
+        }
+
+        .linkers:hover {
+            text-decoration: wavy;
+            color: black;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: aquamarine;
+            position: relative;
+
+
+        }
+
+
+        .div2 {
+            position: relative;
+            margin: 5px;
+            padding: 3px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .forboth {
+          
+            width: 1000px;
+            height: 800px;
+            position: absolute;
+            margin-left: 50px;
+            padding: 10px;
+            border-radius: 20px;
+            left: 100px;
+            margin-top: 20px;
+           
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="header">
+
+        <a href="services.html" class="linkers">Services</a>
+        <a href="#" class="linkers">ITEMS </a>
+        <a href="homepage.html" class="linkers">HOME</a>
+        <a href="login.html" class="linkers">BACK</a>
+        <a href="#" class="linkers">NEXT</a>
+
+    </div>
+   
+    <form name="myForm" id="form">
+
+
+        <div class="forboth">
+            <h3>Pateint Registration Form</h3>
+            <div class="empInfo" id="storeinfo">
+                <div class="div2">
+                    <label for="pateintCode" class="label">Pateint code</label>
+                    <input type="text" name="pateintCode" id="pateintCode" class="input" placeholder="Pateint code">
+                    <div class="error"></div>
+                </div>
+
+                <div class="div2">
+                    <label for="pname" class="label">Pateint Name</label>
+                    <input type="text" name="Pateintname" class="input" id="pateintName" placeholder="Pateint name">
+                    <div class="error"></div>
+                </div>
+
+                <div class="div2">
+                    <label for="date" class="label">Date of brith</label>
+                    <input type="date" name="date" class="input" id="dbrith" placeholder="Date of brith">
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="age" class="label">Age </label>
+                    <input type="number" name="age" class="input" id="age" placeholder="Age of pateint">
+                    <div class="error"></div>
+                </div>
+
+                <div class="div2">
+                    <label for="disease" class="label">Disease </label>
+                    <input type="text" name="disease" class="input" id="disease" placeholder="disease of pateint">
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="bloodgroup" class="label">Blood Group </label>
+                    <input type="text" name="bloodgroup" class="input" id="bloodgroup"
+                        placeholder="blood group of pateint">
+                    <div class="error"></div>
+                </div>
+            </div>
+
+            <div class="empAdd" id="storempAdd">
+
+
+                <div class="div2">
+                    <label for="appdate " class="label">Appointment date </label>
+                    <input type="date" name="appdate " class="input" id="appdate " placeholder=" appointment date">
+                    <div class="error"></div>
+                </div>
+
+
+                <div class="div2">
+                    <label for="gender" class="label">Gender</label>
+                    <select name="gender" class="input" id="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="address" class="label">Address</label>
+                    <input type="text" name="address" class="input" id="address" placeholder=" Pateint Address">
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="City" class="label">City</label>
+                    <input type="text" name="City" class="input" id="City" placeholder=" Pateint City">
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="contact" class="label">Contact No </label>
+                    <input type="number" name="contact" class="input" id="contact" placeholder="contact number ">
+                    <div class="error"></div>
+                </div>
+
+                <div class="div2">
+                    <label for="Allocate doctor" class="label">Allocate Doctor </label>
+                    <input type="text" name="Allocate doctor" class="input" id="alldoctor"
+                        placeholder="Allocate doctor ">
+                    <div class="error"></div>
+                </div>
+
+            </div>
+
+            <div class="btnclass" id="btnclass">
+
+                <input type="submit" name="submit" class="save" value="Save" id="btnsubmit">
+                <input type="reset" name="submit" class="save" value="Cansel">
+
+
+            </div>
+
+        </div>
+
+    </form>
+</body>
+<script type="text/javascript">
+
+    const form = document.getElementById('form');
+    const pateintCode = document.getElementById('pateintCode');
+    const pateintName = document.getElementById('pateintName');
+    const dbrith = document.getElementById('dbrith');
+    const age = document.getElementById('age');
+    const disease = document.getElementById('disease');
+    const bloodgroup = document.getElementById('bloodgroup');
+    const appdate = document.getElementById('appdate');
+    const gender = document.getElementById('gender');
+    const address = document.getElementById('address');
+    const city = document.getElementById('city');
+    const contact = document.getElementById('contact');
+    const alldoctor = document.getElementById('alldoctor');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        validateInputs();
+    });
+
+    const setError = (element, message) => {
+        const div2 = element.parentElement;
+        const errorDisplay = div2.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        div2.classList.add('error');
+        div2.classList.remove('success')
+    }
+
+    const setSuccess = element => {
+        const div2 = element.parentElement;
+        const errorDisplay = div2.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        div2.classList.add('success');
+        div2.classList.remove('error');
+    };
+
+    // const isValidEmail = email => {
+    //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(String(email).toLowerCase());
+    // }
+
+    const validateInputs = () => {
+        const pateintcode2 = pateintCode.value.trim();
+        const pateintName2 = pateintName.value.trim();
+        const age2 = age.value.trim();
+        const dbrith2 = dbrith.value.trim();
+        const disease2 = disease.value.trim();
+        const bloodgroup2 = bloodgroup.value.trim();
+        const appdate2 = appdate.value.trim();
+        const gender2 = gender.value.trim();
+        const address2 = address.value.trim();
+        const city2 = city.value.trim();
+        const contact2 = contact.value.trim();
+        const alldoctor2 = alldoctor.value.trim();
+
+        if (pateintcode2 === '') {
+            setError(pateintCode, 'Pateint Id is required');
+        } else {
+            setSuccess(pateintCode);
+        }
+
+        if (pateintName2 === '') {
+            setError(pateintName, 'pateint name is required');
+        } else {
+            setSuccess(pateintName);
+        }
+
+        if (age2 === '') {
+            setError(age, 'Age is required');
+        } else {
+            setSuccess(age);
+        }
+
+        if (dbrith2 === '') {
+            setError(dbrith, 'Item catagory is required');
+        } else {
+            setSuccess(dbrith);
+        }
+        if (disease2 === '') {
+            setError(disease, 'Disease is required');
+        } else {
+            setSuccess(disease);
+        }
+        if (bloodgroup2 === '') {
+            setError(bloodgroup, 'Bloodgroup is required');
+        } else {
+            setSuccess(bloodgroup);
+        }
+        if (appdate2 === '') {
+            setError(appdate, 'App date is required');
+        } else {
+            setSuccess(appdate);
+        }
+        if (gender2 === '') {
+            setError(gender, 'Gender is required');
+        } else {
+            setSuccess(gender);
+        }
+        if (address2 === '') {
+            setError(address, 'Address is required');
+        } else {
+            setSuccess(address);
+        }
+
+        if (contact2 === '') {
+            setError(contact, 'Contact is required');
+        } else {
+            setSuccess(contact);
+        }
+
+        if (alldoctor2 === '') {
+            setError(alldoctor, 'Allocator doctor is required');
+        } else {
+            setSuccess(alldoctor);
+        }
+    };
+
+</script>
+
+</html>

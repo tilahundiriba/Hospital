@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Page</title>
+    <style>
+        .adminlogo {
+            height: 150px;
+            width: 250px;
+            border-radius: 20px;
+        }
+
+        .admindiv {
+            height: 490px;
+        }
+        .div1{
+            display: flex;
+            flex-direction: column;
+        }
+        .labclass{
+            position: relative;
+            left: 0px;
+            color: #2F3C7E;
+        }
+        .error{
+            color: red;
+        }
+        .div2{
+            height: 50px;
+            width: 100px;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <form id="form" name="form">
+        <div class="admindiv">
+            <div class="adm">
+                <img src="images/adminlogin.jpg" alt="Admin logo" class="adminlogo">
+            </div>
+            <div class="div1">
+                <label for="username" class="labclass">Username</label>
+                <input type="text" name="username" class="inputclass" placeholder="username" id="username">
+                <div class="error"></div>
+            </div>
+            <div class="div1">
+                <label for="password" class="labclass"> Password </label>
+                <input type="password" name="password" class="inputclass" placeholder="Password" id="password">
+                <div class="error"></div>
+            </div>
+            <button name="submit" class="btnclass">Login</button>
+            <input type="reset"  class="btncansel" value="Cansel">
+            
+        </div>
+       
+    </form>
+
+    
+</body>
+<script type="text/javascript">
+
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+
+
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        validateInputs();
+    });
+
+    const setError = (element, message) => {
+        const div1 = element.parentElement;
+        const errorDisplay = div1.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        div1.classList.add('error');
+        div1.classList.remove('success')
+    }
+
+    const setSuccess = element => {
+        const div1 = element.parentElement;
+        const errorDisplay = div1.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        div1.classList.add('success');
+        div1.classList.remove('error');
+    };
+
+    const validateInputs = () => {
+        const username2 = username.value.trim();
+        const password2 = password.value.trim();
+
+
+        if (username2 === '') {
+            setError(username, 'Please enter username.');
+        } else {
+            setSuccess(username);
+        }
+        if (password2 === '') {
+            setError(password, 'Please enter your password.');
+        } else {
+            setSuccess(password);
+        }
+
+
+
+    };
+</script>
+
+</html>

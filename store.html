@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Page</title>
+    <!-- <link rel="stylesheet" href="staff.css"> -->
+    <style>
+        .empInfo {
+            background-color: rgba(1, 1, 1, 0.5);
+            transform: 0.5;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            left: 50px;
+            border-radius: 40px;
+            position: absolute;
+            top: 100px;
+            height: 370px;
+            margin: 20px;
+            padding-top: 30px;
+
+        }
+
+        .empAdd {
+            background-color: rgba(1, 1, 1, 0.5);
+            /* padding-top: 10px; */
+            border-radius: 40px;
+
+            width: 350px;
+            top: 80px;
+            display: flex;
+            flex-direction: column;
+            left: 650px;
+            align-items: center;
+            position: absolute;
+            height: 470px;
+        }
+
+        .btnclass {
+            position: absolute;
+
+
+            height: 50px;
+            width: 400px;
+            top: 470px;
+            left: 300px;
+        }
+
+        .input {
+            width: 300px;
+            border-radius: 10px;
+            height: 40px;
+
+        
+        }
+
+        .save {
+            padding: 15px;
+            border-bottom-color: red;
+            border-top-color: green;
+            background-color: rgba(1, 1, 1, 0.2);
+            color: #CCF381;
+            width: 200px;
+            border-radius: 10px;
+            font-size: large;
+            margin-right: 30px;
+        }
+
+        .save:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .fieldone {
+            top: 0px;
+            width: 1300px;
+            height: 600px;
+            border: solid black;
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+        }
+
+        body {
+            background-color: rgba(1, 1, 1, 0.2);
+            background-image: url("images/store2.jpg");
+            background-size: cover;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .label {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #F0A07C;
+        }
+
+        h3 {
+            color: #CCF381;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .btnclass {
+
+            top: 550px;
+            left: 450px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        body {
+
+
+            background-color: #33adff;
+            background-repeat: none;
+            background-size: cover;
+
+        }
+
+        #storempAdd {
+            left: 860px;
+            top: 100px;
+        }
+
+        #linkers {
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            background-color: #4d4dff;
+            height: 550px;
+            border-radius: 20px;
+            left: 30px;
+            top: 100px;
+
+        }
+
+        .wts {
+            position: absolute;
+            left: 300px;
+        }
+
+        /* #btnclassforStore{
+    top: 500px;
+    left: 350px;
+    width: 600px;
+} */
+        .pharm {
+            position: absolute;
+            left: 800px;
+            height: 800px;
+            width: 800px;
+            top: 100px;
+            border-radius: 30px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .header {
+            background-color: rgba(1, 1, 1, 0.5);
+            height: 70px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 0px;
+            margin-left: 0px;
+
+            padding-left: 20px;
+
+
+        }
+
+        .header:hover {
+            background-color: rgba(1, 1, 1, 1);
+        }
+
+        .linkers {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            color: aquamarine;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: normal;
+            left: 50%;
+            margin: 20px;
+            text-decoration: none;
+        }
+
+        .linkers:hover {
+            text-decoration: wavy;
+            color: black;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: aquamarine;
+            position: relative;
+
+
+        }
+
+     
+        .div1 ,.div2{
+position: relative;
+margin: 5px;
+padding: 3px;
+display: flex;
+flex-direction: column;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form name="myForm" id="form">
+
+
+        <div class="header">
+
+            <a href="services.html" class="linkers">Services</a>
+            <a href="#" class="linkers">ITEMS </a>
+            <a href="homepage.html" class="linkers">HOME</a>
+            <a href="login.html" class="linkers">BACK</a>
+            <a href="#" class="linkers">NEXT</a>
+
+        </div>
+        <div class="empInfo" id="storeinfo">
+
+            <h3> Store</h3>
+
+            <div class="div1">
+                <label for="item id" class="label" >Item ID</label>
+                <input type="text" name="itemid" id="Itemid" class="input" placeholder="items id">
+                <div class="error"></div>
+            </div>
+
+            <div class="div1">
+                <label for="name" class="label">Item Name</label>
+                <input type="text" name="name" class="input" id="ItemName" placeholder="items name">
+                <div class="error"></div>
+            </div>
+            <div class="div1">
+                <label for="category" class="label">Category</label>
+                <input type="text" name="category" class="input" id="category" placeholder="Items category">
+                <div class="error"></div>
+            </div>
+
+
+        </div>
+
+        <div class="empAdd" id="storempAdd">
+
+            <h3>Payments</h3>
+            <div class="div2">
+            <label for="price" class="label">Price</label>
+            <input type="number" name="price" class="input" id="price" placeholder="items price for each">
+            <div class="error"></div>
+        </div>
+   
+
+        <div class="div2">
+            <label for="amount" class="label">Amount</label>
+            <input type="number" name="amount" class="input" id="amount" placeholder="Items number">
+            <div class="error"></div>
+        </div>
+        <div class="div2">
+            <label for="recorded" class="label">Recorded by </label>
+            <input type="text" name="recorded" class="input"  id="recorded" placeholder="Recorder name">
+            <div class="error"></div>
+        </div>
+
+        <div class="div2">
+            <label for="date" class="label">Date of Addition</label>
+            <input type="date" name="date" class="input"  id="date" placeholder="Date of Addition">
+            <div class="error"></div>
+        </div>
+
+        </div>
+
+        <div class="btnclass" id="btnclassforStore">
+            <button name="submit" class="save">Save</button>
+            <button name="reset" class="save">New</button>
+
+        </div>
+
+
+
+    </form>
+</body>
+<script type="text/javascript">
+
+    const form = document.getElementById('form');
+const Itemid = document.getElementById('Itemid');
+const ItemName = document.getElementById('ItemName');
+const category = document.getElementById('category');
+const price = document.getElementById('price');
+const amount = document.getElementById('amount');
+const recorded = document.getElementById('recorded');
+const date = document.getElementById('date');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    validateInputs();
+});
+
+const setError = (element, message) => {
+    const div1 = element.parentElement;
+    const errorDisplay = div1.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    div1.classList.add('error');
+    div1.classList.remove('success')
+}
+
+const setSuccess = element => {
+    const div1 = element.parentElement;
+    const errorDisplay = div1.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    div1.classList.add('success');
+    div1.classList.remove('error');
+};
+
+// const isValidEmail = email => {
+//     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(String(email).toLowerCase());
+// }
+
+const validateInputs = () => {
+    const itemid = Itemid.value.trim();
+    const itemname = ItemName.value.trim();
+    const itemprice = price.value.trim();
+    const itemcatagory = category.value.trim();
+    const amount2 = amount.value.trim();
+    const recorded2 = recorded.value.trim();
+    const date2 = date.value.trim();
+
+    if(itemid === '') {
+        setError(Itemid, 'Item Id is required');
+    } else {
+        setSuccess(Itemid);
+    }
+
+    if(itemname === '') {
+        setError(ItemName, 'Item name is required');
+    }  else {
+        setSuccess(ItemName);
+    }
+
+    if(itemprice === '') {
+        setError(price, 'price is required');
+    } else {
+        setSuccess(price);
+    }
+
+    if(itemcatagory === '') {
+        setError(category, 'Item catagory is required');
+    } else  {
+        setSuccess(category);
+    } 
+    if(amount2 === '') {
+        setError(amount, 'Item amout is required');
+    } else  {
+        setSuccess(amount);
+    } 
+    if(recorded2 === '') {
+        setError(recorded, 'Recordeder name is required');
+    } else  {
+        setSuccess(recorded);
+    } 
+    if(date2 === '') {
+        setError(date, 'date of addition is required');
+    } else  {
+        setSuccess(date);
+    } 
+};
+
+</script>
+
+</html>

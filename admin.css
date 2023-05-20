@@ -7,7 +7,7 @@ body{
     }
     .admindiv{
         position: absolute;
-        background-color: rgba(1,1,1,0.2);
+        background-color:  #FBEAEB;
         left:400px ;
         align-items: center;
         height: 600px;
@@ -30,18 +30,16 @@ body{
 
     }
     .inputclass{
-        background-color: rgba(1,1,1,0.2);
+        background-color: rgb(134, 132, 132);
         width: 250px;
         height: 30px;
-        border-radius: 10px;
+        border-radius: 5px;
         border-bottom: solid 2px;
         border-top: none;
         border-left: none;
         border-right: none;
     }
-    .inputclass:hover{
-        background-color: rgba(1,1,1,0.4);
-    }
+  
   
     h3{
         height: 20px;
@@ -55,17 +53,37 @@ body{
  position: relative;
         width: 250px;
         height: 40px;
-        color: black;
+        color: aquamarine;
         font-size: large;
         font-family: 'Times New Roman', Times, serif;
         font-weight: bold;
         border-radius: 10px;
         margin-top: 10px;
-        background-color: rgba(1,1,1,0.5);
+    
         margin-top: 20px;
-
+        background-color: rgb(124, 160, 160); 
     }
     .btnclass:hover{
-        background-color: rgb(0.6,0.5,0); 
+        background-color: rgba(24, 102, 30, 0.753);
+      
         color: aquamarine;
+    }
+    .btncansel{
+        position: relative;
+        width: 250px;
+        height: 40px;
+        color: aquamarine;
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-top: 10px;
+    
+        margin-top: 20px;
+        background-color: rgb(204, 152, 92); 
+    }
+    .btncansel:hover{
+        background-color: rgba(175, 31, 6, 0.753);
+      
+        color: aquamarine; 
     }

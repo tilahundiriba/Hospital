@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style></style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-image: url("images/pateint.jpg");
+            background-size: cover;
+        }
+
+        .input {
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+            height: 30px;
+            margin-top: 10px;
+
+
+             background-color: rgba(163, 157, 157, 0.2);
+        }
+
+        .divlogin {
+            padding: 15px;
+            width: 350px;
+            height: 480px;
+            margin: auto;
+            margin-top: 50px;
+            border-width: 2px;
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            background-color: #072C50;
+            border-radius: 40px;
+            border-bottom-color: red;
+            border-top-color: green;
+            font-family: 'Gill Sans', 'Gill Sans MT', italic, 'Trebuchet MS', sans-serif;
+            color: black;
+            text-align: center;
+        }
+
+        .prof {
+            width: 200px;
+            border-radius: 10px;
+            height: 30px;
+
+            background-color: rgba(1, 1, 1, 0.2);
+        }
+
+        .btnlogin {
+            padding: 10px 100px;
+            border-bottom-color: red;
+            border-top-color: green;
+            background-color: rgba(1, 1, 1, 0.2);
+            color: white;
+            border-radius: 10px;
+            font-size: large;
+            margin-top: 30px;
+
+        }
+
+        .btnlogin:hover {
+            background-color: rgb(49, 126, 33);
+            color: white;
+            cursor: pointer;
+        }
+.btncansel{
+    padding: 10px 100px;
+            border-bottom-color: red;
+            border-top-color: green;
+            background-color: rgba(1, 1, 1, 0.2);
+            color: white;
+            border-radius: 10px;
+            font-size: large;
+            margin-top: 30px;
+}
+.btncansel:hover{
+    background-color: rgb(139, 28, 28);
+            color: white;
+            cursor: pointer;
+}
+        p {
+
+            color: black;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h3 {
+
+            font-size: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .userlogo {
+            height: 150px;
+            width: 300px;
+            border-radius: 20px;
+
+        }
+
+        .labal {
+            position: relative;
+            left: -80px;
+            color: rgb(202, 179, 179);
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="" id="form">
+        <div class="divlogin">
+            <div class="userlogindiv">
+                <img src="images/userlogin.jpg" alt="User login logo" class="userlogo">
+            </div>
+            <div class="div1">
+                <label for="username" class="labal">Username </label>
+                <input type="text" name="username" class="input" placeholder="User name" id="username">
+                <div class="error"></div>
+            </div>
+            <div class="div1">
+                <label for="password" class="labal">Password </label>
+                <input type="password" name="password" class="input" placeholder="password" id="password">
+                <div class="error"></div>
+            </div>
+            <button name="submit" class="btnlogin">Login</button>
+            <input type="reset" class="btncansel" value="Cansel">
+        </div>
+    </form>
+</body>
+<script type="text/javascript">
+
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+
+
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        validateInputs();
+    });
+
+    const setError = (element, message) => {
+        const div1 = element.parentElement;
+        const errorDisplay = div1.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        div1.classList.add('error');
+        div1.classList.remove('success')
+    }
+
+    const setSuccess = element => {
+        const div1 = element.parentElement;
+        const errorDisplay = div1.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        div1.classList.add('success');
+        div1.classList.remove('error');
+    };
+
+    const validateInputs = () => {
+        const username2 = username.value.trim();
+        const password2 = password.value.trim();
+
+
+        if (username2 === '') {
+            setError(username, 'Please enter username.');
+        } else {
+            setSuccess(username);
+        }
+        if (password2 === '') {
+            setError(password, 'Please enter your password.');
+        } else {
+            setSuccess(password);
+        }
+
+
+
+    };
+
+</script>
+
+</html>
