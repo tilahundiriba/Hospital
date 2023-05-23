@@ -225,7 +225,7 @@
         }
 
         .forboth {
-          
+            display: none;
             width: 1000px;
             height: 800px;
             position: absolute;
@@ -234,14 +234,28 @@
             border-radius: 20px;
             left: 100px;
             margin-top: 20px;
-           
+background-color: #33adff;
+        }
+
+        .forboth2 {
+            background-color: aquamarine;
+            display: none;
+            width: 1000px;
+            height: 800px;
+            position: absolute;
+            margin-left: 50px;
+            padding: 10px;
+            border-radius: 20px;
+            left: 100px;
+            margin-top: 20px;
+
         }
     </style>
 
 </head>
 
 <body>
-    
+
     <div class="header">
 
         <a href="services.html" class="linkers">Services</a>
@@ -249,13 +263,15 @@
         <a href="homepage.html" class="linkers">HOME</a>
         <a href="login.html" class="linkers">BACK</a>
         <a href="#" class="linkers">NEXT</a>
-
+      
     </div>
-   
-    <form name="myForm" id="form">
+    <button type="button" onclick="document.getElementById('id01').style.display='block';
+     document.getElementById('id02').style.display='none'" >Sign Up</button>
+    <button onclick="document.getElementById('id02').style.display='block'" >Sign Up</button>
+    <form name="myForm" id="form" action="insert.php" method="post">
 
 
-        <div class="forboth">
+        <div class="forboth" id="id02">
             <h3>Pateint Registration Form</h3>
             <div class="empInfo" id="storeinfo">
                 <div class="div2">
@@ -295,15 +311,6 @@
             </div>
 
             <div class="empAdd" id="storempAdd">
-
-
-                <div class="div2">
-                    <label for="appdate " class="label">Appointment date </label>
-                    <input type="date" name="appdate " class="input" id="appdate " placeholder=" appointment date">
-                    <div class="error"></div>
-                </div>
-
-
                 <div class="div2">
                     <label for="gender" class="label">Gender</label>
                     <select name="gender" class="input" id="gender">
@@ -321,18 +328,23 @@
                 </div>
                 <div class="div2">
                     <label for="City" class="label">City</label>
-                    <input type="text" name="City" class="input" id="City" placeholder=" Pateint City">
+                    <input type="text" name="City" class="input" id="city" placeholder=" Pateint City">
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="email" class="label">Email Address </label>
+                    <input type="email" name="email" class="input" id="email" placeholder=" Email address">
                     <div class="error"></div>
                 </div>
                 <div class="div2">
                     <label for="contact" class="label">Contact No </label>
-                    <input type="number" name="contact" class="input" id="contact" placeholder="contact number ">
+                    <input type="text" name="contact" class="input" id="contact" placeholder="xx-xxxx-xxxx ">
                     <div class="error"></div>
                 </div>
 
                 <div class="div2">
                     <label for="Allocate doctor" class="label">Allocate Doctor </label>
-                    <input type="text" name="Allocate doctor" class="input" id="alldoctor"
+                    <input type="text" name="Allocatedoctor" class="input" id="alldoctor"
                         placeholder="Allocate doctor ">
                     <div class="error"></div>
                 </div>
@@ -341,15 +353,16 @@
 
             <div class="btnclass" id="btnclass">
 
-                <input type="submit" name="submit" class="save" value="Save" id="btnsubmit">
-                <input type="reset" name="submit" class="save" value="Cansel">
+                <input type="submit" name="submit" class="save" value="Save">
+                <input type="reset" name="reset" class="save" value="Cansel">
 
 
             </div>
 
         </div>
-
+<!-- the second form for  updatepateint -->
     </form>
+
 </body>
 <script type="text/javascript">
 
@@ -360,13 +373,18 @@
     const age = document.getElementById('age');
     const disease = document.getElementById('disease');
     const bloodgroup = document.getElementById('bloodgroup');
-    const appdate = document.getElementById('appdate');
+    const email = document.getElementById('email');
     const gender = document.getElementById('gender');
     const address = document.getElementById('address');
     const city = document.getElementById('city');
     const contact = document.getElementById('contact');
     const alldoctor = document.getElementById('alldoctor');
-
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var regName = /^[A-Za-z]+$/;
+    var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+    var numbers = /^[0-9]+$/;
+    var regAge = /^[0-9]\w{1,2}$/;
+    var passw = /^[A-Za-z]\w{7,14}$/;
     form.addEventListener('submit', e => {
         e.preventDefault();
 
@@ -390,12 +408,6 @@
         div2.classList.add('success');
         div2.classList.remove('error');
     };
-
-    // const isValidEmail = email => {
-    //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     return re.test(String(email).toLowerCase());
-    // }
-
     const validateInputs = () => {
         const pateintcode2 = pateintCode.value.trim();
         const pateintName2 = pateintName.value.trim();
@@ -403,7 +415,7 @@
         const dbrith2 = dbrith.value.trim();
         const disease2 = disease.value.trim();
         const bloodgroup2 = bloodgroup.value.trim();
-        const appdate2 = appdate.value.trim();
+        const email2 = email.value.trim();
         const gender2 = gender.value.trim();
         const address2 = address.value.trim();
         const city2 = city.value.trim();
@@ -418,13 +430,22 @@
 
         if (pateintName2 === '') {
             setError(pateintName, 'pateint name is required');
-        } else {
+        } else if (!pateintName2.match(regName)) {
+
+            setError(pateintName, 'Name must be character only');
+        }
+        else {
             setSuccess(pateintName);
         }
 
         if (age2 === '') {
             setError(age, 'Age is required');
-        } else {
+        }
+        else if (!age2.match(regAge)) {
+
+            setError(age, 'Age must less than two digit.');
+        }
+        else {
             setSuccess(age);
         }
 
@@ -435,18 +456,32 @@
         }
         if (disease2 === '') {
             setError(disease, 'Disease is required');
-        } else {
+        } else if (!disease2.match(regName)) {
+
+            setError(disease, 'Disease must be character only');
+        }
+        else {
             setSuccess(disease);
         }
         if (bloodgroup2 === '') {
             setError(bloodgroup, 'Bloodgroup is required');
-        } else {
+        }
+        else if (!bloodgroup2.match(regName)) {
+
+            setError(bloodgroup, 'bloodgroup must be character only');
+        }
+        else {
             setSuccess(bloodgroup);
         }
-        if (appdate2 === '') {
-            setError(appdate, 'App date is required');
-        } else {
-            setSuccess(appdate);
+        if (email2 === '') {
+            setError(email, 'Email is required');
+        }
+        else if (!email2.match(re)) {
+
+            setError(email, 'Provide correct email.');
+        }
+        else {
+            setSuccess(email);
         }
         if (gender2 === '') {
             setError(gender, 'Gender is required');
@@ -458,16 +493,29 @@
         } else {
             setSuccess(address);
         }
-
+        if (city2 === '') {
+            setError(city, 'city is required');
+        } else {
+            setSuccess(city);
+        }
         if (contact2 === '') {
             setError(contact, 'Contact is required');
-        } else {
+        } else if (!contact2.match(phoneno)) {
+
+            setError(contact, 'Provide correct phone no.');
+        }
+        else {
             setSuccess(contact);
         }
 
         if (alldoctor2 === '') {
             setError(alldoctor, 'Allocator doctor is required');
-        } else {
+        }
+        else if (!alldoctor2.match(regName)) {
+
+            setError(alldoctor, 'name must be character only.');
+        }
+        else {
             setSuccess(alldoctor);
         }
     };

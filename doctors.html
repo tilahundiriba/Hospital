@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors Page</title>
+    <!-- <link rel="stylesheet" href="staff.css"> -->
+    <style>
+        .empInfo {
+            background-color: rgba(1, 1, 1, 0.4);
+            transform: 0.5;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            left: 100px;
+            border-radius: 5px;
+            position: absolute;
+            top: 60px;
+            height: 430px;
+            margin: 20px;
+            padding-top: 10px;
+
+        }
+
+        .empInfo:hover {
+            background-color: rgba(1, 1, 1, 0.6);
+        }
+
+        .empAdd {
+            background-color: rgba(1, 1, 1, 0.4);
+            /* padding: 30px; */
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 5px;
+
+            width: 350px;
+            top: 80px;
+            /* display: flex;
+            flex-direction: column; */
+            left: 550px;
+            align-items: center;
+            position: absolute;
+            height: 400px;
+        }
+
+        .empAdd:hover {
+            background-color: rgba(1, 1, 1, 0.6);
+        }
+
+
+
+        .btnclass {
+            position: absolute;
+
+            height: 60px;
+            width: 600px;
+            top: 550px;
+            left: 300px;
+        }
+
+        .input {
+            width: 270px;
+            border-radius: 2px;
+            height: 30px;
+            margin-top: 10px;
+            /* background-color: rgba(1, 1, 1, 0.2); */
+        }
+
+        .input:hover {
+            background-color: white;
+        }
+
+        .save {
+            width: 150px;
+            margin-left: 30px;
+            margin-right: 30px;
+            padding: 15px;
+            border-bottom-color: red;
+            border-top-color: green;
+            background-color: rgba(1, 1, 1, 0.2);
+            color: #FFF748;
+            border-radius: 10px;
+            font-size: large;
+        }
+
+        .save:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .fieldone {
+            top: 0px;
+            width: 1300px;
+            height: 600px;
+            border: solid black;
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+        }
+
+        body {
+
+            background-color: #b3b3ff;
+            background-image: url("images/doctors.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .label {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #FFF748;
+
+            left: -30px;
+        }
+
+        h3 {
+            color: black;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .job {
+            background-color: rgba(1, 1, 1, 0.2);
+            color: #FFF748;
+            width: 200px;
+            border-radius: 10px;
+            height: 30px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .header {
+            background-color: rgba(1, 1, 1, 0.5);
+            height: 70px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 0px;
+            margin-left: 0px;
+            border-radius: 10px;
+            padding-left: 20px;
+
+
+        }
+
+        .header:hover {
+            background-color: rgba(1, 1, 1, 1);
+        }
+
+        .linkers {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            color: aquamarine;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: normal;
+            left: 75%;
+            margin: 20px;
+            text-decoration: none;
+        }
+
+        .linkers:hover {
+            text-decoration: wavy;
+            color: black;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+
+        h3 {
+            color: aquamarine;
+            position: relative;
+
+        }
+
+        p {
+            padding-left: 20px;
+            padding-right: 20px;
+            gap: 20px;
+        }
+
+        .staf {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sex {
+            position: relative;
+            display: flex;
+            flex-direction: raw;
+            margin: 20px;
+
+        }
+
+        .error {
+            color: red;
+        }
+
+        .rad {
+            margin: 10px;
+        }
+        .both{
+            height: 650px;
+            width: 1100px;
+            background-color: rgba(1, 1, 1, 0.2);
+            position: absolute;
+            left: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+
+        <a href="#" class="linkers">Other</a>
+        <a href="homepage.html" class="linkers">Home</a>
+    </div>
+    <form id="form" name="myForm">
+        <div class="both">
+            <div class="empInfo">
+
+                <h3> Employee Information</h3>
+
+                <div class="staf">
+                    <label for="startDay" class="label">Start Day</label>
+                    <input type="date" name="startDay" class="input" placeholder="start date" id="startDay">
+                    <div class="error"></div>
+                </div>
+                <div class="staf">
+                    <label for="Symptom" class="label">Symptom</label>
+                    <input type="text" name="Syptom" class="input" placeholder="Disease Symptom" id="Symptom">
+                    <div class="error"></div>
+                </div>
+                <div class="staf">
+                    <label for="reason" class="label">Reason </label>
+                    <input type="text" name="reason" class="input" placeholder="how long" id="reason">
+                    <div class="error"></div>
+                </div>
+                <div class="staf">
+                    <label for="howlong" class="label">How long </label>
+                    <input type="text" name="howlong" class="input" placeholder="how long" id="howlong">
+                    <div class="error"></div>
+                </div>
+
+            </div>
+
+            <div class="empAdd">
+
+                <div class="staf">
+                    <label for="requiredtest" class="label">Required test</label>
+                    <div class="sex">
+                        <input type="radio" name="test" value="yes" class="rad" id="yes">
+                        <label for="Yes" class="label">Yes</label>
+                        <input type="radio" name="test" value="no" class="rad" id="no">
+                        <label for="No" class="label">No</label>
+                    </div>
+                    <div class="error"></div>
+                </div>
+
+                <div class="staf">
+                    <label for="testtype" class="label">Test type</label>
+                    <div class="sex">
+                        <input type="radio" name="testtype" value="blood" class="rad" id="blood">
+                        <label for="blood" class="label">Blood</label>
+                        <input type="radio" name="testtype" value="urine" class="rad" id="urine">
+                        <label for="urine" class="label">Urine</label>
+                    </div>
+                    <div class="error"></div>
+                </div>
+
+                <div class="staf">
+                    <label for="other" class="label">Other Information</label>
+                    <textarea id="txtview" name="txtview" rows="8" cols="30"></textarea>
+                    <div class="error"></div>
+                </div>
+            </div>
+            <div class="btnclass">
+                <input type="submit" name="submit" value="Save" class="save">
+                <input type="reset" name="reset" value="cancel" class="save">
+
+
+            </div>
+
+        </div>
+    </form>
+</body>
+<script type="text/javascript">
+
+
+    const form = document.getElementById('form');
+    const startDay = document.getElementById('startDay');
+    const Symptom = document.getElementById('Symptom');
+    const reason = document.getElementById('reason');
+    const howlong = document.getElementById('howlong');
+    const txtview = document.getElementById('txtview');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        validateInputs();
+    });
+
+    const setError = (element, message) => {
+        const staf = element.parentElement;
+        const errorDisplay = staf.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        staf.classList.add('error');
+        staf.classList.remove('success')
+    }
+
+    const setSuccess = element => {
+        const staf = element.parentElement;
+        const errorDisplay = staf.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        staf.classList.add('success');
+        staf.classList.remove('error');
+    };
+
+    const isValidEmail = email => {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    var regName = /^[A-Za-z]+$/;
+    var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+    var numbers = /^[0-9]+$/;
+    var regAge = /^[0-9]\w{1,2}$/;
+    var passw = /^[A-Za-z]\w{7,14}$/;
+    const validateInputs = () => {
+        const startDay2 = startDay.value.trim();
+        const reason2 = reason.value.trim();
+        const Symptom2 = Symptom.value.trim();
+        const howlong2 = howlong.value.trim();
+        const txtview2 = txtview.value.trim();
+
+
+        if (startDay2 === '') {
+            setError(startDay, 'Start day is required');
+        }
+        else {
+            setSuccess(startDay);
+        }
+        if (Symptom2 === '') {
+            setError(Symptom, 'Symptom is required');
+        }
+        else if (!Symptom2.match(regName)) {
+            setError(Symptom, 'Symptom must be character only.');
+        } else {
+            setSuccess(Symptom);
+        }
+        if (reason2 === '') {
+            setError(reason, 'Reason is required');
+        } else if (!reason2.match(regName)) {
+            setError(reason, 'Reason must be character only.');
+        } else {
+            setSuccess(reason);
+        }
+        if (txtview2 === '') {
+            setError(txtview, 'Other info is required');
+        } else {
+            setSuccess(txtview);
+        }
+
+        if (howlong2 === '') {
+            setError(howlong, 'how long is required');
+        }
+
+        else {
+            setSuccess(howlong);
+        }
+        // gender place
+
+    };
+
+
+</script>
+
+</html>

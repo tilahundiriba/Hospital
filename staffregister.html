@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Staff Page</title>
     <!-- <link rel="stylesheet" href="staff.css"> -->
     <style>
         .empInfo {
@@ -16,7 +16,7 @@
             align-items: center;
             flex-direction: column;
             left: 100px;
-            border-radius: 40px;
+            border-radius: 5px;
             position: absolute;
             top: 60px;
             height: 550px;
@@ -32,7 +32,7 @@
         .empAdd {
             background-color: rgba(1, 1, 1, 0.4);
             padding-top: 10px;
-            border-radius: 40px;
+            border-radius: 5px;
 
             width: 350px;
             top: 80px;
@@ -49,7 +49,7 @@
         }
 
         .japp {
-            border-radius: 40px;
+            border-radius: 5px;
             align-items: center;
             background-color: rgba(1, 1, 1, 0.4);
             width: 350px;
@@ -77,10 +77,10 @@
 
         .input {
             width: 270px;
-            border-radius: 10px;
+            border-radius: 2px;
             height: 30px;
             margin-top: 10px;
-            background-color: rgba(1, 1, 1, 0.2);
+            /* background-color: rgba(1, 1, 1, 0.2); */
         }
 
         .input:hover {
@@ -271,7 +271,7 @@
             <h3>Employee Address</h3>
             <div class="staf">
                 <label for="phone" class="label">Phone</label>
-                <input type="text" name="number" class="input" placeholder="phone number" id="phone">
+                <input type="text" name="number" class="input" placeholder="xx-xxxx-xxxx" id="phone">
                 <div class="error"></div>
             </div>
             <div class="staf">
@@ -306,11 +306,6 @@
         <div class="japp">
 
             <h3>Job Application</h3>
-            <div class="staf">
-                <label for="date" class="label">Date</label>
-                <input type="date" name="date" id="date" class="input" >
-                <div class="error"></div>
-            </div>
             <div class="staf">
                 <label for="id" class="label">Employee Id</label>
                 <input type="text" name="id" class="input" placeholder="employee id" id="id">
@@ -349,175 +344,15 @@
         <div class="btnclass">
             <input type="submit" name="submit" value="Save" class="save">
             <input type="reset" name="submit" value="New" class="save">
-            <!-- <button name="reset" class="save">New</button> -->
+           
 
         </div>
 
 
     </form>
 </body>
-<script type="text/javascript"> 
+<script type="text/javascript" src="validateStaff.js"> 
 
-const form = document.getElementById('form');
-const fname = document.getElementById('fname');
-const mname = document.getElementById('mname');
-const lname = document.getElementById('lname');
-const age = document.getElementById('age');
-const dbrith = document.getElementById('dbrith');
-const male = document.getElementById('male');
-const female = document.getElementById('female');
-const phone = document.getElementById('phone');
-const email = document.getElementById('email');
-const region = document.getElementById('region');
-const address = document.getElementById('address');
-const date = document.getElementById('date');
-const empId = document.getElementById('id');
-const password = document.getElementById('pass');
-const passconf = document.getElementById('passconf');
-const proff = document.getElementById('proffession');
-const salary = document.getElementById('salary');
-const Country = document.getElementById('country');
-
-
-form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    validateInputs();
-});
-
-const setError = (element, message) => {
-    const staf = element.parentElement;
-    const errorDisplay = staf.querySelector('.error');
-
-    errorDisplay.innerText = message;
-    staf.classList.add('error');
-    staf.classList.remove('success')
-}
-
-const setSuccess = element => {
-    const staf = element.parentElement;
-    const errorDisplay = staf.querySelector('.error');
-
-    errorDisplay.innerText = '';
-    staf.classList.add('success');
-    staf.classList.remove('error');
-};
-
-const isValidEmail = email => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-const validateInputs = () => {
-    const fname2 = fname.value.trim();
-    const lname2 = lname.value.trim();
-    const mname2 = mname.value.trim();
-    const age2 = age.value.trim();
-    const region2 = region.value.trim();
-    const email2 = email.value.trim();
-    const date2 = date.value.trim();
-    const passconf2 = passconf.value.trim();
-    const password2 = password.value.trim();
-    const address2 = address.value.trim();
-    const proff2 = proff.value.trim();
-    const phone2 = phone.value.trim();
-    const male2 = male.value.trim();
-    const female2 = female.value.trim();
-    const dbrith2 = dbrith.value.trim();
-    const empId2 = empId.value.trim();
-    const salary2 = salary.value.trim();
-    const country2 = country.value.trim();
-
-    if(fname2 === '') {
-        setError(fname, 'Frist Name is required');
-    } else {
-        setSuccess(fname);
-    }
-    if(mname2 === '') {
-        setError(mname, 'Middle name is required');
-    } else {
-        setSuccess(mname);
-    }
-    if(lname2 === '') {
-        setError(lname, 'Last name is required');
-    }  else {
-        setSuccess(lname);
-    }
-    if(dbrith2=== '') {
-        setError(dbrith, 'Date of brith is required');
-    } else  {
-        setSuccess(dbrith);
-    } 
-
-    if(age2 === '') {
-        setError(age, 'Age is required');
-    } else  {
-        setSuccess(age);
-    } 
-    // gender place
-    if(phone2=== '') {
-        setError(phone, 'Phone no. is required');
-    } else  {
-        setSuccess(phone);
-    } 
-    if(email2 === '') {
-        setError(email, 'Email is required');
-    } else if (!isValidEmail(email2)) {
-        setError(email, 'Provide a valid email address');
-    }else  {
-        setSuccess(email);
-    } 
-    //country palce 
-    if(country2=== '') {
-        setError(country, 'Please select yuor country');
-    } else  {
-        setSuccess(country);
-    } 
-    if(region2=== '') {
-        setError(region, 'Region is required');
-    } else  {
-        setSuccess(region);
-    } 
-  
-    if(address2 === '') {
-        setError(address, 'Address is required');
-    } else  {
-        setSuccess(address);
-    } 
-   
-    if(date2 === '') {
-        setError(date, 'Date of addition is required');
-    } else  {
-        setSuccess(date);
-    } 
-    if(empId2=== '') {
-        setError(empId, 'Employee Id is required');
-    } else  {
-        setSuccess(empId);
-    } 
-    if(password2=== '') {
-        setError(password, 'Password is required');
-    } else  {
-        setSuccess(password);
-    } 
-    if(passconf2=== '') {
-        setError(passconf, 'Password confiremation is required');
-    } else  {
-        setSuccess(passconf);
-    } 
-   
-   
-    if(proff2=== '') {
-        setError(proff, 'Please select your proffession');
-    } else  {
-        setSuccess(proff);
-    } 
-    if(salary2=== '') {
-        setError(salary, 'Employee salary is required');
-    } else  {
-        setSuccess(salary);
-    }
-};
 
 
 </script>

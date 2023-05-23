@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>billing</title>
+    <title>Billing</title>
     <style>
         * {
             padding: 0px;
@@ -47,7 +47,7 @@
         }
 
         body {
-            background-image: url("images/adminWalpaper.jpg");
+            background-image: url("images/homepageback.jpg");
             /* background-repeat: no-repeat; */
             background-size: 100%;
             background-color: #262223;
@@ -58,10 +58,10 @@
             width: 520px;
             height: 830px;
             padding-top: 70px;
-            background-color: #161B21;
+            background-color: rgba(1, 1, 1, 0.5);
             left: 400px;
             top: 30px;
-            border-radius: 30px;
+            border-radius: 2px;
 
         }
 
@@ -208,19 +208,18 @@
         <a href="#" class="linkers">NEXT</a>
 
     </div>
-    <form action="" name="myForm" id="form">
+    <form action="insertbill.php" name="myForm" id="form" method="POST">
 
         <div class="diveinfo">
-            <h5>BILL MANAGMENT FORM</h5>
+   
             <div class="div1">
-                <label for="date">Date</label><br>
-                <input type="date" name="date" id="date" class="inptext" >
-                <!-- <input type="date" name="date" id="date" class="inptext" > -->
+                <label for="card">Pateint Code</label><br>
+                <input type="text" name="cardNo" id="cardno" class="inptext" placeholder="Please Enter CardNo.....">
                 <div class="error"></div>
             </div>
             <div class="div1">
-                <label for="card">CardNo</label><br>
-                <input type="text" name="cardNo" id="cardno" class="inptext" placeholder="Please Enter CardNo.....">
+                <label for="card">Item ID</label><br>
+                <input type="text" name="itemid" id="itemid" class="inptext" placeholder="Please Enter item id.....">
                 <div class="error"></div>
             </div>
             <div class="div1">
@@ -253,7 +252,7 @@
             </div>
 
             <div class="div2">
-                <input type="submit" name="submit" id="btnsubmit" class="button">
+                <input type="submit" name="insert" id="btnsubmit" class="button">
                 <input type="reset" name="reset" class="button">
             </div>
         </div>
@@ -262,91 +261,9 @@
 
 </body>
 
-<script type="text/javascript">
+<script type="text/javascript" src="validateBill.js">
 
-    const form = document.getElementById('form');
-    const date = document.getElementById('date');
-    const serprice = document.getElementById('amount');
-    const bedprice = document.getElementById('price');
-    const roomno = document.getElementById('roomno');
-    const noday = document.getElementById('noday');
-    const cardNo = document.getElementById('cardno');
-    const accpterName = document.getElementById('nameacceptor');
-
-
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-
-        validateInputs();
-    });
-
-    const setError = (element, message) => {
-        const div1 = element.parentElement;
-        const errorDisplay = div1.querySelector('.error');
-
-        errorDisplay.innerText = message;
-        div1.classList.add('error');
-        div1.classList.remove('success')
-    }
-
-    const setSuccess = element => {
-        const div1 = element.parentElement;
-        const errorDisplay = div1.querySelector('.error');
-
-        errorDisplay.innerText = '';
-        div1.classList.add('success');
-        div1.classList.remove('error');
-    };
-
-    const validateInputs = () => {
-        const serprice2 = serprice.value.trim();
-        const bedprice2 = bedprice.value.trim();
-        const roomno2 = roomno.value.trim();
-        const cardNo2 = cardNo.value.trim();
-        const accpterName2 = accpterName.value.trim();
-        const noday2 = noday.value.trim();
-        const date2 = date.value.trim();
-
-        if (date2 === '') {
-            setError(date, 'Date of addition is required');
-        } else {
-            setSuccess(date);
-        }
-        if (cardNo2 === '') {
-            setError(cardNo, 'Card number is required');
-        } else {
-            setSuccess(cardNo);
-        }
-        if (serprice2 === '') {
-            setError(serprice, 'Service price  is required');
-        } else {
-            setSuccess(serprice);
-        }
-        if (bedprice2 === '') {
-            setError(bedprice, 'Bed price is required');
-        } else {
-            setSuccess(bedprice);
-        }
-        if (noday2 === '') {
-            setError(noday, 'Numberr of day is required');
-        } else {
-            setSuccess(noday);
-        }
-        if (roomno2 === '') {
-            setError(roomno, 'Room number is required');
-        } else {
-            setSuccess(roomno);
-        }
-
-        if (accpterName2 === '') {
-            setError(accpterName, 'accpterName is required');
-        } else {
-            setSuccess(accpterName);
-        }
-
-
-
-    };
+    
 
 </script>
 
