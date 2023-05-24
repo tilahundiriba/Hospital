@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style></style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+<link rel="stylesheet" href="style/userLogin.css">
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <form class="" id="form">
+        <div class="divlogin">
+            <div class="userlogindiv">
+                <img src="style/images/userlogin.jpg" alt="User login logo" class="userlogo">
+            </div>
+            <div class="div1">
+                <label for="username" class="labal">Username </label>
+                <input type="text" name="username" class="input" placeholder="User name" id="username">
+                <div class="error"></div>
+            </div>
+            <div class="div1">
+                <label for="password" class="labal">Password </label>
+                <input type="password" name="password" class="input" placeholder="password" id="password">
+                <div class="error"></div>
+            </div>
+            <button name="submit" class="btnlogin">Login</button>
+            <input type="reset" class="btncansel" value="Cansel">
+        </div>
+    </form>
+</body>
+<script type="text/javascript">
+
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        validateInputs();
+    });
+
+    const setError = (element, message) => {
+        const div1 = element.parentElement;
+        const errorDisplay = div1.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        div1.classList.add('error');
+        div1.classList.remove('success')
+    }
+
+    const setSuccess = element => {
+        const div1 = element.parentElement;
+        const errorDisplay = div1.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        div1.classList.add('success');
+        div1.classList.remove('error');
+    };
+
+    const validateInputs = () => {
+        const username2 = username.value.trim();
+        const password2 = password.value.trim();
+
+
+        if (username2 === '') {
+            setError(username, 'Please enter username.');
+        } else {
+            setSuccess(username);
+        }
+        if (password2 === '') {
+            setError(password, 'Please enter your password.');
+        } else {
+            setSuccess(password);
+        }
+
+
+
+    };
+
+</script>
+
+</html>

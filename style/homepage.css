@@ -111,3 +111,43 @@ h2{
     top: 20px;
     
 }
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.div2 {
+    height: 50px;
+    width: 100px;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+.store{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+    border: 2px solid cyan;
+    left: 900px;
+    top: 100px;
+    padding: 20px;
+    color: aquamarine;
+}
+.store:hover{
+background-color: rgba(1, 1, 1,0.5);
+}
+.doctor{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+    border: 2px solid cyan;
+    left: 900px;
+    top: 470px;
+    padding: 20px;
+    color: aquamarine;
+
+}
+.doctor:hover{
+background-color: rgba(1, 1, 1,0.5);
+}
