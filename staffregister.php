@@ -7,8 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Page</title>
     <link rel="stylesheet" href="style/staff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
- 
+ .linkers {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  color: aquamarine;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: normal;
+  left: 60%;
+  margin: 20px;
+  text-decoration: none;
+}
     </style>
 
 </head>
@@ -16,10 +28,13 @@
 <body>
     <div class="header">
 
-        <a href="updateStaff.html" class="linkers">Update</a>
-        <a href="homepage.html" class="linkers">Home</a>
+        
+        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
+        <a href="updateStaff.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
+        <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
-    <form id="form" name="myForm">
+    <form id="form" name="myForm" action="insertToStaff.php" method="post">
         <div class="empInfo">
 
             <h3> Employee Information</h3>
@@ -68,7 +83,7 @@
             <h3>Employee Address</h3>
             <div class="staf">
                 <label for="phone" class="label">Phone</label>
-                <input type="text" name="number" class="input" placeholder="xx-xxxx-xxxx" id="phone">
+                <input type="text" name="phone" class="input" placeholder="xx-xxxx-xxxx" id="phone">
                 <div class="error"></div>
             </div>
             <div class="staf">
@@ -105,7 +120,7 @@
             <h3>Job Application</h3>
             <div class="staf">
                 <label for="id" class="label">Employee Id</label>
-                <input type="text" name="id" class="input" placeholder="employee id" id="id">
+                <input type="text" name="empid" class="input" placeholder="employee id" id="id">
                 <div class="error"></div>
             </div>
             <div class="staf">
@@ -140,7 +155,7 @@
         </div>
         <div class="btnclass">
             <input type="submit" name="submit" value="Save" class="save">
-            <input type="reset" name="submit" value="New" class="save">
+            <input type="reset" name="reset" value="New" class="save">
            
 
         </div>

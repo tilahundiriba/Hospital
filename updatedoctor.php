@@ -8,21 +8,43 @@
     <title>Doctors Page</title>
     <link rel="stylesheet" href="style/updatedoctor.css">
    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .linkers {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: aquamarine;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    left: 65%;
+    margin: 20px;
+    text-decoration: none;
+}
+
+</style>
 
 </head>
 
 <body class="body22">
     <div class="header">
 
-        <a href="#" class="linkers">Other</a>
-        <a href="homepage.html" class="linkers">Home</a>
+      
+        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
+        <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
-    <form id="form" name="myForm">
+    <form id="form" name="myForm" action="doctorInsert.php" method="post">
         <div class="both22">
             <h3> Update pateint Information</h3>
             <div class="empInfo22">
 
-               
+                <div class="staf">
+                    <label for="pateintid" class="label">patient id</label>
+                    <input type="text" name="pateintCode" class="input" placeholder="pateintCode" id="pateintCode">
+                    <div class="error"></div>
+                </div>
 
                 <div class="staf">
                     <label for="startDay" class="label">Start Day</label>
@@ -41,7 +63,7 @@
                 </div>
                 <div class="staf">
                     <label for="howlong" class="label">How long </label>
-                    <input type="text" name="howlong" class="input" placeholder="how long" id="howlong">
+                    <input type="number" name="howlong" class="input" placeholder="how long" id="howlong">
                     <div class="error"></div>
                 </div>
 

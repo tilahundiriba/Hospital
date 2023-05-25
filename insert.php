@@ -32,7 +32,7 @@ $address = $_POST['address'];
 $contact = $_POST['contact'];
 $Allocatedoctor = $_POST['Allocatedoctor'];
 
-$sql = "INSERT into PATEINT(pateintCode,pname,dbrith,age,disease,email,gender,bgroup,city,paddress,contact,allname)
+$sql = "INSERT into PATEINTS(pateintCode,pname,dbrith,age,disease,email,gender,bgroup,city,paddress,contact,allname)
 values('$pcode','$pname','$date','$age','$disease','$email','$gender','$bloodgroup','$City','$address','$contact','$Allocatedoctor')";
 
 if($conn->query($sql)===TRUE){

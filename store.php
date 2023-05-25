@@ -8,20 +8,22 @@
     <title>Store Page</title>
     <link rel="stylesheet" href="style/store.css">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <form name="myForm" id="form">
+    <form name="myForm" id="form" action="insertToStore.php" method="post">
 
 
         <div class="header">
 
-            <a href="services.html" class="linkers">Services</a>
-            <a href="#" class="linkers">ITEMS </a>
-            <a href="homepage.html" class="linkers">HOME</a>
-            <a href="login.html" class="linkers">BACK</a>
-            <a href="updatestore.html" class="linkers">Update</a>
+            
+            
+            <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+            <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
+            <a href="updatestore.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
+            <a href="login.html" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
+         
 
         </div>
         <div class="both">
@@ -38,12 +40,12 @@
 
                 <div class="div1">
                     <label for="name" class="label">Item Name</label>
-                    <input type="text" name="name" class="input" id="ItemName" placeholder="items name">
+                    <input type="text" name="itemname" class="input" id="ItemName" placeholder="items name">
                     <div class="error"></div>
                 </div>
                 <div class="div1">
                     <label for="category" class="label">Category</label>
-                    <select name="gender" class="input" id="category">
+                    <select name="category" class="input" id="category">
                         <option value="Hypoglycemics ">Hypoglycemics</option>
                         <option value="Analgesics">Analgesics</option>
                         <option value="Anesthetics">Anesthetics</option>
@@ -58,7 +60,7 @@
                
                 <div class="div2">
                     <label for="price" class="label">Price</label>
-                    <input type="number" name="price" class="input" id="price" placeholder="items price for each">
+                    <input type="number" name="itemPrice" class="input" id="price" placeholder="items price for each">
                     <div class="error"></div>
                 </div>
                 <div class="div2">

@@ -4,8 +4,6 @@ const mname = document.getElementById('mname');
 const lname = document.getElementById('lname');
 const age = document.getElementById('age');
 const dbrith = document.getElementById('dbrith');
-const male = document.getElementById('male');
-const female = document.getElementById('female');
 const phone = document.getElementById('phone');
 const email = document.getElementById('email');
 const region = document.getElementById('region');
@@ -15,7 +13,7 @@ const password = document.getElementById('pass');
 const passconf = document.getElementById('passconf');
 const proff = document.getElementById('proffession');
 const salary = document.getElementById('salary');
-const Country = document.getElementById('country');
+const country = document.getElementById('country');
 
 var regName = /^[A-Za-z]+$/;
 var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
@@ -63,8 +61,6 @@ const validateInputs = () => {
     const address2 = address.value.trim();
     const proff2 = proff.value.trim();
     const phone2 = phone.value.trim();
-    const male2 = male.value.trim();
-    const female2 = female.value.trim();
     const dbrith2 = dbrith.value.trim();
     const empId2 = empId.value.trim();
     const salary2 = salary.value.trim();
@@ -117,9 +113,7 @@ const validateInputs = () => {
     } 
     else if (!phone2.match(phoneno)) {
         setError(phone, 'Provide a valid number');
-    } else if (!phone2.length < 7) {
-        setError(phone, 'Paasword must be greater than 7 character.');
-    }
+    } 
     else  {
         setSuccess(phone);
     } 

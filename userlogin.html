@@ -7,9 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
-<link rel="stylesheet" href="style/userLogin.css">
+    <link rel="stylesheet" href="style/userLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-       
+        .div1 {
+            display: flex;
+            flex-direction: column;
+        }
+        i{
+            color: white;
+        }
     </style>
 </head>
 
@@ -21,12 +28,16 @@
             </div>
             <div class="div1">
                 <label for="username" class="labal">Username </label>
-                <input type="text" name="username" class="input" placeholder="User name" id="username">
+                <span><i class="fa fa-envelope-o" style="font-size:24px"></i>
+                    <input type="text" name="username" class="input" placeholder="User name" id="username">
+                </span>
                 <div class="error"></div>
             </div>
             <div class="div1">
                 <label for="password" class="labal">Password </label>
-                <input type="password" name="password" class="input" placeholder="password" id="password">
+                <span><i class="fa fa-lock" style="font-size:24px"></i>
+                    <input type="password" name="password" class="input" placeholder="password" id="password">
+                </span>
                 <div class="error"></div>
             </div>
             <button name="submit" class="btnlogin">Login</button>
