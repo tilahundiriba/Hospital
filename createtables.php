@@ -67,20 +67,30 @@ if ($conn->connect_error) {
 //     passconf VARCHAR(30) 
 //     )";
 //create table for billinfo
-$sql = "CREATE TABLE BILLTABLE(
-  cardNo VARCHAR(30) ,
-  itemid VARCHAR(30) PRIMARY KEY,
-  amount VARCHAR(30) ,
-  price VARCHAR(30) ,
-  noday VARCHAR(30) ,
-  total VARCHAR(10),
-  roomno VARCHAR(50),
-  nameacceptor VARCHAR(10),
-  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY(cardNo) REFERENCES PATEINTS(pateintCode)
+// $sql = "CREATE TABLE BILLTABLE(
+//   cardNo VARCHAR(30) ,
+//   itemid VARCHAR(30) PRIMARY KEY,
+//   amount VARCHAR(30) ,
+//   price VARCHAR(30) ,
+//   noday VARCHAR(30) ,
+//   total VARCHAR(10),
+//   roomno VARCHAR(50),
+//   nameacceptor VARCHAR(10),
+//   reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+//   FOREIGN KEY(cardNo) REFERENCES PATEINTS(pateintCode)
+//   )";
+
+$sql = "CREATE TABLE ATTENDANCE(
+ 
+  empid VARCHAR(30) ,
+  date VARCHAR(30) ,
+  mark VARCHAR(30) ,
+  permission VARCHAR(30) ,
+  reason VARCHAR(250),
+  FOREIGN KEY(empid) REFERENCES EMPLOYEE(empId)
   )";
 if ($conn->query($sql) === TRUE) {
-  echo "Table medicines created successfully";
+  echo "Table ATTENDANCE created successfully";
 } else {
   echo "Error creating table: " . $conn->error;
 }

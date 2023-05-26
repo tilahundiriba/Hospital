@@ -36,8 +36,10 @@ $salary = $_POST['salary'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $passwordConf = $_POST['passwordConf'];
+
 $sql2 = "INSERT into emailandpassword(emila,passwd,passconf)
 values('$email','$password','$passwordConf')";
+
 $sql = "INSERT into employee(empId,firstname,middlename,lastname,dbrith,age,
 gender,phone,country,region,stffaddress,proffession,salary)
 values('$empId','$firstname','$middlename','$lastname','$dbrith','$age',

@@ -35,25 +35,25 @@
         <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
         <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
-    <form id="form" name="myForm" action="doctorInsert.php" method="post">
+    <form id="form" action="doctorInsert.php" method="post">
         <div class="both22">
             <h3> Update pateint Information</h3>
             <div class="empInfo22">
 
                 <div class="staf">
-                    <label for="pateintid" class="label">patient id</label>
-                    <input type="text" name="pateintCode" class="input" placeholder="pateintCode" id="pateintCode">
+                    <label for="pateintCode" class="label">patient id</label>
+                    <input type="text" name="pcode" class="input" placeholder="pateintCode" id="pateintCode">
                     <div class="error"></div>
                 </div>
 
                 <div class="staf">
                     <label for="startDay" class="label">Start Day</label>
-                    <input type="date" name="startDay" class="input" placeholder="start date" id="startDay">
+                    <input type="date" name="startday" class="input" placeholder="start date" id="startDay">
                     <div class="error"></div>
                 </div>
                 <div class="staf">
                     <label for="Symptom" class="label">Symptom</label>
-                    <input type="text" name="Syptom" class="input" placeholder="Disease Symptom" id="Symptom">
+                    <input type="text" name="syptom" class="input" placeholder="Disease Symptom" id="Symptom">
                     <div class="error"></div>
                 </div>
                 <div class="staf">
@@ -72,19 +72,19 @@
             <div class=" empAdd22">
 
                 <div class="staf">
-                    <label for="requiredtest" class="label">Required test</label>
-                    <div class="sex">
+                    <label for="yes" class="label">Required test</label>
+                    <div class="sex" id="requiredtest">
                         <input type="radio" name="test" value="yes" class="rad" id="yes">
-                        <label for="Yes" class="label">Yes</label>
+                        <label for="yes" class="label">Yes</label>
                         <input type="radio" name="test" value="no" class="rad" id="no">
-                        <label for="No" class="label">No</label>
+                        <label for="no" class="label">No</label>
                     </div>
                     <div class="error"></div>
                 </div>
 
                 <div class="staf">
-                    <label for="testtype" class="label">Test type</label>
-                    <div class="sex">
+                    <label for="blood" class="label">Test type</label>
+                    <div class="sex" id="testtype">
                         <input type="radio" name="testtype" value="blood" class="rad" id="blood">
                         <label for="blood" class="label">Blood</label>
                         <input type="radio" name="testtype" value="urine" class="rad" id="urine">
@@ -94,14 +94,15 @@
                 </div>
 
                 <div class="staf">
-                    <label for="other" class="label">Other Information</label>
+                    <label for="txtview" class="label">Other Information</label>
                     <textarea id="txtview" name="txtview" rows="8" cols="30"></textarea>
                     <div class="error"></div>
                 </div>
             </div>
             <div class="btnclass22">
-                <input type="submit" name="submit" value="save" class="save22">
+                <input type="submit" name="update" value="save" class="save22">
                 <input type="reset" name="reset" value="cancel" class="save22">
+                <!-- <button type="submit" name="submit" class="save22">Save</button> -->
 
 
             </div>

@@ -65,10 +65,8 @@
                 <div class="error"></div>
             </div>
             <div class="staf">
-                <label for="Gender" class="label">Gender</label>
-                <p class="sex">
-
-
+                <label for="gender" class="label">Gender</label>
+                <p class="sex" id="gender">
                     <input type="radio" name="gender" value="Male" class="rad" id="male">
                     <label for="male" class="label">Male</label>
                     <input type="radio" name="gender" value="Female" class="rad" id="female">
@@ -154,16 +152,17 @@
 
         </div>
         <div class="btnclass">
-            <input type="submit" name="submit" value="Save" class="save">
-            <input type="reset" name="reset" value="New" class="save">
-           
+            <!-- <input type="submit" name="submit" value="Save" class="save">
+            <input type="reset" name="reset" value="New" class="save"> -->
+            <button type="submit" name="submit" class="save">Save</button>
+     
 
         </div>
 
 
     </form>
 </body>
-<script type="text/javascript" src="javascript/validateStaff.js"> 
+<!-- <script type="text/javascript" src="javascript/validateStaff.js">  -->
 
 
 

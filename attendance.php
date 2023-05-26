@@ -15,14 +15,15 @@
 </head>
 
 <body>
-    <form name="myForm" id="form">
-        <div class="header">
+    <div class="header">
 
            
-            <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-            <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
+        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
 
-        </div>
+    </div>
+    <form name="myForm" id="form" action="insertToAttendance.php" method="GET">
+       
         <div class="forboth">
             <h3>Staff Attendance  Form</h3>
             <div class="empInfo" id="storeinfo">
@@ -47,7 +48,7 @@
                 </div>
 
                 <div class="div1">
-                    <label for="perm " class="label">Permition </label>
+                    <label for="perm" class="label">Permition </label>
                     <select name="perm" class="input" id="perm">
                         <option value="Absent">Absent</option>
                         <option value="Present">Present</option>
@@ -55,15 +56,16 @@
                     <div class="error"></div>
                 </div>
                 <div class="div1">
-                    <label for="reason " class="label">Reason</label>
+                    <label for="reason" class="label">Reason</label>
                     <input type="text" name="reason " class="input" id="reason" placeholder="Reason ">
                     <div class="error"></div>
                 </div>
             </div>
 
             <div class="btnclass" id="btnclass">
-                <input type="submit" name="submit" class="save" value="Save"> 
-                <input type="reset" name="submit" class="save" value="Cansel"> 
+                <!-- <input type="submit" name="submit" class="save" value="Save"> 
+                <input type="reset" name="reset" class="save" value="Cansel">  -->
+                <button type="submit" name="submit" class="save">Save</button>
             
 
             </div>
