@@ -32,7 +32,7 @@
 
       
         <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
+        <a href="displayForDoctors.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
         <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
     <form id="form" action="doctorInsert.php" method="post">
@@ -109,7 +109,7 @@
 
         </div>
     </form>
-    <script type="text/javascript" src="javascript/validateUpdateDoctor.js">
+    <script type="text/javascript" src=".../javascript/validateUpdateDoctor.js">
     </script>
 </body>
 

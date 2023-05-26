@@ -19,7 +19,7 @@
 
            
         <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
+        <a href="displayAttendance.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
 
     </div>
     <form name="myForm" id="form" action="insertToAttendance.php" method="GET">
@@ -28,8 +28,8 @@
             <h3>Staff Attendance  Form</h3>
             <div class="empInfo" id="storeinfo">
                 <div class="div1">
-                    <label for="staffCode" class="label">Employee ID</label>
-                    <input type="text" name="staffCode" id="staffCode" class="input" placeholder="staff code">
+                    <label for="staffcode" class="label">Employee ID</label>
+                    <input type="text" name="staffCode" id="staffcode" class="input" placeholder="staff code">
                     <div class="error"></div>
                 </div>
                 <div class="div1">
@@ -57,15 +57,15 @@
                 </div>
                 <div class="div1">
                     <label for="reason" class="label">Reason</label>
-                    <input type="text" name="reason " class="input" id="reason" placeholder="Reason ">
+                    <input type="text" name="reason" class="input" id="reason" placeholder="Reason ">
                     <div class="error"></div>
                 </div>
             </div>
 
             <div class="btnclass" id="btnclass">
-                <!-- <input type="submit" name="submit" class="save" value="Save"> 
-                <input type="reset" name="reset" class="save" value="Cansel">  -->
-                <button type="submit" name="submit" class="save">Save</button>
+                <input type="submit" name="submit" class="save" value="Save"> 
+                <input type="reset" name="reset" class="save" value="Cansel"> 
+                <!-- <button type="submit" name="submit" class="save">Save</button> -->
             
 
             </div>
@@ -76,8 +76,8 @@
 </body>
 <script type="text/javascript">
 
-    const form = document.getElementById('form');
-const empid = document.getElementById('staffCode');
+const form = document.getElementById('form');
+const empid = document.getElementById('staffcode');
 const date = document.getElementById('date');
 const mark = document.getElementById('mark');
 const perm = document.getElementById('perm');
@@ -85,27 +85,27 @@ const reason = document.getElementById('reason');
 
 
 form.addEventListener('submit', e => {
-    e.preventDefault();
+e.preventDefault();
 
-    validateInputs();
+validateInputs();
 });
 
 const setError = (element, message) => {
-    const div1 = element.parentElement;
-    const errorDisplay = div1.querySelector('.error');
+const div1 = element.parentElement;
+const errorDisplay = div1.querySelector('.error');
 
-    errorDisplay.innerText = message;
-    div1.classList.add('error');
-    div1.classList.remove('success')
+errorDisplay.innerText = message;
+div1.classList.add('error');
+div1.classList.remove('success')
 }
 
 const setSuccess = element => {
-    const div1 = element.parentElement;
-    const errorDisplay = div1.querySelector('.error');
+const div1 = element.parentElement;
+const errorDisplay = div1.querySelector('.error');
 
-    errorDisplay.innerText = '';
-    div1.classList.add('success');
-    div1.classList.remove('error');
+errorDisplay.innerText = '';
+div1.classList.add('success');
+div1.classList.remove('error');
 };
 
 // const isValidEmail = email => {
@@ -114,40 +114,40 @@ const setSuccess = element => {
 // }
 
 const validateInputs = () => {
-    const empid2 = empid.value.trim();
-    const perm2 = perm.value.trim();
-    const mark2 = mark.value.trim();
-    const reason2 = reason.value.trim();
-    const date2 = date.value.trim();
+const empid2 = empid.value.trim();
+const perm2 = perm.value.trim();
+const mark2 = mark.value.trim();
+const reason2 = reason.value.trim();
+const date2 = date.value.trim();
 
-    if(empid2 === '') {
-        setError(empid, 'Employee Id is required');
-    } else {
-        setSuccess(empid);
-    }
+if(empid2 === '') {
+    setError(empid, 'Employee Id is required');
+} else {
+    setSuccess(empid);
+}
 
-    if(date2 === '') {
-        setError(date, 'Date is required');
-    }  else {
-        setSuccess(date);
-    }
+if(date2 === '') {
+    setError(date, 'Date is required');
+}  else {
+    setSuccess(date);
+}
 
-    if(perm2 === '') {
-        setError(perm, 'permition is required');
-    } else {
-        setSuccess(perm);
-    }
+if(perm2 === '') {
+    setError(perm, 'permition is required');
+} else {
+    setSuccess(perm);
+}
 
-    if(mark2 === '') {
-        setError(mark, 'Mark is required');
-    } else  {
-        setSuccess(mark);
-    } 
-    if(reason2 === '') {
-        setError(reason, 'Reason is required');
-    } else  {
-        setSuccess(reason);
-    } 
+if(mark2 === '') {
+    setError(mark, 'Mark is required');
+} else  {
+    setSuccess(mark);
+} 
+if(reason2 === '') {
+    setError(reason, 'Reason is required');
+} else  {
+    setSuccess(reason);
+} 
 
 };
 

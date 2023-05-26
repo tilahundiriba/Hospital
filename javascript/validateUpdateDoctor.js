@@ -1,7 +1,7 @@
 
 const form = document.getElementById('form');
-const startDay = document.getElementById('startDay');
-const Symptom = document.getElementById('Symptom');
+const startday = document.getElementById('startday');
+const symptom = document.getElementById('symptom');
 const reason = document.getElementById('reason');
 const howlong = document.getElementById('howlong');
 const txtview = document.getElementById('txtview');
@@ -41,26 +41,26 @@ var numbers = /^[0-9]+$/;
 var regAge = /^[0-9]\w{1,2}$/;
 var passw = /^[A-Za-z]\w{7,14}$/;
 const validateInputs = () => {
-    const startDay2 = startDay.value.trim();
+    const startDay2 = startday.value.trim();
     const reason2 = reason.value.trim();
-    const Symptom2 = Symptom.value.trim();
+    const Symptom2 = symptom.value.trim();
     const howlong2 = howlong.value.trim();
     const txtview2 = txtview.value.trim();
 
 
     if (startDay2 === '') {
-        setError(startDay, 'Start day is required');
+        setError(startday, 'Start day is required');
     }
     else {
-        setSuccess(startDay);
+        setSuccess(startday);
     }
     if (Symptom2 === '') {
-        setError(Symptom, 'Symptom is required');
+        setError(symptom, 'Symptom is required');
     }
     else if (!Symptom2.match(regName)) {
-        setError(Symptom, 'Symptom must be character only.');
+        setError(symptom, 'Symptom must be character only.');
     } else {
-        setSuccess(Symptom);
+        setSuccess(symptom);
     }
     if (reason2 === '') {
         setError(reason, 'Reason is required');

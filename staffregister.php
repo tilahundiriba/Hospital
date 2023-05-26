@@ -30,7 +30,7 @@
 
         
         <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
+        <a href="displayStaff.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
         <a href="updateStaff.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
         <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>

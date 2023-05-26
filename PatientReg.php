@@ -8,7 +8,9 @@
     <title>Pateint Registration Page</title>
     <link rel="stylesheet" href="style/pateint.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<style>
+    
+</style>
 </head>
 
 <body>
@@ -18,9 +20,9 @@
         
      
         <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
+        <a href="displayPatient.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
         <a href="updatePateint.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
-        <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
+        <a href="searchStaff.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
       
     </div>
     <form name="myForm" id="form" action="insert.php" method="post">
