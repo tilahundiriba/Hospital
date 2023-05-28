@@ -9,7 +9,22 @@
     <link rel="stylesheet" href="style/attendance.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        
+
+.linkers {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: aquamarine;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    left: 75%;
+    margin: 20px;
+    text-decoration: none;
+}
+i{
+    margin-right: 10px;
+}
     </style>
 
 </head>

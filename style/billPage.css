@@ -142,7 +142,7 @@ p {
     bottom: 20px; */
 }
 .header {
-    background-color: rgba(1, 1, 1, 0.5);
+    background-color: rgba(1, 1, 1, 1);
     height: 70px;
     width: 100%;
     display: flex;
@@ -167,11 +167,13 @@ p {
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-    left: 50%;
+    left: 55%;
     margin: 20px;
     text-decoration: none;
 }
-
+i{
+    margin-right: 10px;
+}
 .linkers:hover {
     text-decoration: wavy;
     color: black;

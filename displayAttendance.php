@@ -36,7 +36,7 @@ if($result->num_rows>0){
 
 
     //
-    echo "<h2>attendance Information View</h2>";
+    echo "<h2>Attendance Information View</h2>";
 echo "<table><tr><th>EMP_ID</th><th>DATE</th><th>MARK</th><th>PERMISSION</th>
 <th>REASON</th>";
 

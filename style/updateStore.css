@@ -1,27 +1,38 @@
 .empInfo {
     background-color: rgba(1, 1, 1, 0.5);
     transform: 0.5;
-    width: 430px;
+    width: 350px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    left: 100px;
+    left: 80px;
     position: absolute;
-    top: 50px;
-    height: 470px;
+    top: 70px;
+    height: 300px;
     margin: 20px;
     padding-top: 30px;
 
 }
 
+.empAdd {
+    background-color: rgba(1, 1, 1, 0.5);
+    width: 350px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    left: 350px;
+    align-items: center;
+    position: absolute;
+    height: 300px;
+padding-top: 30px;
+}
+
 .btnclass {
     position: absolute;
-
-
     height: 50px;
     width: 400px;
-    top: 470px;
-    left: 100px;
+    top: 400px;
+    left: 300px;
 }
 
 .input {
@@ -42,7 +53,6 @@
     border-radius: 10px;
     font-size: large;
     margin-right: 30px;
-    margin-left: 30px;
 }
 
 .save:hover {
@@ -67,7 +77,6 @@ body {
     background-image: url("images/homepageback.jpg");
     background-size: cover;
     height: 100%;
-    width: 100%;
     background-repeat: no-repeat;
 }
 
@@ -78,20 +87,20 @@ body {
 }
 
 h3 {
-    color: black;
+    color: #CCF381;
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    left: 150px;
+    left: 300px;
+    padding-top: 20px;
 }
 
 .btnclass {
 
-    top: 600px;
-    left: 140px;
+    top: 500px;
+    left: 270px;
     display: flex;
     flex-direction: row;
-   
 }
 
 body {
@@ -103,7 +112,10 @@ body {
 
 }
 
-
+#storempAdd {
+    left: 450px;
+    top: 90px;
+}
 
 #linkers {
     width: 180px;
@@ -140,6 +152,7 @@ width: 600px;
     margin: 0px;
     padding: 0px;
 }
+
 .header {
     background-color: rgba(1, 1, 1, 1);
     height: 70px;
@@ -166,14 +179,13 @@ width: 600px;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-    left: 75%;
+    left: 70%;
     margin: 20px;
     text-decoration: none;
 }
 i{
-    margin-right: 10px;
+margin-right: 10px;
 }
-
 .linkers:hover {
     text-decoration: wavy;
     color: black;
@@ -189,8 +201,8 @@ h2 {
 }
 
 
-.div1
- {
+.div1,
+.div2 {
     position: relative;
     margin: 5px;
     padding: 3px;
@@ -201,14 +213,10 @@ h2 {
 .error {
     color: red;
 }
-.forboth{
-    /* background-color: rgb(54, 47, 47);  */
-    width: 650px;
-    height: 650px;
-    position: absolute;
-    margin-left: 50px;
-    padding: 10px;
-    border-radius: 20px;
-    left: 300px;
-    margin-top: 20px;
+.both{
+    width: 900px;
+    height: 600px;
+    position: relative;
+    /* background-color: rgb(102, 91, 91); */
+    left: 200px;
 }

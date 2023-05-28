@@ -8,7 +8,43 @@
     <title>Store Page</title>
     <link rel="stylesheet" href="style/store.css">
 
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .header {
+        background-color: rgba(1, 1, 1, 1);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+
+    padding-left: 20px;
+
+
+}
+
+.header:hover {
+    background-color: rgba(1, 1, 1, 1);
+}
+
+.linkers {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: aquamarine;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    left: 55%;
+    margin: 20px;
+    text-decoration: none;
+}
+i{
+    margin-right: 10px;
+}
+</style>
 </head>
 
 <body>

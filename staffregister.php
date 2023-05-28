@@ -17,9 +17,25 @@
   font-size: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: normal;
-  left: 60%;
+  left: 55%;
   margin: 20px;
   text-decoration: none;
+}
+i{
+    margin-right: 10px;
+}
+.header {
+  background-color: rgba(1, 1, 1, 1);
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0px;
+  margin-left: 0px;
+
+  padding-left: 20px;
+
+
 }
     </style>
 
@@ -152,9 +168,9 @@
 
         </div>
         <div class="btnclass">
-            <!-- <input type="submit" name="submit" value="Save" class="save">
-            <input type="reset" name="reset" value="New" class="save"> -->
-            <button type="submit" name="submit" class="save">Save</button>
+            <input type="submit" name="submit" value="Save" class="save">
+            <input type="reset" name="reset" value="New" class="save">
+            <!-- <button type="submit" name="submit" class="save">Save</button> -->
      
 
         </div>
@@ -162,7 +178,7 @@
 
     </form>
 </body>
-<!-- <script type="text/javascript" src="javascript/validateStaff.js">  -->
+<script type="text/javascript" src="javascript/validateStaff.js"> 
 
 
 

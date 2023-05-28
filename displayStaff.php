@@ -12,7 +12,11 @@ table, th, td {
 }
 table{
     position: relative;
-    left: 250px;
+    left: 50px;
+}
+h2{
+position: relative;
+left: 450px;
 }
 </style>
 </head>

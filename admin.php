@@ -1,3 +1,7 @@
+<?php
+include("connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <!-- <link rel="stylesheet" href="admin.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Admin Login</title>
     <style>
@@ -142,15 +146,15 @@
 </head>
 
 <body>
-    <form id="form" name="form">
+    <form id="form" name="form" method="post">
         <div class="admindiv">
             <div class="adm">
                 <img src="style/images/adminlogin.jpg" alt="Admin logo" class="adminlogo">
             </div>
             <div class="div1">
-                <label for="username" class="labclass">Username</label>
+                <label for="username" class="labclass">Email</label>
                 <span><i class="fa fa-envelope-o" style="font-size:24px"></i>
-                    <input type="text" name="username" class="inputclass" placeholder="username" id="username"></span>
+                    <input type="email" name="email" class="inputclass" placeholder="username" id="username"></span>
                 <div class="error"></div>
             </div>
             <div class="div1">
@@ -166,55 +170,36 @@
         </div>
 
     </form>
+    <?php
 
+    if(isset($_POST['submit']))
+    { 
+      $count=0;
+      $res=mysqli_query($conn,"SELECT * FROM emailandpassword WHERE emila='$_POST[email]' && passwd='$_POST[password]';");
+      $count=mysqli_num_rows($res);
+
+      if($count==0)
+      {
+        ?>
+        <script type="text/javascript"> 
+             alert("username and password doesn't match");
+             window.location="admin.php";
+         </script>
+        <?php
+      }
+      else
+      {
+        ?>
+        <script type="text/javascript">
+           window.location="homepage.html";
+        </script>
+       <?php
+      }
+    }
+    $conn->close();
+   ?>
 
 </body>
-<script type="text/javascript">
 
-    const form = document.getElementById('form');
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-
-        validateInputs();
-    });
-    const setError = (element, message) => {
-        const div1 = element.parentElement;
-        const errorDisplay = div1.querySelector('.error');
-
-        errorDisplay.innerText = message;
-        div1.classList.add('error');
-        div1.classList.remove('success')
-    }
-    const setSuccess = element => {
-        const div1 = element.parentElement;
-        const errorDisplay = div1.querySelector('.error');
-
-        errorDisplay.innerText = '';
-        div1.classList.add('success');
-        div1.classList.remove('error');
-    };
-
-    const validateInputs = () => {
-        const username2 = username.value.trim();
-        const password2 = password.value.trim();
-
-
-        if (username2 === '') {
-            setError(username, 'Please enter username.');
-        } else {
-            setSuccess(username);
-        }
-        if (password2 === '') {
-            setError(password, 'Please enter your password.');
-        } else {
-            setSuccess(password);
-        }
-
-
-
-    };
-</script>
 
 </html>

@@ -9,7 +9,39 @@
     <link rel="stylesheet" href="style/pateint.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    
+    .header {
+    background-color: rgba(1, 1, 1, 1);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+
+    padding-left: 20px;
+
+
+}
+
+.header:hover {
+    background-color: rgba(1, 1, 1, 1);
+}
+
+.linkers {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: aquamarine;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    left: 55%;
+    margin: 20px;
+    text-decoration: none;
+}
+i{
+    margin-right: 10px;
+}
 </style>
 </head>
 
@@ -22,7 +54,7 @@
         <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
         <a href="displayPatient.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
         <a href="updatePateint.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
-        <a href="searchStaff.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
+        <a href="searchPatientUI.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
       
     </div>
     <form name="myForm" id="form" action="insert.php" method="post">
