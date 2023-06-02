@@ -1,3 +1,7 @@
+<?php
+include "connection.php";
+?>
+
 <!DOCTYPE html>
 <html>
  
@@ -8,16 +12,7 @@
 <body>
     <center>
         <?php
-        $servername ="localhost";
-        $username = "root";
-        $password = "";
-        $database_name = "HMS"; 
-        $conn = new mysqli($servername , $username,  $password, $database_name);
-         
-        if($conn -> connect_error){
-            die("ERROR: Could not connect. "
-                . $conn -> connect_error);
-        }
+      
         if(isset($_POST['insert'])){
 $pcode = $_POST['cardNo'];
 $itemid = $_POST['itemid'];
@@ -32,9 +27,21 @@ $sql = "INSERT into BILLTABLE(cardNo,itemid,amount,price,noday,total,roomno,name
 values('$pcode','$itemid','$sprice','$bprice','$ndays','$total1','$rno','$accpname')";
 
 if($conn->query($sql)===TRUE){
-  echo '<script>alert("INSERTED CORRECTLY")</script>' ;}
+  echo '<script>alert("INSERTED CORRECTLY")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="BillManagment.php";
+   </script>
+  <?php
+}
  else{
   echo '<script>alert("not INSERTED succesfully")</script>' ;
+
+  ?>
+  <script type="text/javascript"> 
+       window.location="BillManagment.php";
+   </script>
+  <?php
 }
 }
         mysqli_close($conn);

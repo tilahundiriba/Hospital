@@ -16,7 +16,7 @@
         <h2>Hospital Services</h2>
         
         
-             <a href="homePage2.html" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
+             <a href="index.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
                 </div>
    
     <div class="service">

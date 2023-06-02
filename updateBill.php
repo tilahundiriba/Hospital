@@ -1,3 +1,7 @@
+<?php
+include "connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,23 +21,18 @@
 
     <div class="header">
 
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
         <a href="BillManagment.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
         
 
     </div>
-    <form action="insertbill.php" name="myForm" id="form" method="POST">
+    <form name="myForm" id="form" method="POST">
 
         <div class="diveinfo">
             <h3>Update Bill Form</h3>
             <div class="div1">
-                <label for="card">Pateint Code</label><br>
+                <label for="cardno">Pateint Code</label><br>
                 <input type="text" name="cardNo" id="cardno" class="inptext" placeholder="Please Enter CardNo.....">
-                <div class="error"></div>
-            </div>
-            <div class="div1">
-                <label for="card">Item ID</label><br>
-                <input type="text" name="itemid" id="itemid" class="inptext" placeholder="Please Enter item id.....">
                 <div class="error"></div>
             </div>
             <div class="div1">
@@ -66,16 +65,50 @@
             </div>
 
             <div class="div2">
-                <input type="submit" name="insert" id="btnsubmit" class="button">
+                <input type="submit" name="update" id="btnsubmit" class="button">
                 <input type="reset" name="reset" class="button">
             </div>
         </div>
 
     </form>
+    <?php
+if (isset($_POST['update'])) {
 
+    $cardNo  = $_POST['cardNo'];
+    $amount = $_POST['amount'];
+    $roomno = $_POST['roomno'];
+    $price = $_POST['price'];
+    $noday = $_POST['noday']; 
+    $nameacceptor = $_POST['nameacceptor'];
+    $total = $amount+( $price * $noday);
+
+    $sql ="UPDATE billtable SET nameacceptor='$nameacceptor',amount='$amount',
+    	price='$price',noday='$noday',total='$total', roomno=$roomno WHERE cardNo ='$cardNo '";
+             if ($conn->query($sql) === TRUE) {
+                echo '<script>alert("UPDATED CORRECTLY")</script>';
+                ?>
+                <script type="text/javascript"> 
+                     window.location="updateBill.php";
+                 </script>
+                <?php
+ } else {
+                 echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
+                 ?>
+                 <script type="text/javascript"> 
+                      window.location="updateBill.php";
+                  </script>
+                 <?php
+             }
+
+}
+
+
+?>
 </body>
 
-<script type="text/javascript" src="javascript/validateBill.js">
+<!-- <script type="text/javascript" src="javascript/validateBill.js"> -->
+
+
 
 
 

@@ -51,10 +51,9 @@ i{
 
         
      
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
         <a href="displayPatient.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
-        <a href="updatePateint.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
-        <a href="searchPatientUI.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
+        <a href="updatePateint.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
       
     </div>
     <form name="myForm" id="form" action="insert.php" method="post">

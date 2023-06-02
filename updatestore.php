@@ -1,3 +1,8 @@
+
+
+<?php
+include("connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +21,13 @@
 </head>
 
 <body>
-    <form name="myForm" id="form">
+    <form name="myForm" id="form" method="post">
 
 
         <div class="header">
 
         
-            <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+            <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
             <a href="store.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
         
 
@@ -34,19 +39,19 @@
                 
 
                 <div class="div1">
-                    <label for="item id" class="label">Item ID</label>
+                    <label for="Itemid" class="label">Item ID</label>
                     <input type="text" name="itemid" id="Itemid" class="input" placeholder="items id">
                     <div class="error"></div>
                 </div>
 
                 <div class="div1">
-                    <label for="name" class="label">Item Name</label>
+                    <label for="ItemName" class="label">Item Name</label>
                     <input type="text" name="name" class="input" id="ItemName" placeholder="items name">
                     <div class="error"></div>
                 </div>
                 <div class="div1">
                     <label for="category" class="label">Category</label>
-                    <select name="gender" class="input" id="category">
+                    <select name="category" class="input" id="category">
                         <option value="Hypoglycemics ">Hypoglycemics</option>
                         <option value="Analgesics">Analgesics</option>
                         <option value="Anesthetics">Anesthetics</option>
@@ -78,7 +83,7 @@
             </div>
 
             <div class="btnclass" id="btnclassforStore">
-                <button name="submit" class="save">Save</button>
+                <button type="submit" name="submit" class="save">Save</button>
                 <button  type="reset" class="save">Cansel</button>
 
             </div>
@@ -86,8 +91,42 @@
         </div>
 
     </form>
+    <?php
+   
+        if(isset($_POST['submit'])){
+$itemid = $_POST['itemid'];
+$itemname = $_POST['name'];
+$category = $_POST['category'];
+$itemPrice = $_POST['price'];
+$amount = $_POST['amount'];
+$recorded = $_POST['recorded'];
+$total = $amount * $itemPrice;
+
+$sql = "update medicines set itemname='$itemname',category='$category',
+itemPrice='$itemPrice',amount='$amount',recorded='$recorded',
+total='$total' where itemid='$itemid'";
+
+if($conn->query($sql)===TRUE){
+  echo '<script>alert("INSERTED CORRECTLY")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="store.php";
+   </script>
+  <?php
+}
+ else{
+  echo '<script>alert("not INSERTED succesfully")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="store.php";
+   </script>
+  <?php
+}
+}
+        mysqli_close($conn);
+        ?>
 </body>
-<script type="text/javascript" src="validationStoreInput.js">
+<!-- <script type="text/javascript" src="javascript/validationStoreInput.js"> -->
 
     
 

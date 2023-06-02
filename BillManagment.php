@@ -50,8 +50,8 @@ i{
     <div class="header">
 
         
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="updateBill.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="updateBill.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
         <a href="services.html" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
         <a href="displayBill.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
     </div>

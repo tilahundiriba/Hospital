@@ -1,3 +1,7 @@
+<?php
+include "connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,20 +51,20 @@ i{
 </head>
 
 <body>
-    <form name="myForm" id="form">
+    <form name="myForm" id="form" method="post">
 
 
         <div class="header">
 
           
        
-            <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+            <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
             <a href="PatientReg.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
            <i class="fa fa-angle-double-left" style="font-size:24px"></i>
 
         </div>
         <div class="forboth">
-            <h3>Pateint Data Update Form</h3>
+            <h3>Pateint Data Update </h3>
             <div class="empInfo" id="storeinfo">
                 <div class="div1">
                     <label for="pateintCode" class="label">Pateint code</label>
@@ -80,8 +84,8 @@ i{
                 </div>
 
                 <div class="div2">
-                    <label for="appdate " class="label">Appointment date </label>
-                    <input type="date" name="appdate " class="input" id="appdate" placeholder=" Appointment date">
+                    <label for="appdate" class="label">Appointment date </label>
+                    <input type="date" name="appdate" class="input" id="appdate" placeholder="Appointment date">
                     <div class="error"></div>
                 </div>
             </div>
@@ -93,23 +97,23 @@ i{
 
                 <div class="div1">
                     <label for="address" class="label">Address</label>
-                    <input type="text" name="address" class="input" id="address" placeholder=" Pateint Address">
+                    <input type="text" name="address" class="input" id="address" placeholder="Pateint Address" autocomplete="name">
                     <div class="error"></div>
                 </div>
                 <div class="div1">
-                    <label for="City" class="label">City</label>
-                    <input type="text" name="City" class="input" id="city" placeholder=" Pateint City">
+                    <label for="city" class="label">City</label>
+                    <input type="text" name="City" class="input" id="city" placeholder="Pateint City">
                     <div class="error"></div>
                 </div>
                 <div class="div2">
                     <label for="contact" class="label">Contact No </label>
-                    <input type="text" name="contact" class="input" id="contact" placeholder="xx-xxxx-xxxx ">
+                    <input type="text" name="contact" class="input" id="contact" placeholder="xx-xxxx-xxxx">
                     <div class="error"></div>
                 </div>
 
                 <div class="div2">
-                    <label for="Allocate doctor" class="label">Allocate Doctor </label>
-                    <input type="text" name="Allocate doctor" class="input" id="alldoctor"
+                    <label for="alldoctor" class="label">Allocate Doctor </label>
+                    <input type="text" name="Alldoctor" class="input" id="alldoctor"
                         placeholder="Allocate doctor ">
                     <div class="error"></div>
                 </div>
@@ -125,11 +129,45 @@ i{
         </div>
 
     </form>
-    <script type="text/javascript" src="javascript/validateUpdatePatein.js"></script>
+
+    <?php
+if (isset($_POST['submit'])) {
+
+    $pateintCode = $_POST['pateintCode'];
+    $disease = $_POST['disease'];
+    $appdate = $_POST['appdate'];
+    $address = $_POST['address'];
+    $City = $_POST['City'];
+    $contact = $_POST['contact'];
+    $Alldoctor = $_POST['Alldoctor']; 
+    $age = $_POST['age'];
+    $sql ="UPDATE PATEINTS SET age='$age',disease='$disease',city='$City',paddress='$address',
+    contact='$contact',allname='$Alldoctor', reg_date='$appdate' WHERE pateintCode='$pateintCode'";
+             if ($conn->query($sql) === TRUE) {
+                echo '<script>alert("UPDATED CORRECTLY")</script>';
+                ?>
+                <script type="text/javascript"> 
+                     window.location="updatePateint.php";
+                 </script>
+                <?php
+ } else {
+                 echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
+                 ?>
+                 <script type="text/javascript"> 
+                      window.location="updatePateint.php";
+                  </script>
+                 <?php
+             }
+
+}
+
+
+?>
+    <!-- <script type="text/javascript" src="javascript/validateUpdatePatein.js"></script> -->
 </body>
 
 
 
-</script>
+
 
 </html>

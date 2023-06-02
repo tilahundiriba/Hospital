@@ -1,3 +1,7 @@
+<?php
+include("connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,40 +69,47 @@
 
         .both{
             width: 900px;
-            height: 200px;
-           
+            height: 400px;
+           /* background-color: white; */
             position: absolute;
             display: flex;
             left: 170px;
-            top: 150px;
+            top: 250px;
             flex-direction: column;
-            background-color: rgba(1, 1, 1, 0.3);
+            
           /* background-color: rgb(60, 88, 62); */
             border-radius: 20px;
         }
         .empInfo2{
-            height: 100px;
+            height: 200px;
             width: 350px;
             display: flex;
             flex-direction: column;
             position: relative;
             top: 20px;
             margin: 10px;
+            
+            background-color: red;
             left: 50px;
-            /* background-color: rgba(1, 1, 1, 0.3); */
+            background-color: rgba(1, 1, 1, 0.3);
           padding: 10px;
+          padding-top: 50px;
+          border-radius: 10px;
         }
         .empAdd2{
+            background-color: green;
             top: 40px;
-            height: 100px;
+            height: 200px;
             width: 350px;
             display: flex;
             flex-direction: column;
             position: absolute;
             margin: 10px;
             left: 500px; 
-            /* background-color: rgba(1, 1, 1, 0.3); */
+            background-color: rgba(1, 1, 1, 0.3);
             padding: 10px;
+            padding-top: 50px;
+            border-radius: 10px;
         }
         .save{
            
@@ -120,13 +131,13 @@
      .btnclass22{
         position: absolute;
         left: 80px;
-        top: 50px;
+        top: 200px;
 
      }   
      .btnclass2{
         position: absolute;
         left: 80px;
-        top: 50px;
+        top: 200px;
 
      }  
      .input{
@@ -166,6 +177,16 @@ i{
  
     margin-right: 10px;
 }
+table, th, td {
+    border: 2px solid green;
+  color:blue;
+
+
+}
+table{
+    position: relative;
+    left: 250px;
+}
     </style>
 
 </head>
@@ -174,15 +195,14 @@ i{
     <div class="header">
 
 
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="#" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
-        <a href="#" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="staffregister.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
     </div>
 
     <div class="both">
         <h3> Search Staff Information</h3>
         <h2> Delete Staff Information</h2>
-        <form action="searchStaff.php" method="post" id="form">
+        <form  method="post" id="form" name="form">
             
             <div class="empInfo2">
 
@@ -199,25 +219,75 @@ i{
 
             </div>
         </form>
-        <form id="form" action="deletePatient.php" method="post">
+        <form id="form" method="post">
             <div class="empAdd2">
 
                 <div class="staf2">
                     <label for="empId" class="label2">Emp_ID</label>
-                    <input type="text" name="empId" class="input" placeholder="employee id...." id="empId">
+                    <input type="text" name="empIdd" class="input" placeholder="employee id...." id="empId">
                     <div class="error"></div>
                 </div>
                 <div class="btnclass22">
-                    <input type="submit" name="update" value="DELETE" class="save">
+                    <input type="submit" name="delete" value="DELETE" class="save">
                     <input type="reset" name="reset" value="CANCEL" class="save">
                 </div>
             </div>
         </form>
 
     </div>
+    <?php 
+if(isset($_POST['search'])){
+   
+   
+       $emp_Id = $_POST['empId'];
 
-    <!-- <script type="text/javascript" src="javascript/validateUpdateDoctor.js">
-    </script> -->
+$sql="select empId,firstname,middlename,phone,stffaddress,proffession,salary from employee WHERE empId ='$emp_Id'";
+$result=$conn->query($sql);
+if($result->num_rows>0){
+echo "<table><tr><th>EMP_ID</th><th>EMP_FIRST_NAME</th><th>EMP_MIDDLE_NAME</th>
+<th>PHONE</th><th>ADDRESS</th><th>PROFFESSION</th><th>SALARY</th></tr>";
+
+while($row=$result->fetch_assoc()){
+    echo "<tr><td>".$row["empId"]."</td><td>".$row["firstname"]."</td>
+    <td>".$row["middlename"]."</td><td>".$row["phone"]."</td>
+    <td>".$row["stffaddress"]."</td><td>".$row["proffession"]."</td><td>".$row["salary"]."</td></tr>";
+}
+}
+echo "</table>";
+
+}
+
+
+?>  
+<!-- php file for delete task start -->
+<?php
+if (isset($_POST['delete'])) {
+    $empId = $_POST['empIdd'];
+    $sql = "delete from employee WHERE empId='$empId'";
+    // DELETE t1 FROM billtable AS t1 JOIN PATEINTS AS t2 ON t1.cardNo = t2.pateintCode WHERE pateintCode='535353';
+
+    if ($conn->query($sql) === true) {
+        ?>
+        <script type="text/javascript"> 
+             alert("deleted succesfully");
+             window.location="searchStaffUI.php";
+         </script>
+        <?php
+      
+    } else {
+        ?>
+        <script type="text/javascript"> 
+             alert("not deleted succesfully");
+             window.location="searchStaffUI.php";
+         </script>
+        <?php
+        
+    }
+
+}
+$conn->close();
+
+?>
 </body>
 
 

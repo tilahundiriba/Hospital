@@ -1,3 +1,7 @@
+<?php
+include "connection.php";
+?>
+
 <!DOCTYPE html>
 <html>
  
@@ -8,16 +12,7 @@
 <body>
     <center>
         <?php
-        $servername ="localhost";
-        $username = "root";
-        $password = "";
-        $database_name = "hms"; 
-        $conn = new mysqli($servername , $username,  $password, $database_name);
-         
-        if($conn -> connect_error){
-            die("ERROR: Could not connect. "
-                . $conn -> connect_error);
-        }
+       
         if(isset($_POST['submit'])){
             $pcode = $_POST['pateintCode'];
             $pname = $_POST['Pateintname'];
@@ -36,9 +31,21 @@ $sql = "INSERT into PATEINTS(pateintCode,pname,dbrith,age,disease,email,gender,b
 values('$pcode','$pname','$date','$age','$disease','$email','$gender','$bloodgroup','$City','$address','$contact','$Allocatedoctor')";
 
 if($conn->query($sql)===TRUE){
-  echo '<script>alert("INSERTED CORRECTLY")</script>' ;}
+  echo '<script>alert("INSERTED CORRECTLY")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="PetientReg.php";
+   </script>
+  <?php
+}
  else{
   echo '<script>alert("not INSERTED succesfully")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="PetientReg.php";
+   </script>
+  <?php
+
 }
 }
         mysqli_close($conn);

@@ -45,10 +45,10 @@ i{
     <div class="header">
 
         
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
         <a href="displayStaff.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
-        <a href="updateStaff.html" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
-        <a href="#" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
+        <a href="updateStaff.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
+        <a href="searchStaffUI.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
     <form id="form" name="myForm" action="insertToStaff.php" method="post">
         <div class="empInfo">
@@ -81,7 +81,7 @@ i{
                 <div class="error"></div>
             </div>
             <div class="staf">
-                <label for="gender" class="label">Gender</label>
+                <label for="male" class="label">Gender</label>
                 <p class="sex" id="gender">
                     <input type="radio" name="gender" value="Male" class="rad" id="male">
                     <label for="male" class="label">Male</label>
@@ -97,17 +97,17 @@ i{
             <h3>Employee Address</h3>
             <div class="staf">
                 <label for="phone" class="label">Phone</label>
-                <input type="text" name="phone" class="input" placeholder="xx-xxxx-xxxx" id="phone">
+                <input type="text" name="phone" class="input" placeholder="xx-xxxx-xxxx" id="phone" autocomplete="off">
                 <div class="error"></div>
             </div>
             <div class="staf">
                 <label for="email" class="label">Email</label>
-                <input type="email" name="email" class="input" placeholder="email address" id="email">
+                <input type="email" name="email" class="input" placeholder="email address" id="email" autocomplete="off">
                 <div class="error"></div>
             </div>
             <div class="staf">
                 <label for="country" class="label">Country</label>
-                <select name="country" class="input" id="country">
+                <select name="country" class="input" id="country" autocomplete="off">
                     <option value="Ethiopia">Ethiopia</option>
                     <option value="Sudan">Sudan</option>
                     <option value="Kenya">Kenya</option>
@@ -119,12 +119,12 @@ i{
             </div>
             <div class="staf">
                 <label for="region" class="label">Region</label>
-                <input type="text" name="region" class="input" placeholder="region" id="region">
+                <input type="text" name="region" class="input" placeholder="region" id="region" autocomplete="off">
                 <div class="error"></div>
             </div>
             <div class="staf">
                 <label for="address" class="label">Address</label>
-                <input type="text" name="address" class="input" placeholder="address" id="address">
+                <input type="text" name="address" class="input" placeholder="address" id="address" autocomplete="off">
                 <div class="error"></div>
             </div>
         </div>
@@ -138,12 +138,12 @@ i{
                 <div class="error"></div>
             </div>
             <div class="staf">
-                <label for="Password" class="label">Password</label>
+                <label for="pass" class="label">Password</label>
                 <input type="password" name="password" class="input" placeholder="password" id="pass">
                 <div class="error"></div>
             </div>
             <div class="staf">
-                <label for="Password" class="label">Password-confirm</label>
+                <label for="passconf" class="label">Password-confirm</label>
                 <input type="password" name="passwordConf" class="input" placeholder="Password-confirm" id="passconf">
                 <div class="error"></div>
             </div>
@@ -151,17 +151,15 @@ i{
                 <label for="proffession" class="label">Proffession</label>
                 <select name="proffession" id="proffession" class="input">
 
-                    <option value="doctor">Doctor</option>
-                    <option value="nurse">Nurse</option>
-                    <option value="pharamasist">Pharamasist</option>
-                    <option value="labortarist">Labortarist</option>
-                    <option value="radiographer">Radiographer</option>
-                    <option value="dentist">Dentist</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Pharamasist">Pharamasist</option>
+                    <option value="Labortarist">Labortarist</option>
                 </select>
                 <div class="error"></div>
             </div>
             <div class="staf">
-                <label for="payment" class="label">Salary</label>
+                <label for="salary" class="label">Salary</label>
                 <input type="text" name="salary" class="input" placeholder="payment" id="salary">
             <div class="error"></div>
             </div>
@@ -178,7 +176,7 @@ i{
 
     </form>
 </body>
-<script type="text/javascript" src="javascript/validateStaff.js"> 
+<!-- <script type="text/javascript" src="javascript/validateStaff.js">  -->
 
 
 

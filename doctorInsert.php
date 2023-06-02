@@ -1,5 +1,4 @@
-
-         <?php
+      <?php
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -28,8 +27,18 @@
             
             if ($conn->query($sql) === TRUE) {
                echo '<script>alert("UPDATED CORRECTLY")</script>';
+               ?>
+               <script type="text/javascript"> 
+                    window.location="updatedoctor.php";
+                </script>
+               <?php
 } else {
                 echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
+                ?>
+                <script type="text/javascript"> 
+                     window.location="updatedoctor.php";
+                 </script>
+                <?php
             }
         }
         mysqli_close($conn);

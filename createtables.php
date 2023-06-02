@@ -80,17 +80,27 @@ if ($conn->connect_error) {
 //   FOREIGN KEY(cardNo) REFERENCES PATEINTS(pateintCode)
 //   )";
 
-$sql = "CREATE TABLE ATTENDANCE(
+// $sql = "CREATE TABLE ATTENDANCE(
  
-  empid VARCHAR(30) ,
-  date VARCHAR(30) ,
-  mark VARCHAR(30) ,
-  permission VARCHAR(30) ,
-  reason VARCHAR(250),
-  FOREIGN KEY(empid) REFERENCES EMPLOYEE(empId)
+//   empid VARCHAR(30) ,
+//   date VARCHAR(30) ,
+//   mark VARCHAR(30) ,
+//   permission VARCHAR(30) ,
+//   reason VARCHAR(250),
+//   FOREIGN KEY(empid) REFERENCES EMPLOYEE(empId)
+//   )";
+
+$sql = "CREATE TABLE Laboratory(
+ 
+  patient_id VARCHAR(30) ,
+  bloodTest VARCHAR(30) ,
+  urineTest VARCHAR(30) ,
+  x_ray VARCHAR(30) ,
+  OtherInfo VARCHAR(250),
+  FOREIGN KEY(patient_id) REFERENCES pateints(pateintCode)
   )";
 if ($conn->query($sql) === TRUE) {
-  echo "Table ATTENDANCE created successfully";
+  echo "Table Laboratory created successfully";
 } else {
   echo "Error creating table: " . $conn->error;
 }

@@ -191,7 +191,7 @@ include("connection.php");
       {
         ?>
         <script type="text/javascript">
-           window.location="homepage.html";
+           window.location="homepage.php";
         </script>
        <?php
       }

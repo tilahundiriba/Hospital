@@ -32,9 +32,20 @@ $sql = "INSERT into medicines(itemid,itemname,category,itemPrice,amount,recorded
 values('$itemid','$itemname','$category','$itemPrice','$amount','$recorded','$total')";
 
 if($conn->query($sql)===TRUE){
-  echo '<script>alert("INSERTED CORRECTLY")</script>' ;}
+  echo '<script>alert("INSERTED CORRECTLY")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="store.php";
+   </script>
+  <?php
+}
  else{
   echo '<script>alert("not INSERTED succesfully")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="store.php";
+   </script>
+  <?php
 }
 }
         mysqli_close($conn);

@@ -22,7 +22,7 @@
             else{    
                $pateintCode = $_POST['empId'];
             
-               $sql = "DELETE FROM PATEINTS WHERE pateintCode = '$pateintCode'" ;
+             $sql = "DELETE FROM PATEINTS WHERE pateintCode = '$pateintCode'" ;
            
                
                if($conn->query($sql)===true){

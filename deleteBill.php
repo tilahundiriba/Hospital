@@ -1,7 +1,7 @@
-
 <?php
-include "connection.php";
+include("connection.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +9,7 @@ include "connection.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Page</title>
+    <title>Delete Page</title>
     <!-- <link rel="stylesheet" href="style/updatedoctor.css"> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -47,7 +47,6 @@ include "connection.php";
         }
 
 
-
         .linkers {
             position: relative;
             display: flex;
@@ -68,20 +67,20 @@ include "connection.php";
             border-radius: 5px;
         }
 
-        .both22{
+        .both{
             width: 900px;
             height: 400px;
-
+           /* background-color: white; */
             position: absolute;
             display: flex;
             left: 170px;
             top: 250px;
             flex-direction: column;
-            /* background-color: rgba(1, 1, 1, 0.3); */
+            
           /* background-color: rgb(60, 88, 62); */
             border-radius: 20px;
         }
-        .empInfo{
+        .empInfo2{
             height: 200px;
             width: 350px;
             display: flex;
@@ -89,14 +88,16 @@ include "connection.php";
             position: relative;
             top: 20px;
             margin: 10px;
+            
+            background-color: red;
             left: 50px;
             background-color: rgba(1, 1, 1, 0.3);
           padding: 10px;
           padding-top: 50px;
-
           border-radius: 10px;
         }
-        .empAdd{
+        .empAdd2{
+            background-color: green;
             top: 40px;
             height: 200px;
             width: 350px;
@@ -104,15 +105,14 @@ include "connection.php";
             flex-direction: column;
             position: absolute;
             margin: 10px;
-            left: 500px;
+            left: 500px; 
             background-color: rgba(1, 1, 1, 0.3);
             padding: 10px;
             padding-top: 50px;
-
             border-radius: 10px;
         }
-        .save22{
-
+        .save{
+           
   height: 25px;
   margin-left: 20px;
     border-bottom-color: red;
@@ -123,23 +123,23 @@ include "connection.php";
     margin-right: 10px;
 }
 
-.save22:hover {
+.save:hover {
     color: black;
     background-color: white;
 }
 
+     .btnclass22{
+        position: absolute;
+        left: 80px;
+        top: 200px;
+
+     }   
      .btnclass2{
         position: absolute;
-        left: 100px;
-        top: 150px;
+        left: 80px;
+        top: 200px;
 
-     }
-     .btnclass{
-        position: absolute;
-        left: 100px;
-        top: 150px;
-
-     }
+     }  
      .input{
         height: 25px;
 width: 220px;
@@ -159,26 +159,26 @@ top: 10px;
     color: aqua;
   }
 
-  .body2 {
+  .body22 {
     background-image: url("style/images/homepageback.jpg");
     /* background-repeat: no-repeat; */
     background-size: 100%;
-
+    
 }
 .staf2{
     display: flex;
     flex-direction: row;
 }
-.label{
+.label2{
     padding: 10px;
     color: aqua;
 }
 i{
-
- margin-right: 10px;
+ 
+    margin-right: 10px;
 }
 table, th, td {
-    border: 1px solid green;
+    border: 2px solid green;
   color:blue;
 
 
@@ -191,84 +191,55 @@ table{
 
 </head>
 
-<body class="body2">
+<body class="body22">
     <div class="header">
 
 
         <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="PatientReg.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
-       
+        <a href="staffregister.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
     </div>
 
-    <div class="both22">
-        <h3> Search pateint Information</h3>
-        <h2> Delete pateint Information</h2>
-        <form id="form" name="myForm2" method="post">
-
-            <div class="empInfo">
-
-                <div class="staf2">
-                    <label for="empId" class="label">PATIENT ID</label>
-                    <input type="text" name="empId" class="input" placeholder="patient id...." id="empId" required>
-                    <div class="error"></div>
-                </div>
-
-                <div class="btnclass">
-                    <input type="submit" name="search" value="SEARCH" class="save22" >
-                    <input type="reset" name="reset" value="CANCEL" class="save22" onclick="searchPatient.php">
-
-                </div>
-
-            </div>
-        </form>
-        <form id="form2" name="form2" method="post">
-            <div class="empAdd">
+    <div class="both">
+        <h2> Delete Bill Information</h2>
+        
+        <form id="form" method="post">
+            <div class="empAdd2">
 
                 <div class="staf2">
-                    <label for="empId" class="label">PATIENT ID</label>
-                    <input type="text" name="empIdd" class="input" placeholder="patient id...." id="empId" required>
+                    <label for="item_Id" class="label2">item_Id</label>
+                    <input type="text" name="item_Id" class="input" placeholder="item id...." id="item_Id" required>
                     <div class="error"></div>
                 </div>
-                <div class="btnclass2">
-                    <input type="submit" name="delete" value="DELETE" class="save22">
-                    <input type="reset" name="reset" value="CANCEL" class="save22">
+                <div class="btnclass22">
+                    <input type="submit" name="delete" value="DELETE" class="save">
+                    <input type="reset" name="reset" value="CANCEL" class="save">
                 </div>
             </div>
         </form>
 
     </div>
-    <?php
-if (isset($_POST['search'])) {
-
-    $pateintCode = $_POST['empId'];
-
-    $sql = "select pateintCode,pname,disease,email,paddress,contact,allname from PATEINTS WHERE pateintCode='$pateintCode'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo "<table><tr><th>PATIENT ID</th><th>PATIENT NAME</th><th>DISEASE</th><th>EMAIL</th><th>ADDRESS</th><th>CONTACT</th><th>ALLOCATOR NAME</th></tr>";
-
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["pateintCode"] . "</td><td>" . $row["pname"] . "</td><td>" . $row["disease"] . "</td><td>" . $row["email"] . "</td>
-    <td>" . $row["paddress"] . "</td><td>" . $row["contact"] . "</td><td>" . $row["allname"] . "</td></tr>";
-        }
-    }
-    echo "</table>";
-
-}
-
-
-?>
+    
 <!-- php file for delete task start -->
-    <?php
+<?php
 if (isset($_POST['delete'])) {
-    $pateintCode = $_POST['empIdd'];
-    $sql = "delete from PATEINTS WHERE pateintCode='$pateintCode'";
-    // DELETE t1 FROM billtable AS t1 JOIN PATEINTS AS t2 ON t1.cardNo = t2.pateintCode WHERE pateintCode='535353';
-
+    $item_Id = $_POST['item_Id'];
+    $sql = "delete from billtable WHERE item_Id='$item_Id'";
     if ($conn->query($sql) === true) {
-        echo '<script>alert("deleted succesfully")</script>';
+        ?>
+        <script type="text/javascript"> 
+             alert("deleted succesfully");
+             window.location="searchStaffUI.php";
+         </script>
+        <?php
+      
     } else {
-        echo '<script>alert("not deleted succesfully")</script>';
+        ?>
+        <script type="text/javascript"> 
+             alert("not deleted succesfully");
+             window.location="searchStaffUI.php";
+         </script>
+        <?php
+        
     }
 
 }

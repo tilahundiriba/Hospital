@@ -33,7 +33,7 @@ i{
     <div class="header">
 
            
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
         <a href="displayAttendance.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
 
     </div>

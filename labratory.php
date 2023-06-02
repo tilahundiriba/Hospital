@@ -1,4 +1,5 @@
 <?php
+include "connection.php";
 session_start();
 
 ?>
@@ -142,6 +143,29 @@ h4{
     position: relative;
     left: 70px;
 }
+.div2{
+    display: flex;
+    flex-direction: column;
+}
+.divlogin {
+    padding: 15px;
+    width: 350px;
+    height: 520px;
+    margin: auto;
+    margin-top: 50px;
+    border-width: 2px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    background-color: #072C50;
+    border-radius: 5px;
+    border-bottom-color: red;
+    border-top-color: green;
+    font-family: 'Gill Sans', 'Gill Sans MT', italic, 'Trebuchet MS', sans-serif;
+    color: black;
+    text-align: center;
+}
     </style>
 </head>
 
@@ -149,7 +173,7 @@ h4{
 <div class="header">
 
    
-<a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+<a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
 <a href="displayForDoctors.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
 <a href="labratory.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
 </div>
@@ -172,33 +196,92 @@ h4{
         <div class="divlogin">
            
             <div class="div1">
-                <label for="username" class="labal">Username </label>
-                <span><i class="fa fa-envelope-o" style="font-size:24px"></i>
-                    <input type="text" name="username" class="input" placeholder="User name" id="username">
-                </span>
+                <label for="patient_id" class="labal">Patient_ID</label>
+              
+                    <input type="text" name="patient_id" class="input" placeholder="patient_id" id="patient_id">
+               
                 <div class="error"></div>
             </div>
-            <div class="div1">
-                <label for="password" class="labal">Password </label>
-                <span><i class="fa fa-lock" style="font-size:24px"></i>
-                    <input type="password" name="password" class="input" placeholder="password" id="password">
-                </span>
-                <div class="error"></div>
-            </div>
-            <button name="submit" class="btnlogin">Login</button>
-            <input type="reset" class="btncansel" value="Cansel">
+
+            <div class="div2">
+                    <label for="blood" class="labal">Blood Test</label>
+                    <select name="blood" class="input" id="blood">
+                        <option value="Normal">Normal</option>
+                        <option value="Abnormal">Abnormal</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="urine" class="labal">Urine Test</label>
+                    <select name="urine" class="input" id="urine">
+                        <option value="Normal">Normal</option>
+                        <option value="Abnormal">Abnormal</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="div2">
+                    <label for="x_ray" class="labal">X-ray Test</label>
+                    <select name="x_ray" class="input" id="x_ray">
+                        <option value="Normal">Normal</option>
+                        <option value="Abnormal">Abnormal</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                
+                <div class="div2">
+                <label for="txtview" class="labal">Additional Note</label>
+                  <textarea name="txtview" id="txtview" cols="35" rows="10"></textarea>
+                    <div class="error"></div>
+                </div>
+            <button name="submit" class="btnlogin">Submit Report</button>
+          
         </div>
     </form>
 
     <?php
 if(isset($_POST['submit'])){
 
-    $_SESSION['username']= $_POST['username'];
-    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['patient_id']= $_POST['patient_id'];
+    $_SESSION['blood'] = $_POST['blood'];
+    $_SESSION['urine']= $_POST['urine'];
+    $_SESSION['x_ray'] = $_POST['x_ray'];
+    $_SESSION['txtview']= $_POST['txtview'];
+    
 }
 
-
 ?>
+<?php
+ if(isset($_POST['submit'])){
+$patient_id = $_POST['patient_id'];
+$bloodTest = $_POST['blood'];
+$urineTest = $_POST['urine'];
+$x_ray = $_POST['x_ray'];
+$OtherInfo = $_POST['txtview'];
+
+$sql = "INSERT into laboratory(patient_id,bloodTest,urineTest,x_ray,OtherInfo)
+values('$patient_id','$bloodTest','$urineTest','$x_ray','$OtherInfo')";
+
+if($conn->query($sql)===TRUE){
+  echo '<script>alert("INSERTED CORRECTLY")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="labratory.php";
+   </script>
+  <?php
+}
+ 
+ else{
+  echo '<script>alert("not INSERTED succesfully")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="laboratory.php";
+   </script>
+  <?php
+}
+}
+        mysqli_close($conn);
+        ?>
+
 </body>
 
 

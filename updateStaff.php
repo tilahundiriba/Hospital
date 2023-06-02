@@ -1,3 +1,8 @@
+<?php
+include "connection.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +18,18 @@
 </head>
 
 <body>
-  <form name="myForm" id="form">
+  <form name="myForm" id="form" method="post">
     <div class="header">
 
     
-      <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+      <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
       <a href="staffregister.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
     </div>
     <div class=" empInfo22">
       <h3> Update Employee Information</h3>
       <div class="half22">
         <div class="diverror">
-          <label for="empId" class="label">Employee Id</label>
+          <label for="id" class="label">Employee Id</label>
           <input type="text" name="empId" class="input" placeholder="Employee Id" id="id">
           <div class="error"></div>
         </div>
@@ -50,11 +55,6 @@
           </select>
           <div class="error"></div>
         </div>
-        <div class="diverror">
-          <label for="region" class="label">Region</label>
-          <input type="text" name="region" class="input" placeholder="Region" id="region">
-          <div class="error"></div>
-        </div>
       </div>
       <div class="half2">
         <div class="diverror">
@@ -68,7 +68,7 @@
           <div class="error"></div>
         </div>
         <div class="diverror">
-          <label for="proffession" class="label">Proffession</label>
+          <label for="proff" class="label">Proffession</label>
           <select name="proffession" class="input" id="proff">
 
             <option value="Doctor">Doctor</option>
@@ -87,13 +87,48 @@
         </div>
       </div>
       <div class="btndiv22">
-        <input type="submit" value="Save" class="btnsave">
+        <input type="submit" value="Save" class="btnsave"  name="update">
         <input type="reset" value="Clear" class="btnsave">
       </div>
     </div>
 
   </form>
-  <script type="text/javascript" src="javascript/validateUpdateStaff.js"></script>
+
+
+  <?php
+if (isset($_POST['update'])) {
+
+    $empId = $_POST['empId'];
+    $country = $_POST['country'];
+    $address = $_POST['address'];
+    $date = $_POST['date'];
+    $phone = $_POST['phone'];
+    $proffession = $_POST['proffession']; 
+    $age = $_POST['age'];
+    $salary = $_POST['salary'];
+    $sql ="UPDATE employee SET age='$age',country='$country',reg_date='$date',stffaddress='$address',
+    	phone='$phone',proffession='$proffession',salary='$salary' WHERE empId='$empId'";
+             if ($conn->query($sql) === TRUE) {
+                echo '<script>alert("UPDATED CORRECTLY")</script>';
+                ?>
+                <script type="text/javascript"> 
+                     window.location="updateStaff.php";
+                 </script>
+                <?php
+ } else {
+                 echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
+                 ?>
+                 <script type="text/javascript"> 
+                      window.location="updateStaff.php";
+                  </script>
+                 <?php
+             }
+
+}
+
+
+?>
+  <!-- <script type="text/javascript" src="javascript/validateUpdateStaff.js"></script> -->
 </body>
 
 </html>

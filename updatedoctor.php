@@ -57,7 +57,7 @@ if(isset($_POST['update'])){
     padding-right: 30px;
     border-radius: 5px;
 
-    width: 300px;
+    width: 350px;
     top: 80px;
     /* display: flex;
     flex-direction: column; */
@@ -296,16 +296,20 @@ h4{
     <div class="header">
 
    
-        <a href="homepage.html" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
+        <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
         <a href="displayForDoctors.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
-        <a href="labratory.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
     <div class="forphp" id="divForPhp">
   
     <?php
+
    echo" <h4>Lab Report </h4>";
-    echo "<b>Patient user name:</b>  ".$_SESSION['username']."<br>" ;
-    echo "<b>Patient password:</b> ".$_SESSION['password'] ;
+    echo "<b>patient_id:</b>  ".$_SESSION['patient_id']."<br>" ;
+    echo "<b>Patient blood:</b> ".$_SESSION['blood'] ."<br>" ;
+    echo "<b>Patient urine:</b>  ".$_SESSION['urine']."<br>" ;
+    echo "<b>Patient x_ray:</b> ".$_SESSION['x_ray'] ."<br>" ;
+    echo "<b>Patient txtview:</b> ".$_SESSION['txtview'];
+
     ?>
     <button onclick="document.getElementById('divForPhp').style.display='none'" class="clear">Clear</button>
     </div>
@@ -364,13 +368,15 @@ h4{
                         <label for="blood" class="label">Blood</label>
                         <input type="radio" name="testtype" value="urine" class="rad" id="urine">
                         <label for="urine" class="label">Urine</label>
+                        <input type="radio" name="testtype" value="x-ray" class="rad" id="x-ray">
+                        <label for="x-ray" class="label">X-ray</label>
                     </div>
                     <div class="error"></div>
                 </div>
 
                 <div class="staf">
                     <label for="txtview" class="label">Other Information</label>
-                    <textarea id="txtview" name="txtview" rows="8" cols="30"></textarea>
+                    <textarea id="txtview" name="txtview" rows="8" cols="30" class="input"></textarea>
                     <div class="error"></div>
                 </div>
             </div>

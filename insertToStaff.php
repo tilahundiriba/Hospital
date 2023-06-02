@@ -46,14 +46,37 @@ values('$empId','$firstname','$middlename','$lastname','$dbrith','$age',
 '$gender','$phone','$country','$region','$stffaddress','$proffession','$salary')";
 
 if($conn->query($sql)===TRUE){
-  echo '<script>alert("INSERTED CORRECTLY")</script>' ;}
+  echo '<script>alert("INSERTED CORRECTLY")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="admin.php";
+   </script>
+  <?php
+}
+ 
  else{
   echo '<script>alert("not INSERTED succesfully")</script>' ;
+  ?>
+  <script type="text/javascript"> 
+       window.location="admin.php";
+   </script>
+  <?php
 }
 if($conn->query($sql2)===TRUE){
-    echo '<script>alert("Password INSERTED CORRECTLY")</script>' ;}
+    echo '<script>alert("Password INSERTED CORRECTLY")</script>' ;
+    ?>
+    <script type="text/javascript"> 
+         window.location="staffregister.php";
+     </script>
+    <?php
+}
    else{
     echo '<script>alert("not INSERTED succesfully")</script>' ;
+    ?>
+    <script type="text/javascript"> 
+         window.location="staffregister.php";
+     </script>
+    <?php
   }
 }
         mysqli_close($conn);

@@ -23,8 +23,8 @@
         <div class="login"><a href="PatientReg.php"><img src="style/images/ReginAClicka.png" alt="Admin Login"></a>
             Click Image to pateint page
         </div>
-        <div class="billreg"><a href="BillManagment.php"><img src="style/images/bill2logo.avif" alt="Admin Login"></a>
-            Click Image to Bill page
+        <div class="billreg"><a href="searchPatientUI.php"><img src="style/images/search.jpg" alt="Admin Login"></a>
+            Click Image to search pateint page
         </div>
         <div class="allreg"><a href="staffregister.php"><img src="style/images/staff.jpg" alt="Admin Login"></a>
             Click Image to staff Registration page
