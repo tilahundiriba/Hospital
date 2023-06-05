@@ -70,7 +70,7 @@ if (isset($_POST['validate'])) {
                 
                     ?>
         <script type="text/javascript">
-           window.location="searchPatientUI.php";
+           window.location="userSearch.php";
         </script>
        <?php
 }

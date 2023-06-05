@@ -1,16 +1,23 @@
 <?php
+include "connection.php";
 SESSION_START();
 
 if(isset($_POST['update'])){
     
     $_SESSION['pcode']=$_POST['pcode'];
-     $_SESSION['startday']= $_POST['startday'];
-     $_SESSION['syptom']= $_POST['syptom'];
-     $_SESSION['test']= $_POST['reason'];
-     $_SESSION['howlong']= $_POST['howlong'];
-     $_SESSION['test'] = $_POST['reason'];
-     $_SESSION['testtype'] = $_POST['testtype'];
-     $_SESSION['txtview'] = $_POST['txtview'];
+    $_SESSION['startday']= $_POST['startday'];
+    $_SESSION['syptom']= $_POST['syptom'];
+    $_SESSION['howlong']= $_POST['howlong'];
+    $_SESSION['test'] =$_POST['test'];
+    $_SESSION['reason'] = $_POST['reason'];
+    $_SESSION['testtype'] = $_POST['testtype'];
+    $_SESSION['txtview1'] = $_POST['txtview1'];
+
+    ?>
+    <script type="text/javascript"> 
+         alert("Your lab request send succesfully?!!");
+     </script>
+    <?php 
     }
     
 
@@ -302,7 +309,6 @@ h4{
     <div class="forphp" id="divForPhp">
   
     <?php
-
    echo" <h4>Lab Report </h4>";
     echo "<b>patient_id:</b>  ".$_SESSION['patient_id']."<br>" ;
     echo "<b>Patient blood:</b> ".$_SESSION['blood'] ."<br>" ;
@@ -314,7 +320,7 @@ h4{
     <button onclick="document.getElementById('divForPhp').style.display='none'" class="clear">Clear</button>
     </div>
     <button onclick="document.getElementById('divForPhp').style.display='block'" class="result">Lab Report</button>
-    <form id="form" method="post">
+    <form id="form" method="post" name="form" onsubmit="return validateForm()">
         <div class="both22">
             <h3> Update pateint Information</h3>
             <div class="empInfo22">
@@ -326,13 +332,13 @@ h4{
                 </div>
 
                 <div class="staf">
-                    <label for="startDay" class="label">Start Day</label>
-                    <input type="date" name="startday" class="input" placeholder="start date" id="startDay">
+                    <label for="startday" class="label">Start Day</label>
+                    <input type="date" name="startday" class="input" placeholder="start date" id="startday">
                     <div class="error"></div>
                 </div>
                 <div class="staf">
-                    <label for="Symptom" class="label">Symptom</label>
-                    <input type="text" name="syptom" class="input" placeholder="Disease Symptom" id="Symptom">
+                    <label for="symptom" class="label">Symptom</label>
+                    <input type="text" name="syptom" class="input" placeholder="Disease Symptom" id="symptom">
                     <div class="error"></div>
                 </div>
                 <div class="staf">
@@ -375,8 +381,8 @@ h4{
                 </div>
 
                 <div class="staf">
-                    <label for="txtview" class="label">Other Information</label>
-                    <textarea id="txtview" name="txtview" rows="8" cols="30" class="input"></textarea>
+                    <label for="textview1" class="label">Other Information</label>
+                    <textarea id="textview1" name="txtview1" cols="30"  rows="5" class="input"></textarea>
                     <div class="error"></div>
                 </div>
             </div>
@@ -390,8 +396,128 @@ h4{
 
         </div>
     </form>
-    <script type="text/javascript" src=".../javascript/validateUpdateDoctor.js">
-    </script>
+    <?php
+        if (isset($_POST['update'])) {
+            $pcode = $_POST['pcode'];
+            $startDay = $_POST['startday'];
+            $symptom = $_POST['syptom'];
+            $reason = $_POST['reason'];
+            $howlong = $_POST['howlong'];
+            $test = $_POST['test'];
+            $testtype = $_POST['testtype'];
+            $txtview = $_POST['txtview1'];
+
+            ?>
+            <script type="text/javascript"> 
+                 alert("The request is send seccussfully!!");
+             </script>
+            <?php
+            
+            $sql ="UPDATE PATEINTS SET start_day='$startDay',symptom='$symptom',
+                    reason='$reason', how_long='$howlong', test='$test',
+                    test_type='$testtype', txt_view='$txtview' WHERE pateintCode='$pcode'";
+            
+            if ($conn->query($sql) === TRUE) {
+               echo '<script>alert("UPDATED CORRECTLY")</script>';
+               ?>
+               <script type="text/javascript"> 
+                    window.location="updatedoctor.php";
+                </script>
+               <?php
+} else {
+                echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
+                ?>
+                <script type="text/javascript"> 
+                     window.location="updatedoctor.php";
+                 </script>
+                <?php
+            }
+        }
+        mysqli_close($conn);
+        ?> 
+<script>
+function validateForm() {
+  // Get form inputs and trim leading/trailing whitespace
+  var pcode = document.forms["form"]["pcode"].value.trim();
+  var startday = document.forms["form"]["startday"].value.trim();
+  var symptom = document.forms["form"]["syptom"].value.trim();
+  var reason = document.forms["form"]["reason"].value.trim();
+  var howlong = document.forms["form"]["howlong"].value.trim();
+  var test = document.querySelector('input[name="test"]:checked');
+  var testtype = document.querySelector('input[name="testtype"]:checked');
+
+  // Define regular expression patterns for validation
+  var pcodePattern = /^[a-zA-Z0-9]+$/;
+  var startdayPattern = /^\d{4}-\d{2}-\d{2}$/;
+  var symptomPattern = /^[a-zA-Z ]+$/;
+  var reasonPattern = /^[a-zA-Z ]+$/;
+  var howlongPattern = /^\d+$/;
+
+  // Validate patient ID
+  if (pcode == "") {
+    alert("Patient ID must be filled out");
+    return false;
+  }
+  else if (!pcodePattern.test(pcode)) {
+    alert("Please enter a valid Patient ID consisting of letters and/or numbers");
+    return false;
+  }
+
+  // Validate start day
+  if (startday == "") {
+    alert("Start day must be filled out");
+    return false;
+  }
+  else if (!startdayPattern.test(startday)) {
+    alert("Please enter a valid start day in format yyyy-mm-dd");
+    return false;
+  }
+
+  // Validate symptom
+  if (symptom == "") {
+    alert("Symptom must be filled out");
+    return false;
+  }
+  else if (!symptomPattern.test(symptom)) {
+    alert("Please enter a valid symptom consisting of letters and/or spaces");
+    return false;
+  }
+
+  // Validate reason
+  if (reason == "") {
+    alert("Reason must be filled out");
+    return false;
+  }
+  else if (!reasonPattern.test(reason)) {
+    alert("Please enter a valid reason consisting of letters and/or spaces");
+    return false;
+  }
+
+  // Validate how long
+  if (howlong == "") {
+    alert("How long must be filled out");
+    return false;
+  }
+  else if (!howlongPattern.test(howlong)) {
+    alert("Please enter a valid how long consisting of digits only");
+    return false;
+  }
+
+  // Validate required test
+  if (test == null) {
+    alert("Required test must be selected");
+    return false;
+  }
+
+  // Validate test type
+  if (testtype == null) {
+    alert("Test type must be selected");
+    return false;
+  }
+
+  return true;
+}
+</script>
 </body>
 
 

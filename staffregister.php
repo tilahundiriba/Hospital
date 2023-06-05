@@ -38,6 +38,135 @@ i{
 
 }
     </style>
+        <script>
+        function validateForm() {
+            // Get form inputs
+            var fname = document.forms["myForm"]["fname"].value;
+            var lname = document.forms["myForm"]["lname"].value;
+            var dbrith = document.forms["myForm"]["dbrith"].value;
+            var age = document.forms["myForm"]["age"].value;
+            var phone = document.forms["myForm"]["phone"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var region = document.forms["myForm"]["region"].value;
+            var address = document.forms["myForm"]["address"].value;
+            var empid = document.forms["myForm"]["empid"].value;
+            var password = document.forms["myForm"]["password"].value;
+            var passwordConf = document.forms["myForm"]["passwordConf"].value;
+            var salary = document.forms["myForm"]["salary"].value;
+
+            // Define regular expression patterns for validation
+            var namePattern = /^[a-zA-Z ]+$/;
+            var phonePattern = /^\d{2}-\d{4}-\d{4}$/;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{":;'?/>.<,])(?!.*\s).{8,}$/;
+
+            // Validate first name
+            if (fname == "") {
+                alert("First name must be filled out");
+                return false;
+            }
+            else if (!namePattern.test(fname)) {
+                alert("Please enter a valid first name");
+                return false;
+            }
+
+            // Validate last name
+            if (lname == "") {
+                alert("Last name must be filled out");
+                return false;
+            }
+            else if (!namePattern.test(lname)) {
+                alert("Please enter a valid last name");
+                return false;
+            }
+
+            // Validate date of birth
+            if (dbrith == "") {
+                alert("Date of birth must be filled out");
+                return false;
+            }
+
+            // Validate age
+            if (age == "") {
+                alert("Age must be filled out");
+                return false;
+            }
+            else if (age < 18 || age > 65) {
+                alert("Please enter a valid age between 18 and 65");
+                return false;
+            }
+
+            // Validate phone number
+            if (phone == "") {
+                alert("Phone number must be filled out");
+                return false;
+            }
+            else if (!phonePattern.test(phone)) {
+                alert("Please enter a valid phone number in format xx-xxxx-xxxx");
+                return false;
+            }
+
+            // Validate email
+            if (email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            else if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            // Validate region
+            if (region == "") {
+                alert("Region must be filled out");
+                return false;
+            }
+
+            // Validate address
+            if (address == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+
+            // Validate employee ID
+            if (empid == "") {
+                alert("Employee ID must be filled out");
+                return false;
+            }
+
+            // Validate password
+            if (password == "") {
+                alert("Password must be filled out");
+                return false;
+            }
+            else if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+                return false;
+            }
+
+            // Validate password confirmation
+            if (passwordConf == "") {
+                alert("Password confirmation must be filled out");
+                return false;
+            }
+            else if (password != passwordConf) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // Validate salary
+            if (salary == "") {
+                alert("Salary must be filled out");
+                return false;
+            }
+            else if (isNaN(salary) || salary <= 0) {
+                alert("Please enter a valid salary");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 
 </head>
 
@@ -50,7 +179,7 @@ i{
         <a href="updateStaff.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
         <a href="searchStaffUI.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
     </div>
-    <form id="form" name="myForm" action="insertToStaff.php" method="post">
+    <form id="form" name="myForm" action="insertToStaff.php" method="post" onsubmit="return validateForm()">
         <div class="empInfo">
 
             <h3> Employee Information</h3>
@@ -176,10 +305,6 @@ i{
 
     </form>
 </body>
-<!-- <script type="text/javascript" src="javascript/validateStaff.js">  -->
 
-
-
-</script>
 
 </html>

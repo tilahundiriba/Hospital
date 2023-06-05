@@ -1,7 +1,6 @@
 <?php
 include "connection.php";
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +116,7 @@ h3 {
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-    left: 65%;
+    left: 75%;
     margin: 20px;
     text-decoration: none;
 }
@@ -167,6 +166,55 @@ h4{
     text-align: center;
 }
     </style>
+    <script>
+function validateForm() {
+  // Get form inputs and trim leading/trailing whitespace
+  var patient_id = document.forms["myForm"]["patient_id"].value.trim();
+  var blood = document.forms["myForm"]["blood"].value;
+  var urine = document.forms["myForm"]["urine"].value;
+  var x_ray = document.forms["myForm"]["x_ray"].value;
+  var txtview = document.forms["myForm"]["txtview"].value.trim();
+
+  // Define regular expression patterns for validation
+  var patientIdPattern = /^[a-zA-Z0-9]+$/;
+
+  // Validate patient ID
+  if (patient_id == "") {
+    alert("Patient ID must be filled out");
+    return false;
+  }
+  else if (!patientIdPattern.test(patient_id)) {
+    alert("Please enter a valid Patient ID consisting of letters and/or numbers");
+    return false;
+  }
+
+  // Validate blood test
+  if (blood == "") {
+    alert("Blood test must be selected");
+    return false;
+  }
+
+  // Validate urine test
+  if (urine == "") {
+    alert("Urine test must be selected");
+    return false;
+  }
+
+  // Validate x-ray test
+  if (x_ray == "") {
+    alert("X-ray test must be selected");
+    return false;
+  }
+
+  // Validate additional note
+  if (txtview == "") {
+    alert("Additional note must be filled out");
+    return false;
+  }
+
+  return true;
+}
+</script>
 </head>
 
 <body>
@@ -174,8 +222,7 @@ h4{
 
    
 <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-<a href="displayForDoctors.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
-<a href="labratory.php" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
+<a href="" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW</a>
 </div>
 <div class="forphp" id="divForPhp">
   
@@ -184,15 +231,16 @@ h4{
  echo "<b>Patient Code:</b>  ". $_SESSION['pcode']."<br>" ;
  echo"<b>Start day:</b>  ". $_SESSION['startday']."<br>" ;
  echo"<b>Syptom:</b>  ". $_SESSION['syptom']."<br>" ;
+ echo"<b>Reason:</b>  ". $_SESSION['reason']."<br>" ;
  echo "<b>Test:</b>  ".$_SESSION['test'] ."<br>";
  echo"<b>How long:</b>  ". $_SESSION['howlong'] ."<br>";
  echo "<b>Test Type:</b>  ".$_SESSION['testtype']."<br>";
- echo "<b>Other info: </b> ".$_SESSION['txtview'];
+ echo "<b>Other info: </b> ".$_SESSION['txtview1'];
   ?>
   <button onclick="document.getElementById('divForPhp').style.display='none'" class="clear">Clear</button>
   </div>
   <button onclick="document.getElementById('divForPhp').style.display='block'" class="result">Lab Required</button>
-    <form class="" id="form" method="post">
+    <form class="" id="form" method="post" name="myForm" onsubmit="return validateForm()">
         <div class="divlogin">
            
             <div class="div1">
@@ -240,13 +288,17 @@ h4{
 
     <?php
 if(isset($_POST['submit'])){
-
+   
     $_SESSION['patient_id']= $_POST['patient_id'];
     $_SESSION['blood'] = $_POST['blood'];
     $_SESSION['urine']= $_POST['urine'];
     $_SESSION['x_ray'] = $_POST['x_ray'];
     $_SESSION['txtview']= $_POST['txtview'];
-    
+    ?>
+    <script type="text/javascript"> 
+         alert("The report is send seccussfully!!");
+     </script>
+    <?php
 }
 
 ?>

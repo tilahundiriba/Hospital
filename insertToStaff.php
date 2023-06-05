@@ -49,7 +49,7 @@ if($conn->query($sql)===TRUE){
   echo '<script>alert("INSERTED CORRECTLY")</script>' ;
   ?>
   <script type="text/javascript"> 
-       window.location="admin.php";
+       window.location="staffregister.php";
    </script>
   <?php
 }
@@ -58,7 +58,7 @@ if($conn->query($sql)===TRUE){
   echo '<script>alert("not INSERTED succesfully")</script>' ;
   ?>
   <script type="text/javascript"> 
-       window.location="admin.php";
+       window.location="staffregister.php";
    </script>
   <?php
 }

@@ -1,87 +1,109 @@
-
-const form = document.getElementById('form');
-const startday = document.getElementById('startday');
-const symptom = document.getElementById('symptom');
-const reason = document.getElementById('reason');
-const howlong = document.getElementById('howlong');
-const txtview = document.getElementById('txtview');
+const form = document.forms["myForm"];
+const empId = form["empId"];
+const age = form["age"];
+const phone = form["phone"];
+const country = form["country"];
+const address = form["address"];
+const date = form["date"];
+const profession = form["profession"];
+const salary = form["salary"];
 
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    validateInputs();
+    validateForm();
 });
 
-const setError = (element, message) => {
-    const staf = element.parentElement;
-    const errorDisplay = staf.querySelector('.error');
+const validateForm = () => {
+    // Define regular expression patterns for validation
+    const empIdPattern = /^[a-zA-Z0-9]+$/;
+    const agePattern = /^\d+$/;
+    const phonePattern = /^\d{2}-\d{4}-\d{4}$/;
+    const countryPattern = /^[a-zA-Z ]+$/;
+    const addressPattern = /^[a-zA-Z0-9\s,'-]*$/;
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    const professionPattern = /^[a-zA-Z ]+$/;
+    const salaryPattern = /^\d+(\.\d{1,2})?$/;
 
-    errorDisplay.innerText = message;
-    staf.classList.add('error');
-    staf.classList.remove('success')
+    // Validate employee ID
+    if (empId.value.trim() === "") {
+        alert("Employee ID must be filled out");
+        return false;
+    }
+    else if (!empIdPattern.test(empId.value.trim())) {
+        alert("Please enter a valid Employee ID consisting of letters and/or numbers");
+        return false;
+    }
+
+    // Validate age
+    if (age.value.trim() === "") {
+        alert("Age must be filled out");
+        return false;
+    }
+    else if (!agePattern.test(age.value.trim())) {
+        alert("Please enter a valid age consisting of digits only");
+        return false;
+    }
+
+    // Validate phone number
+    if (phone.value.trim() === "") {
+        alert("Phone number must be filled out");
+        return false;
+    }
+    else if (!phonePattern.test(phone.value.trim())) {
+        alert("Please enter a valid phone number in format xx-xxxx-xxxx");
+        return false;
+    }
+
+    // Validate country
+    if (country.value.trim() === "") {
+        alert("Country must be filled out");
+        return false;
+    }
+    else if (!countryPattern.test(country.value.trim())) {
+        alert("Please enter a valid country name consisting of letters and/or spaces");
+        return false;
+    }
+
+    // Validate address
+    if (address.value.trim() === "") {
+        alert("Address must be filled out");
+        return false;
+    }
+    else if (!addressPattern.test(address.value.trim())) {
+        alert("Please enter a valid address consisting of letters, digits, spaces, commas, apostrophes, and/or hyphens");
+        return false;
+    }
+
+    // Validate date
+    if (date.value.trim() === "") {
+        alert("Date must be filled out");
+        return false;
+    }
+    else if (!datePattern.test(date.value.trim())) {
+        alert("Please enter a valid date in format yyyy-mm-dd");
+        return false;
+    }
+
+    // Validate profession
+    if (profession.value.trim() === "") {
+        alert("Profession must be filled out");
+        return false;
+    }
+    else if (!professionPattern.test(profession.value.trim())) {
+        alert("Please enter a valid profession consisting of letters and/or spaces");
+        return false;
+    }
+
+    // Validate salary
+    if (salary.value.trim() === "") {
+        alert("Salary must be filled out");
+        return false;
+    }
+    else if (!salaryPattern.test(salary.value.trim())) {
+        alert("Please enter a valid salary in format xx.xx");
+        return false;
+    }
+
+    return true;
 }
-
-const setSuccess = element => {
-    const staf = element.parentElement;
-    const errorDisplay = staf.querySelector('.error');
-
-    errorDisplay.innerText = '';
-    staf.classList.add('success');
-    staf.classList.remove('error');
-};
-
-const isValidEmail = email => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-var regName = /^[A-Za-z]+$/;
-var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-var numbers = /^[0-9]+$/;
-var regAge = /^[0-9]\w{1,2}$/;
-var passw = /^[A-Za-z]\w{7,14}$/;
-const validateInputs = () => {
-    const startDay2 = startday.value.trim();
-    const reason2 = reason.value.trim();
-    const Symptom2 = symptom.value.trim();
-    const howlong2 = howlong.value.trim();
-    const txtview2 = txtview.value.trim();
-
-
-    if (startDay2 === '') {
-        setError(startday, 'Start day is required');
-    }
-    else {
-        setSuccess(startday);
-    }
-    if (Symptom2 === '') {
-        setError(symptom, 'Symptom is required');
-    }
-    else if (!Symptom2.match(regName)) {
-        setError(symptom, 'Symptom must be character only.');
-    } else {
-        setSuccess(symptom);
-    }
-    if (reason2 === '') {
-        setError(reason, 'Reason is required');
-    } else if (!reason2.match(regName)) {
-        setError(reason, 'Reason must be character only.');
-    } else {
-        setSuccess(reason);
-    }
-    if (txtview2 === '') {
-        setError(txtview, 'Other info is required');
-    } else {
-        setSuccess(txtview);
-    }
-
-    if (howlong2 === '') {
-        setError(howlong, 'how long is required');
-    }
-
-    else {
-        setSuccess(howlong);
-    }
-    // gender place
-
-};

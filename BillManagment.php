@@ -43,6 +43,92 @@ i{
     margin-right: 10px;
 }
 </style>
+<script>
+function validateForm() {
+  // Get form inputs
+  var cardNo = document.forms["myForm"]["cardNo"].value;
+  var itemId = document.forms["myForm"]["itemid"].value;
+  var amount = document.forms["myForm"]["amount"].value;
+  var price = document.forms["myForm"]["price"].value;
+  var noDay = document.forms["myForm"]["noday"].value;
+  var roomNo = document.forms["myForm"]["roomno"].value;
+  var nameAcceptor = document.forms["myForm"]["nameacceptor"].value;
+
+  // Define regular expression patterns for validation
+  var cardNoPattern = /^\d{4}$/;
+  var itemIdPattern = /^\d{4}$/;
+  var amountPattern = /^\d+$/;
+  var pricePattern = /^\d+$/;
+  var noDayPattern = /^\d+$/;
+  var roomNoPattern = /^\d+$/;
+  var nameAcceptorPattern = /^[a-zA-Z ]+$/;
+
+  // Validate cardNo
+  if (cardNo == "") {
+    alert("Patient code must be filled out");
+    return false;
+  } else if (!cardNoPattern.test(cardNo)) {
+    alert("Please enter a valid patient code (4 digits)");
+    return false;
+  }
+
+  // Validate itemId
+  if (itemId == "") {
+    alert("Item ID must be filled out");
+    return false;
+  } else if (!itemIdPattern.test(itemId)) {
+    alert("Please enter a valid item ID (4 digits)");
+    return false;
+  }
+
+  // Validate amount
+  if (amount == "") {
+    alert("Service price must be filled out");
+    return false;
+  } else if (!amountPattern.test(amount)) {
+    alert("Please enter a valid service price (positive integer)");
+    return false;
+  }
+
+  // Validate price
+  if (price == "") {
+    alert("Bed price must be filled out");
+    return false;
+  } else if (!pricePattern.test(price)) {
+    alert("Please enter a valid bed price (positive integer)");
+    return false;
+  }
+
+  // Validate noDay
+  if (noDay == "") {
+    alert("Number of days must be filled out");
+    return false;
+  } else if (!noDayPattern.test(noDay)) {
+    alert("Please enter a valid number of days (positive integer)");
+    return false;
+  }
+
+  // Validate roomNo
+  if (roomNo == "") {
+    alert("Room number must be filled out");
+    return false;
+  } else if (!roomNoPattern.test(roomNo)) {
+    alert("Please enter a valid room number (positive integer)");
+    return false;
+  }
+
+  // Validate nameAcceptor
+  if (nameAcceptor == "") {
+    alert("Acceptor name must be filled out");
+    return false;
+  } else if (!nameAcceptorPattern.test(nameAcceptor)) {
+    alert("Please enter a valid acceptor name");
+    return false;
+  }
+
+  return true;
+}
+</script>
 </head>
 
 <body>
@@ -51,21 +137,21 @@ i{
 
         
         <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
-        <a href="updateBill.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
-        <a href="services.html" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
         <a href="displayBill.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
+        <a href="updateBill.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
+       
     </div>
-    <form action="insertbill.php" name="myForm" id="form" method="POST">
+    <form action="insertbill.php" name="myForm" id="form" method="POST" onsubmit="return validateForm();">
 
         <div class="diveinfo">
    <h3>Bill Management Form</h3>
             <div class="div1">
-                <label for="card">Pateint Code</label><br>
+                <label for="cardno">Pateint Code</label><br>
                 <input type="text" name="cardNo" id="cardno" class="inptext" placeholder="Please Enter CardNo.....">
                 <div class="error"></div>
             </div>
             <div class="div1">
-                <label for="card">Item ID</label><br>
+                <label for="itemid">Item ID</label><br>
                 <input type="text" name="itemid" id="itemid" class="inptext" placeholder="Please Enter item id.....">
                 <div class="error"></div>
             </div>
@@ -108,10 +194,10 @@ i{
 
 </body>
 
-<script type="text/javascript" src="validateBill.js">
+
 
     
 
-</script>
+
 
 </html>

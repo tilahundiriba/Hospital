@@ -120,7 +120,7 @@ span{
     </div>
 <div class="con">
     <h1>WELCOME!!!!!!</h1>
-    <h2>RED FOX SPEACIALIZED HOSPITAL</h2>
+    <h2>T2M SPEACIALIZED HOSPITAL</h2>
 </div>
 <script>
 function openNav() {

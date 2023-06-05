@@ -14,14 +14,19 @@ include "connection.php";
   <link rel="stylesheet" href="style/staff.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+<style>
+  h3{
+    position: relative;
+    left: 300px;
+  }
+</style>
 </head>
 
 <body>
-  <form name="myForm" id="form" method="post">
+  <form name="myForm" id="form" method="post" onsubmit="return validateForm()">
     <div class="header">
 
-    
+
       <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
       <a href="staffregister.php" class="linkers"><i class="fa fa-angle-double-left" style="font-size:24px"></i>BACK</a>
     </div>
@@ -103,32 +108,136 @@ if (isset($_POST['update'])) {
     $address = $_POST['address'];
     $date = $_POST['date'];
     $phone = $_POST['phone'];
-    $proffession = $_POST['proffession']; 
+    $proffession = $_POST['proffession'];
     $age = $_POST['age'];
     $salary = $_POST['salary'];
-    $sql ="UPDATE employee SET age='$age',country='$country',reg_date='$date',stffaddress='$address',
+    $sql = "UPDATE employee SET age='$age',country='$country',reg_date='$date',stffaddress='$address',
     	phone='$phone',proffession='$proffession',salary='$salary' WHERE empId='$empId'";
-             if ($conn->query($sql) === TRUE) {
-                echo '<script>alert("UPDATED CORRECTLY")</script>';
-                ?>
-                <script type="text/javascript"> 
+    if ($conn->query($sql) === true) {
+        echo '<script>alert("UPDATED CORRECTLY")</script>';
+        ?>
+                <script type="text/javascript">
                      window.location="updateStaff.php";
                  </script>
                 <?php
- } else {
-                 echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
-                 ?>
-                 <script type="text/javascript"> 
+} else {
+        echo '<script>alert("NOT UPDATED SUCCESSFULLY")</script>';
+        ?>
+                 <script type="text/javascript">
                       window.location="updateStaff.php";
                   </script>
                  <?php
-             }
+}
 
 }
 
-
 ?>
-  <!-- <script type="text/javascript" src="javascript/validateUpdateStaff.js"></script> -->
+<script>
+  function validateForm() {
+    // Get form inputs and trim leading/trailing whitespace
+    var empId = document.forms["myForm"]["empId"].value.trim();
+    var age = document.forms["myForm"]["age"].value.trim();
+    var phone = document.forms["myForm"]["phone"].value.trim();
+    var country = document.forms["myForm"]["country"].value.trim();
+    var address = document.forms["myForm"]["address"].value.trim();
+    var date = document.forms["myForm"]["date"].value.trim();
+    var proffession = document.forms["myForm"]["proffession"].value.trim();
+    var salary = document.forms["myForm"]["salary"].value.trim();
+
+    // Define regular expression patterns for validation
+    var empIdPattern = /^[a-zA-Z0-9]+$/;
+    var agePattern = /^\d+$/;
+    var phonePattern = /^\d{2}-\d{4}-\d{4}$/;
+    var countryPattern = /^[a-zA-Z ]+$/;
+    var addressPattern = /^[a-zA-Z0-9\s,'-]*$/;
+    var datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    var proffessionPattern = /^[a-zA-Z ]+$/;
+    var salaryPattern = /^\d+(\.\d{1,2})?$/;
+
+  
+    if (empId == "") {
+        alert("Employee ID must be filled out");
+        return false;
+    }
+    else if (!empIdPattern.test(empId)) {
+        alert("Please enter a valid Employee ID consisting of letters and/or numbers");
+        return false;
+    }
+
+  
+    if (age == "") {
+        alert("Age must be filled out");
+        return false;
+    }
+    else if (!agePattern.test(age)) {
+        alert("Please enter a valid age consisting of digits only");
+        return false;
+    }
+
+   
+    if (phone == "") {
+        alert("Phone number must be filled out");
+        return false;
+    }
+    else if (!phonePattern.test(phone)) {
+        alert("Please enter a valid phone number in format xx-xxxx-xxxx");
+        return false;
+    }
+
+ 
+    if (country == "") {
+        alert("Country must be filled out");
+        return false;
+    }
+    else if (!countryPattern.test(country)) {
+        alert("Please enter a valid country name consisting of letters and/or spaces");
+        return false;
+    }
+
+ 
+    if (address == "") {
+        alert("Address must be filled out");
+        return false;
+    }
+    else if (!addressPattern.test(address)) {
+        alert("Please enter a valid address consisting of letters, digits, spaces, commas, apostrophes, and/or hyphens");
+        return false;
+    }
+
+
+    if (date == "") {
+        alert("Date must be filled out");
+        return false;
+    }
+    else if (!datePattern.test(date)) {
+        alert("Please enter a valid date in format yyyy-mm-dd");
+        return false;
+    }
+
+
+    if (proffession == "") {
+        alert("Profession must be filled out");
+        return false;
+    }
+    else if (!proffessionPattern.test(proffession)) {
+        alert("Please enter a valid profession consisting of letters and/or spaces");
+        return false;
+    }
+
+  
+    if (salary == "") {
+        alert("Salary must be filled out");
+        return false;
+    }
+    else if (!salaryPattern.test(salary)) {
+        alert("Please enter a valid salary in format xx.xx");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
 </body>
 
 </html>

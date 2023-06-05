@@ -37,7 +37,7 @@ i{
         <a href="displayAttendance.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
 
     </div>
-    <form name="myForm" id="form" action="insertToAttendance.php" method="GET">
+    <form name="myForm" id="form" action="insertToAttendance.php" method="post">
        
         <div class="forboth">
             <h3>Staff Attendance  Form</h3>
@@ -122,11 +122,6 @@ errorDisplay.innerText = '';
 div1.classList.add('success');
 div1.classList.remove('error');
 };
-
-// const isValidEmail = email => {
-//     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     return re.test(String(email).toLowerCase());
-// }
 
 const validateInputs = () => {
 const empid2 = empid.value.trim();

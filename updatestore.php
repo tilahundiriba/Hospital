@@ -21,7 +21,7 @@ include("connection.php");
 </head>
 
 <body>
-    <form name="myForm" id="form" method="post">
+    <form name="myForm" id="form" method="post" onsubmit="return validateForm()">
 
 
         <div class="header">
@@ -125,11 +125,75 @@ if($conn->query($sql)===TRUE){
 }
         mysqli_close($conn);
         ?>
+        <script>
+        function validateForm() {
+            // Get form inputs and trim leading/trailing whitespace
+            var itemid = document.forms["myForm"]["itemid"].value.trim();
+            var name = document.forms["myForm"]["name"].value.trim();
+            var price = document.forms["myForm"]["price"].value.trim();
+            var amount = document.forms["myForm"]["amount"].value.trim();
+            var recorded = document.forms["myForm"]["recorded"].value.trim();
+
+            // Define regular expression patterns for validation
+            var itemidPattern = /^[a-zA-Z0-9]+$/;
+            var namePattern = /^[a-zA-Z ]+$/;
+            var pricePattern = /^\d+(\.\d{1,2})?$/;
+            var amountPattern = /^\d+$/;
+
+            // Validate item ID
+            if (itemid == "") {
+                alert("Item ID must be filled out");
+                return false;
+            }
+            else if (!itemidPattern.test(itemid)) {
+                alert("Please enter a valid item ID consisting of letters and/or numbers");
+                return false;
+            }
+
+            // Validate item name
+            if (name == "") {
+                alert("Item name must be filled out");
+                return false;
+            }
+            else if (!namePattern.test(name)) {
+                alert("Please enter a valid item name consisting of letters and/or spaces");
+                return false;
+            }
+
+            // Validate price
+            if (price == "") {
+                alert("Price must be filled out");
+                return false;
+            }
+            else if (!pricePattern.test(price)) {
+                alert("Please enter a valid price in format xx.xx");
+                return false;
+            }
+
+            // Validate amount
+            if (amount == "") {
+                alert("Amount must be filled out");
+                return false;
+            }
+            else if (!amountPattern.test(amount)) {
+                alert("Please enter a valid amount consisting of digits only");
+                return false;
+            }
+
+            // Validate recorded by
+            if (recorded == "") {
+                alert("Recorded by must be filled out");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
-<!-- <script type="text/javascript" src="javascript/validationStoreInput.js"> -->
+
 
     
 
-</script>
+
 
 </html>

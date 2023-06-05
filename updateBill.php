@@ -2,6 +2,7 @@
 include "connection.php";
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +27,7 @@ include "connection.php";
         
 
     </div>
-    <form name="myForm" id="form" method="POST">
+    <form name="myForm" id="form" method="POST" onsubmit="return validateForm()">
 
         <div class="diveinfo">
             <h3>Update Bill Form</h3>
@@ -104,14 +105,69 @@ if (isset($_POST['update'])) {
 
 
 ?>
+<script>
+    function validateForm() {
+        // Get form inputs and trim leading/trailing whitespace
+        var cardno = document.forms["myForm"]["cardNo"].value.trim();
+        var amount = document.forms["myForm"]["amount"].value.trim();
+        var price = document.forms["myForm"]["price"].value.trim();
+        var noday = document.forms["myForm"]["noday"].value.trim();
+        var roomno = document.forms["myForm"]["roomno"].value.trim();
+        var nameacceptor = document.forms["myForm"]["nameacceptor"].value.trim();
+
+        // Define regular expression patterns for validation
+        var cardNoPattern = /^[a-zA-Z0-9]+$/;
+
+        // Validate cardNo
+        if (cardno == "") {
+            document.getElementById("cardno-error").innerHTML = "Patient Code must be filled out";
+            return false;
+        } else if (!cardNoPattern.test(cardno)) {
+            document.getElementById("cardno-error").innerHTML = "Please enter a valid Patient Code consisting of letters and/or numbers";
+            return false;
+        }
+
+        // Validate amount
+        if (amount == "") {
+            document.getElementById("amount-error").innerHTML = "Service Price must be filled out";
+            return false;
+        }
+
+        // Validateprice
+        if (price == "") {
+            document.getElementById("price-error").innerHTML = "Bed Price must be filled out";
+            return false;
+        }
+
+        // Validate noday
+        if (noday == "") {
+            document.getElementById("noday-error").innerHTML = "Number of Days must be filled out";
+            return false;
+        }
+
+        // Validate roomno
+        if (roomno == "") {
+            document.getElementById("roomno-error").innerHTML = "Room Number must be filled out";
+            return false;
+        }
+
+        // Validate nameacceptor
+        if (nameacceptor == "") {
+            document.getElementById("nameacceptor-error").innerHTML = "Acceptor Name must be filled out";
+            return false;
+        }
+
+        return true;
+    }
+</script>
 </body>
 
-<!-- <script type="text/javascript" src="javascript/validateBill.js"> -->
 
 
 
 
 
-</script>
+
+
 
 </html>

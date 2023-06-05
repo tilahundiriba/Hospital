@@ -28,7 +28,7 @@ include "connection.php";
     <form class="myform" id="form" method="post">
         <div class="divlogin">
             <div class="userlogindiv">
-                <img src="style/images/userlogin.jpg" alt="User login logo" class="userlogo">
+                <img src="style/images/staff_login.jpg" alt="User login logo" class="userlogo">
             </div>
             <div class="div1">
                 <label for="proff" class="labal">Proffession </label>
@@ -118,55 +118,5 @@ while($row=$result->fetch_assoc()){
 $conn->close();
 ?>
 </body>
-<!-- <script type="text/javascript">
-
-    const form = document.getElementById('form');
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-
-        validateInputs();
-    });
-
-    const setError = (element, message) => {
-        const div1 = element.parentElement;
-        const errorDisplay = div1.querySelector('.error');
-
-        errorDisplay.innerText = message;
-        div1.classList.add('error');
-        div1.classList.remove('success')
-    }
-
-    const setSuccess = element => {
-        const div1 = element.parentElement;
-        const errorDisplay = div1.querySelector('.error');
-
-        errorDisplay.innerText = '';
-        div1.classList.add('success');
-        div1.classList.remove('error');
-    };
-
-    const validateInputs = () => {
-        const username2 = username.value.trim();
-        const password2 = password.value.trim();
-
-
-        if (username2 === '') {
-            setError(username, 'Please enter username.');
-        } else {
-            setSuccess(username);
-        }
-        if (password2 === '') {
-            setError(password, 'Please enter your password.');
-        } else {
-            setSuccess(password);
-        }
-
-
-
-    };
-
-</script> -->
-
+ 
 </html>

@@ -34,7 +34,7 @@ if($conn->query($sql)===TRUE){
   echo '<script>alert("INSERTED CORRECTLY")</script>' ;
   ?>
   <script type="text/javascript"> 
-       window.location="PetientReg.php";
+       window.location="PatientReg.php";
    </script>
   <?php
 }
@@ -42,7 +42,7 @@ if($conn->query($sql)===TRUE){
   echo '<script>alert("not INSERTED succesfully")</script>' ;
   ?>
   <script type="text/javascript"> 
-       window.location="PetientReg.php";
+       window.location="PatientReg.php";
    </script>
   <?php
 

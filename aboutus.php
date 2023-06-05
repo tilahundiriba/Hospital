@@ -169,9 +169,9 @@ top: 0px;
         <img src="style/images/mulehospital.jpg" alt="logos" height="450px" ;>
     </div>
     <div class="forAboutus">
-        Red Fox Hospital (Key Kebero in Amharic) is Ethiopia’s
+        T2M Hospital (Key Kebero in Amharic) is Ethiopia’s
         largest general public hospital and one of only two University Hospitals in the country.
-        In 1998 Red Fox Hospital, which is also the largest referral hospital in the country was given to All University
+        In 1998 T2M Hospital, which is also the largest referral hospital in the country was given to All University
         by the Ministry of Health (MoH) for the faculty as a main teaching hospital.
         The faculty is the oldest and the largest among the health training institutions in the country, staffed with
         the most senior specialists.
@@ -180,7 +180,7 @@ top: 0px;
         The hospital is administered by All University and is the largest and oldest teaching hospital
         among all in Ethiopia providing teaching for about 300 medical students and 350 Residents every year.
 
-        Red Fox hospital offers diagnosis and treatment for approximately 370,000- 400,000 patients a year.
+        T2M hospital offers diagnosis and treatment for approximately 370,000- 400,000 patients a year.
         The hospital has 800 beds, with 130 specialists, 50 non-teaching doctors.
         The emergency department sees around 80,000 patients a year.
 

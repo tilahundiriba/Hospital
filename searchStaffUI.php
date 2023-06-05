@@ -243,6 +243,14 @@ if(isset($_POST['search'])){
 
 $sql="select empId,firstname,middlename,phone,stffaddress,proffession,salary from employee WHERE empId ='$emp_Id'";
 $result=$conn->query($sql);
+if (mysqli_num_rows($result) == 0){
+    ?>
+    <script type="text/javascript">
+         alert("The patient id does't exist!!!");
+         window.location="searchStaffUI.php";
+     </script>
+    <?php
+}
 if($result->num_rows>0){
 echo "<table><tr><th>EMP_ID</th><th>EMP_FIRST_NAME</th><th>EMP_MIDDLE_NAME</th>
 <th>PHONE</th><th>ADDRESS</th><th>PROFFESSION</th><th>SALARY</th></tr>";
@@ -264,8 +272,6 @@ echo "</table>";
 if (isset($_POST['delete'])) {
     $empId = $_POST['empIdd'];
     $sql = "delete from employee WHERE empId='$empId'";
-    // DELETE t1 FROM billtable AS t1 JOIN PATEINTS AS t2 ON t1.cardNo = t2.pateintCode WHERE pateintCode='535353';
-
     if ($conn->query($sql) === true) {
         ?>
         <script type="text/javascript"> 

@@ -58,7 +58,6 @@ i{
             <a href="index.php" class="linkers"><i class="fa fa-home" style="font-size:24px"></i>HOME</a>
             <a href="displayDrug.php" class="linkers"><i class="fa fa-eye" style="font-size:24px"></i>VIEW </a>
             <a href="updatestore.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
-            <a href="login.html" class="linkers"><i class="fa fa-trash-o" style="font-size:24px"></i>DELETE</a>
          
 
         </div>
@@ -69,13 +68,13 @@ i{
                 
 
                 <div class="div1">
-                    <label for="item id" class="label">Item ID</label>
+                    <label for="Itemid" class="label">Item ID</label>
                     <input type="text" name="itemid" id="Itemid" class="input" placeholder="items id">
                     <div class="error"></div>
                 </div>
 
                 <div class="div1">
-                    <label for="name" class="label">Item Name</label>
+                    <label for="ItemName" class="label">Item Name</label>
                     <input type="text" name="itemname" class="input" id="ItemName" placeholder="items name">
                     <div class="error"></div>
                 </div>
@@ -122,7 +121,7 @@ i{
 
     </form>
 </body>
-<script type="text/javascript" src="validationStoreInput.js">
+<script type="text/javascript" src="javascript/validationStoreInput.js">
 
     
 

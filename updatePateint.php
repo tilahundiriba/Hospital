@@ -47,11 +47,108 @@ i{
     margin-right: 10px;
 }
     </style>
+    <script>
+  function validateForm() {
+    // Get form inputs
+    var pateintCode = document.forms["myForm"]["pateintCode"].value;
+    var age = document.forms["myForm"]["age"].value;
+    var disease = document.forms["myForm"]["disease"].value;
+    var appdate = document.forms["myForm"]["appdate"].value;
+    var address = document.forms["myForm"]["address"].value;
+    var city = document.forms["myForm"]["City"].value;
+    var contact = document.forms["myForm"]["contact"].value;
+    var Alldoctor = document.forms["myForm"]["Alldoctor"].value;
+
+    // Define regular expression patterns for validation
+    var pateintCodePattern = /^\d{4}$/;
+    var agePattern = /^\d+$/;
+    var diseasePattern = /^[a-zA-Z ]+$/;
+    var appdatePattern = /^\d{4}-\d{2}-\d{2}$/;
+    var addressPattern = /^[a-zA-Z0-9\s,'-]*$/;
+    var cityPattern = /^[a-zA-Z\s]*$/;
+    var contactPattern = /^\d{2}-\d{4}-\d{4}$/;
+    var AlldoctorPattern = /^[a-zA-Z\s]*$/;
+
+    // Validate pateintCode
+    if (pateintCode == "") {
+      alert("Patient code must be filled out");
+      return false;
+    } else if (!pateintCodePattern.test(pateintCode)) {
+      alert("Please enter a valid patient code (4 digits)");
+      return false;
+    }
+
+    // Validate age
+    if (age == "") {
+      alert("Age must be filled out");
+      return false;
+    } else if (!agePattern.test(age)) {
+      alert("Please enter a valid age (positive integer)");
+      return false;
+    }
+
+    // Validate disease
+    if (disease == "") {
+      alert("Disease must be filled out");
+      return false;
+    } else if (!diseasePattern.test(disease)) {
+      alert("Please enter a valid disease name");
+      return false;
+    }
+
+    // Validate appdate
+    if (appdate == "") {
+      alert("Appointment date must be filled out");
+      return false;
+    } else if (!appdatePattern.test(appdate)) {
+      alert("Please enter a valid appointment date (YYYY-MM-DD)");
+      return false;
+    }
+
+    // Validate address
+    if (address == "") {
+      alert("Address must be filled out");
+      return false;
+    } else if (!addressPattern.test(address)) {
+      alert("Please enter a valid address");
+      return false;
+    }
+
+    // Validate city
+    if (city == "") {
+      alert("City must be filled out");
+      return false;
+    } else if (!cityPattern.test(city)) {
+      alert("Please enter a valid city name");
+      return false;
+    }
+
+    // Validate contact
+    if (contact == "") {
+      alert("Contact number must be filled out");
+      return false;
+    } else if (!contactPattern.test(contact)) {
+      alert("Please enter a valid contact number (xx-xxxx-xxxx)");
+      return false;
+    }
+
+    // Validate Alldoctor
+    if (Alldoctor == "") {
+      alert("Allocated doctor name must be filled out");
+      return false;
+    } else if (!AlldoctorPattern.test(Alldoctor)) {
+      alert("Please enter a valid allocated doctor name");
+      return false;
+    }
+
+    return true;
+  }
+</script>
 
 </head>
 
 <body>
-    <form name="myForm" id="form" method="post">
+    <form name="myForm" id="form" method="post" onsubmit="return validateForm()">
 
 
         <div class="header">
@@ -163,7 +260,7 @@ if (isset($_POST['submit'])) {
 
 
 ?>
-    <!-- <script type="text/javascript" src="javascript/validateUpdatePatein.js"></script> -->
+   
 </body>
 
 

@@ -1,7 +1,6 @@
 const form = document.getElementById('form');
 const age = document.getElementById('age');
 const phone = document.getElementById('phone');
-const region = document.getElementById('region');
 const address = document.getElementById('address');
 const empId = document.getElementById('id');
 const proff = document.getElementById('proff');
@@ -45,7 +44,6 @@ const isValidEmail = email => {
 const validateInputs = () => {
   
     const age2 = age.value.trim();
-    const region2 = region.value.trim();
     const address2 = address.value.trim();
     const proff2 = proff.value.trim();
     const phone2 = phone.value.trim();
@@ -87,15 +85,6 @@ const validateInputs = () => {
     else  {
         setSuccess(country);
     } 
-    if(region2=== '') {
-        setError(region, 'Region is required');
-    } else if(!region2.match(regName)){
-        setError(region, 'Region must be character only.');
-    }
-    else  {
-        setSuccess(region);
-    } 
-  
     if(address2 === '') {
         setError(address, 'Address is required');
     } 

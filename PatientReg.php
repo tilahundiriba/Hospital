@@ -43,6 +43,119 @@ i{
     margin-right: 10px;
 }
 </style>
+<script>
+    function validateForm() {
+        // Get form inputs
+        var pateintCode = document.forms["myForm"]["pateintCode"].value;
+        var pateintName = document.forms["myForm"]["Pateintname"].value;
+        var dbrith = document.forms["myForm"]["date"].value;
+        var age = document.forms["myForm"]["age"].value;
+        var disease = document.forms["myForm"]["disease"].value;
+        var bloodgroup = document.forms["myForm"]["bloodgroup"].value;
+        var gender = document.forms["myForm"]["gender"].value;
+        var address = document.forms["myForm"]["address"].value;
+        var city = document.forms["myForm"]["City"].value;
+        var email = document.forms["myForm"]["email"].value;
+        var contact = document.forms["myForm"]["contact"].value;
+        var Allocatedoctor = document.forms["myForm"]["Allocatedoctor"].value;
+
+        // Define regular expression patterns for validation
+        var namePattern = /^[a-zA-Z ]+$/;
+        var phonePattern = /^\d{2}-\d{4}-\d{4}$/;
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate pateint code
+        if (pateintCode == "") {
+            alert("Pateint code must be filled out");
+            return false;
+        }
+
+        // Validate pateint name
+        if (pateintName == "") {
+            alert("Pateint name must be filled out");
+            return false;
+        }
+        else if (!namePattern.test(pateintName)) {
+            alert("Please enter a valid pateint name");
+            return false;
+        }
+
+        // Validate date of birth
+        if (dbrith == "") {
+            alert("Date of birth must be filled out");
+            return false;
+        }
+
+        // Validate age
+        if (age == "") {
+            alert("Age must be filled out");
+            return false;
+        }
+        else if (age < 18 || age > 65) {
+            alert("Please enter a valid age between 18 and 65");
+            return false;
+        }
+
+        // Validate disease
+        if (disease == "") {
+            alert("Disease must be filled out");
+            return false;
+        }
+
+        // Validate blood group
+        if (bloodgroup == "") {
+            alert("Blood group must be filled out");
+            return false;
+        }
+
+        // Validate gender
+        if (gender == "") {
+            alert("Gender must be filled out");
+            return false;
+        }
+
+        // Validate address
+        if (address == "") {
+            alert("Address must be filled out");
+            return false;
+        }
+
+        // Validate city
+        if (city == "") {
+            alert("City must be filled out");
+            return false;
+        }
+
+        // Validate email
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+        else if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        // Validate contact
+        if (contact == "") {
+            alert("Contact number must be filled out");
+            return false;
+        }
+        else if (!phonePattern.test(contact)) {
+            alert("Please enter a valid contact number in format xx-xxxx-xxxx");
+            return false;
+        }
+
+        // Validate allocated doctor
+        if (Allocatedoctor == "") {
+            alert("Allocated doctor must be filled out");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </head>
 
 <body>
@@ -56,7 +169,7 @@ i{
         <a href="updatePateint.php" class="linkers"><i class="fa fa-edit" style="font-size:24px"></i>UPDATE</a>
       
     </div>
-    <form name="myForm" id="form" action="insert.php" method="post">
+    <form name="myForm" id="form" action="insert.php" method="post" onsubmit="return validateForm()">
 
 
         <div class="forboth" id="id02">
@@ -69,13 +182,13 @@ i{
                 </div>
 
                 <div class="div2">
-                    <label for="pname" class="label">Pateint Name</label>
+                    <label for="pateintName" class="label">Pateint Name</label>
                     <input type="text" name="Pateintname" class="input" id="pateintName" placeholder="Pateint name">
                     <div class="error"></div>
                 </div>
 
                 <div class="div2">
-                    <label for="date" class="label">Date of brith</label>
+                    <label for="dbrith" class="label">Date of brith</label>
                     <input type="date" name="date" class="input" id="dbrith" placeholder="Date of brith">
                     <div class="error"></div>
                 </div>
@@ -111,17 +224,17 @@ i{
                 </div>
                 <div class="div2">
                     <label for="address" class="label">Address</label>
-                    <input type="text" name="address" class="input" id="address" placeholder=" Pateint Address">
+                    <input type="text" name="address" class="input" id="address" placeholder=" Pateint Address" autocomplete="off">
                     <div class="error"></div>
                 </div>
                 <div class="div2">
-                    <label for="City" class="label">City</label>
+                    <label for="city" class="label">City</label>
                     <input type="text" name="City" class="input" id="city" placeholder=" Pateint City">
                     <div class="error"></div>
                 </div>
                 <div class="div2">
                     <label for="email" class="label">Email Address </label>
-                    <input type="email" name="email" class="input" id="email" placeholder=" Email address">
+                    <input type="email" name="email" class="input" id="email" placeholder=" Email address" autocomplete="off">
                     <div class="error"></div>
                 </div>
                 <div class="div2">
@@ -131,7 +244,7 @@ i{
                 </div>
 
                 <div class="div2">
-                    <label for="Allocate doctor" class="label">Allocate Doctor </label>
+                    <label for="alldoctor" class="label">Allocate Doctor </label>
                     <input type="text" name="Allocatedoctor" class="input" id="alldoctor"
                         placeholder="Allocate doctor ">
                     <div class="error"></div>
@@ -150,12 +263,12 @@ i{
         </div>
 
     </form>
-    <script type="text/javascript" src="validatePateint.js"></script>
+    
+   
 </body>
 
 
     
 
-</script>
 
 </html>
